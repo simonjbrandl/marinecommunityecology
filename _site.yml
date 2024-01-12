@@ -8,8 +8,8 @@ navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About the course"
-      href: aboutthecourse.html
+    - text: "About"
+      href: about.html
     - text: "R: slides"
       href: rslides.html
     - text: "R: exercises"
