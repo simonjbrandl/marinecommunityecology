@@ -1,0 +1,12 @@
+name: "."
+title: "Marine Community Ecology - UT Austin Marine Science Institute"
+description: |
+  Marine Community Ecology
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: postcards::jolla

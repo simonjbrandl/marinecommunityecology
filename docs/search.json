@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n          \n          \n          Marine Community Ecology - UT Austin Marine Science Institute\n          \n          \n          Home\n          About\n          ☰\n          \n          \n      \n        \n          \n            About this site\n          \n          \n            \n              \n            \n            \n              \n            \n          \n\n          \n            \n              \n          \n\n          \n            \n              \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2024-01-12T12:11:02-06:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Marine Community Ecology",
+      "author": [],
+      "contents": "\n\n          \n          \n          Marine Community Ecology - UT Austin Marine Science Institute\n          \n          \n          Home\n          About\n          ☰\n          \n          \n      \n        \n          \n            Marine Community Ecology\n          \n          \n            \n              I am a classically trained data scientist living in the\n              San Francisco Bay Area. Currently I work on the Oculus\n              team at Facebook. I love talking about baseball, true\n              crime podcasts, and causal inference.\n            \n            \n              I am a classically trained data scientist living in the\n              San Francisco Bay Area. Currently I work on the Oculus\n              team at Facebook. I love talking about baseball, true\n              crime podcasts, and causal inference.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2024-01-12T12:11:47-06:00"
+    }
+  ],
+  "collections": []
+}
