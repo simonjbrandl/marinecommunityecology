@@ -3,10 +3,23 @@ title: "Marine Community Ecology - UT Austin Marine Science Institute"
 description: |
   Marine Community Ecology
 output_dir: "docs"
+theme: mce_theme.css
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
-output: postcards::jolla
+    - text: "About the course"
+      href: aboutthecourse.html
+    - text: "R: slides"
+      href: rslides.html
+    - text: "R: exercises"
+      href: rexercises.html
+    - text: "R: solutions"
+      href: rsolutions.html
+    # - text: "Instructors"
+      # menu: 
+      #   - text: "Dr. Simon J. Brandl"
+      #     href: simonjbrandl.html
+      #   - text: "Dr. Jordan M. Casey"
+      #     href: jordanmcasey.html
+output: postcards::onofre
