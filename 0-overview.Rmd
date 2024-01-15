@@ -1,0 +1,47 @@
+---
+title: "Session 0: Overview"
+description: |
+  This session provides a quick overview over the course and a short primer to installing and organizing your R environment. 
+author:
+  - name: SJB
+color1: "#0D2A47"
+date: "`r Sys.Date()`"
+output:
+  postcards::onofre
+---
+
+# Let's get started...
+<br>
+<br>
+
+## Before we start
+
+There are many resources that can help you with learning to code in R. By far the best resource is the vast community of R users and developers and with every issue you run into, you can almost guarantee that someone else had the same question previously. Forums like [stackoverflow](https://stackoverflow.com/) usually have really helpful answers to questions you may have.
+
+One of my favorite formal training modules is the [swirl](https://swirlstats.com/) package, which helps you learn how to code in R by... well, making you code in R. However, before that, you will have to install and organize your R software. The primer below will help you do just that.
+
+## Structure of coding lesson pages
+
+All of the sessions are structured in the same way, presenting the following materials:
+
+- A narrated slideshow that demos the content we're working on
+- The slideshow itself, which allows you to click links, copy code, etc.
+- A set of training exercises, marked as either 'Homework' or 'Classwork'
+- Solutions to the training exercises, which will come online after class
+
+### Narrated slideshow
+```{r, echo =FALSE}
+library(vembedr)
+embed_url("https://youtu.be/JORVeMI8HUE")
+```
+
+### Slides
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/0-overview-x.html)"}
+xaringanExtra::embed_xaringan(url = "slides/0-overview-x.html", ratio = "16:9")
+```
+\

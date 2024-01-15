@@ -3,6 +3,7 @@ title: "Marine Community Ecology - UT Austin Marine Science Institute"
 description: |
   Marine Community Ecology
 output_dir: "docs"
+favicon: images/mns353_logo.png
 theme: mce_theme.css
 navbar:
   right:
@@ -10,14 +11,13 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Coding"
-      menu: 
-        - text: "R: Demos"
-        - href: "demos.html"
-        - text: "R: Exercises"
-        - href: "exercises.html"
-        - text: "R: Solutions"
-        - href: "solutions.html"
+    - text: "Coding in R"
+      href: "coding.html"
+      menu:
+        - text: "0-Overview"
+          href: "0-overview.html"
+        - text: "1-Introduction"
+          href: "1-introduction.html"
     - text: "Instructors"
       menu:
         - text: "Dr. Simon J. Brandl"

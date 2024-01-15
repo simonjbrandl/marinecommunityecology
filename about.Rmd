@@ -1,10 +1,8 @@
 ---
 title: "About"
 color1: "#0D2A47"
-color2: "#85D3D1"
-angle: 130
 description: |
-  About the course
+  Some infromation about the course
 date: "`r Sys.Date()`"
 output:
   postcards::onofre

@@ -48,10 +48,10 @@
   --background-color: #000000;
   --link-color: #85D3D1;
   --text-bold-color: #85D3D1;
-  --code-highlight-color: #cc5500;
-  --inverse-text-color: #0D2A47;
-  --inverse-background-color: #85D3D1;
-  --inverse-header-color: #0D2A47;
+  --code-highlight-color: rgba(255,255,0,0.5);
+  --inverse-text-color: #FFFFFF;
+  --inverse-background-color: #0D2A47;
+  --inverse-header-color: #FFFFFF;
   --inverse-link-color: #85D3D1;
   --title-slide-background-color: #85D3D1;
   --title-slide-text-color: #000000;
@@ -61,8 +61,6 @@
   --secondary: #0D2A47;
   --white: #FFFFFF;
   --black: #000000;
-  --orange: #cc5500;
-  --teal: #85D3D1;
 }
 
 html {
@@ -103,9 +101,7 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: grey;
-  background-color: #85D3D1;
-  padding: 2px;
+  color: #85D3D1;
 }
 .remark-slide-number {
   color: #85D3D1;
@@ -301,17 +297,5 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .bg-black {
   background-color: var(--black);
-}
-.orange {
-  color: var(--orange);
-}
-.bg-orange {
-  background-color: var(--orange);
-}
-.teal {
-  color: var(--teal);
-}
-.bg-teal {
-  background-color: var(--teal);
 }
 
