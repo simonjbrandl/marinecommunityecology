@@ -1,7 +1,6 @@
 ---
 title: "Marine Community Ecology"
-image: "images/mns353_logo_light.png"
-color1: "#000000"
+color1: "#0D2A47"
 color2: "#85D3D1"
 angle: 130
 links:

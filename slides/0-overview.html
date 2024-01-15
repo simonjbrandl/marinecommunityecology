@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Marine Community Ecology 2024</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Simon J. Brandl" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Marine Community Ecology 2024
+]
+.subtitle[
+## 00-Installing and organizing R
+]
+.author[
+### Simon J. Brandl
+]
+.institute[
+### The University of Texas at Austin
+]
+.date[
+### 2024/01/01 (updated: 2024-01-04)
+]
+
+---
+
+
+
+background-image: url("0-overview_files/IMG_7366.jpeg")
+background-size: cover
+class: center, top, inverse
+
+# Examining ecological communities in marine ecosystems using R
+
+
+---
+class: inverse, center, middle
+
+# Copyright
+
+These slides are part of the course entitled 'Marine Community Ecology,' co-developed by **Dr. Simon J. Brandl** and **Dr. Jordan M. Casey** and taught at The University of Texas at Austin [Marine Science Institute](https://utmsi.utexas.edu/)
+
+All materials for the coding part of the course were created by the author using [R](https://www.r-project.org/) and [R Markdown](https://rmarkdown.rstudio.com/). Slideshows were produced using the [xaringan](https://github.com/yihui/xaringan) package.
+
+All photos used in these presentations were taken by Dr. Casey and all code was written from scratch by Dr. Brandl and Dr. Casey. All scripts, files, and images necessary to complete the coding exercises are provided on [RPubs](https://rpubs.com/gobysimon) and [Github](https://github.com/simonjbrandl/mce2024).
+
+---
+class: center, middle
+
+# Format of coding lessons
+
+All coding lessons are structured as follows:
+
+1) Watch a pre-recorded lecture that introduces you to the packages, operations, and objectives of each coding lesson. The recording and the slides used for the presentation will be available on Canvas. 
+
+2) Perform a set of relatively easy exercises at home, which are usually to be submitted as homework. We will go through their solutions in class.
+
+3) Work through a set of harder exercises in class. This will allow you to work in groups and with your instructors to solve problems and  deepen your coding skills.
+---
+class: center, bottom
+&lt;img src="0-overview_files/footsteps.png"
+style="position:absolute; right:0px; top:10px;"&gt;
+
+
+# First steps 
+# 🐣
+
+.pull-left[1) Download the newest version of [R](https://www.r-project.org/) to your computer (click here for [Windows](https://cran.r-project.org/bin/windows/base/) or [macOS](https://cran.r-project.org/bin/macosx/)).
+
+&lt;img src="0-overview_files/RLogo.png" alt="drawing" width="150"/&gt;
+]
+
+.pull-right[2) For user-friendly coding with mutliple panes and GUI, download [RStudio](https://posit.co/download/rstudio-desktop/) to your computer.
+
+&lt;img src="0-overview_files/rstudio.png" alt="drawing" width="300"/&gt;
+]
+
+---
+# Open RStudio 
+.left-column[No need to open R separately. RStudio autonomously interfaces with R 
+#🎁]
+&lt;img src="0-overview_files/rsetup1.png" width="75%" /&gt;
+---
+# Create a new project 
+.left-column[A project will keep all of your files in the same place, which is nice and tidy 
+#🧹] 
+&lt;img src="0-overview_files/rsetup2.png" width="75%" /&gt;
+---
+# Select 'New Directory'
+.left-column[This allows you to host your project in a brand new local directory 
+#🆕] 
+&lt;img src="0-overview_files/rsetup3.png" width="75%" /&gt;
+---
+# Select 'New Project'
+.left-column[This is our default selection for writing code. One day, you may create a package 
+#📦] 
+&lt;img src="0-overview_files/rsetup4.png" width="75%" /&gt;
+---
+# Name your project
+.left-column[You can locate the directory you want to save your project in during this step 
+#🔎] 
+&lt;img src="0-overview_files/rsetup5.png" width="75%" /&gt;
+---
+# Confirm you're in the right project 
+.left-column[You will see the files present within your project directory (bottom-right panel), as well as an indication which project you are currently working in (top right) 
+#✅] 
+&lt;img src="0-overview_files/rsetup6.png" width="75%" /&gt;
+---
+# Create a new R-script
+.left-column[R-scripts are a great interface for writing code 
+#✍️] 
+&lt;img src="0-overview_files/rsetup7.png" width="75%" /&gt;
+---
+
+# Locate your new script
+.left-column[The new script will open in the top left panel, usually named 'Untitled-1'. Save it to change the name. 
+#💾] 
+&lt;img src="0-overview_files/rsetup8.png" width="75%" /&gt;
+---
+# Write a first line of code
+.left-column[Writing getwd() in your script and running it (either with the 'Run' button or using Cmd+Enter [Mac] / CTRL+Enter [Windows]) will give you your current working directory. This is the path your project is saved under.) 
+#➡️] 
+&lt;img src="0-overview_files/rsetup9.png" width="75%" /&gt;
+---
+# Check your hard drive
+.left-column[You should have a folder with your project and the new script under the specified path. Opening the R-project will automatically set this folder as your working directory.
+#📁] 
+&lt;img src="0-overview_files/rsetup10.png" width="75%" /&gt;
+---
+# Create folders to keep organized
+.left-column[You can now organize your project workspace on your hard drive. For example, you can create a folder called 'data' to store all datasets or a folder called 'plots' to store all plots.
+#🤓] 
+&lt;img src="0-overview_files/rsetup11.png" width="75%" /&gt;
+---
+
+background-image: url("0-overview_files/achievement_meme.jpeg")
+background-position: top, 20%
+class: center, bottom, inverse
+
+# Nice work!
+
+---
+
+class: center, middle
+
+# Next: 01-Introduction to R
+
+Slides created by SJB via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"ratio": "16:9",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

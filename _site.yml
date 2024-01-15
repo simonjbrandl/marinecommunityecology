@@ -10,16 +10,18 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "R: slides"
-      href: rslides.html
-    - text: "R: exercises"
-      href: rexercises.html
-    - text: "R: solutions"
-      href: rsolutions.html
-    # - text: "Instructors"
-      # menu: 
-      #   - text: "Dr. Simon J. Brandl"
-      #     href: simonjbrandl.html
-      #   - text: "Dr. Jordan M. Casey"
-      #     href: jordanmcasey.html
+    - text: "Coding"
+      menu: 
+        - text: "R: Demos"
+        - href: "demos.html"
+        - text: "R: Exercises"
+        - href: "exercises.html"
+        - text: "R: Solutions"
+        - href: "solutions.html"
+    - text: "Instructors"
+      menu:
+        - text: "Dr. Simon J. Brandl"
+          href: sjb.html
+        - text: "Dr. Jordan M. Casey"
+          href: jmc.html
 output: postcards::onofre

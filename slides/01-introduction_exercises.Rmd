@@ -1,0 +1,133 @@
+---
+title: "Marine Community Ecology 2024"
+subtitle: "01-Introduction to coding in R"
+author: "Simon J. Brandl"
+institute: "The University of Texas at Austin"
+date: "2024/01/01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    toc: yes
+    css: ["xaringan-themer.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      ratio: 16:9
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+### setup chunk
+# load packages
+library(xaringanthemer)
+library(fontawesome)
+library(emo)
+library(tidyverse)
+style_duo_accent_inverse(
+  primary_color = "#85D3D1",
+  secondary_color = "#0D2A47",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+# Load package 
+
+Load package for class exercises:
+
+- Package: tidyverse
+```{r, echo = TRUE}
+library(tidyverse)
+```
+
+# Exercise 1 
+Create the following vectors
+
+1) a sequence of even numbers from 2 to 20
+2) 1 to 9 twice
+3) 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7
+4) the word "fish" 18 times
+5) the words "blue", "white", and "yellow" six times
+
+```{r echo = TRUE}
+# 1) a sequence of even numbers from 2 to 20
+seq(2, 20, 2)
+
+# 2) 1 to 9 twice
+rep(1:9, 2) 
+
+# 3) 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7
+rep(2:7, each = 3)
+
+# 4) the word "fish" 18 times
+rep("fish", 18)
+
+# 5) the words "blue", "white", and "yellow" six times
+rep(c("blue", "white", "yellow"), each = 6)
+```
+
+# Exercise 2 
+1) create a vector with random integer values using rpois(100, 10)
+2) create a second vector with values that are smaller or equal to 10 but not 5
+3) sort the second vector in ascending order 
+4) calculate the mean and standard deviations of the second vector 
+5) calculate the maximum value of the second vector
+
+```{r echo = TRUE}
+# 1) create a vector with random integer values using rpois(100, 10)
+vector <- rpois(100, 10)
+vector
+
+# 2) calculate the number of values that are smaller or equal to 10 but not 5
+vector2 <- vector[vector <= 10 & vector != 5]
+vector2
+
+# 3) sort the vector in ascending order 
+sort(vector2)
+
+# 4) calculate the mean and standard deviations 
+mean(vector2)
+sd(vector2)
+
+# 5) calculate the minimum and maximum values
+max(vector2)
+min(vector2)
+```
+
+# Exercise 3
+1) create your own matrix
+2) convert it to a data frame
+3) give your data frame row and column names
+4) convert it to a tibble
+
+```{r, echo=TRUE}
+# 1) create your own matrix
+mx <- matrix(rpois(30, 5), nrow = 5)
+mx
+
+# 2) convert it to a data frame
+df <- as.data.frame(mx)
+df
+
+# 3) give your data frame row and column names
+colnames(df) <- c("african.penguin", "little.penguin", "rockhopper.penguin", "emperor.penguin", "chinstrap.penguin", "adelie.penguin")
+rownames(df) <- c("site1", "site2", "site3", "site4", "site5")
+df
+
+# 4) convert it to a tibble
+tb <- as_tibble(df)
+tb
+```
+
+# Exercise 4
+1) download the dataset called "coralreefherbivores.csv" from Canvas, and put it in your working directory in a folder called "data"
+2) read in the data using the read.csv() function, specifying correct path to the "data" folder
+3) calculate the mean of the column "snoutlength"
+
+```{r, echo=TRUE}
+# 1) read in the data using the read.csv() function, specifying correct path to the "data" folder
+data <- read.csv(file = "data/coralreefherbivores.csv")
+
+# 2) calculate the mean of the column "snoutlength"
+mean(data$snoutlength)
+```

@@ -1,0 +1,19 @@
+[
+  {
+    "path": "demos/2024-01-15-0-overview-demo/",
+    "title": "0-Overview",
+    "description": "This demonstration provides a quick overview and primer to installing and launching R and RStudio on your local machine. If you have never installed or opened R, this is the demo you'll want to go through.",
+    "author": [
+      {
+        "name": "Simon J. Brandl, PhD",
+        "url": "https://fishandfunctions.com"
+      }
+    ],
+    "date": "2024-01-15",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2024-01-15T10:53:50-06:00",
+    "input_file": {}
+  }
+]

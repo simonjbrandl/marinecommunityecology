@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Marine Community Ecology 2024</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Simon J. Brandl" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Marine Community Ecology 2024
+]
+.subtitle[
+## 01-Introduction to coding in R
+]
+.author[
+### Simon J. Brandl
+]
+.institute[
+### The University of Texas at Austin
+]
+.date[
+### 2024/01/01 (updated: 2024-01-11)
+]
+
+---
+
+
+
+&lt;style type="text/css"&gt;
+
+.scrollable {
+  height: 300px;
+  overflow-y: auto;
+}
+
+
+.scrollable-auto {
+  height: 75%;
+  overflow-y: auto;
+}
+
+.remark-slide-scaler {
+    overflow-y: auto;
+}
+&lt;/style&gt;
+
+# Basics
+## Slide setup
+
+Tips and explanations ⬅️ this type of text contains prompts, tips, and tricks
+
+.code-teal[
+
+```r
+# R code is delineated in these boxes
+# hashmarks in R code are annotations, not functional code
+
+"I am a penguin" # &lt;- this is actual code
+```
+
+```
+## [1] "I am a penguin"
+```
+]
+
+⬆️   Code outputs appear below each chunk of code    ⬆️
+---
+
+## Access your workspace
+
+To confirm that you're in the right place, you can write getwd() to get your working directory
+
+
+```r
+# use getwd() to find out where you are
+getwd()
+```
+
+```
+## [1] "/Users/simonjbrandl/Documents/SJB1/Projects/mce2024/markdown"
+```
+
+➡️ This looks great. If you're inside your project (as indicated on the upper right corner of your RStudio environment), your working directory should be automatically set to your project directory. 
+
+➡️ Think of your R-project as a box that contains everything you need to bake a cake. Within it, you may have smaller boxes that contain ingredients, instructions, or tools. 
+---
+## Packages 📦
+
+R is user maintained, and most of its functionality comes from **packages** that contain a set of different functions to accomplish tasks. Some packages (such as the _base_ package) come pre-installed, but the vast majority of packages need to be installed and loaded.
+
+Below, we are installing the _tidyverse_ package using the &lt;span style="color:orange"&gt; *install.packages()* &lt;/span&gt; function 
+
+
+```r
+# you typically don't need to set repos when installing a package
+#install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+```
+
+Installing the package downloads its contents to your R library. Before you can start using it, however, you have to load it into your current R session. We can do this using the &lt;span style="color:orange"&gt; *library()* &lt;/span&gt; function.
+
+
+```r
+# load the tidyverse package in your current R session
+library(tidyverse)
+```
+
+You only need to install packages once, but you will have to re-load the packages you need each time you start a new R session.
+---
+## Common operators
+
+- "?" opens help
+- "&lt;-" assigns the right side to the left side
+- "==" indicates whether the left side matches the right
+
+.pull-left[ Getting help and assigning values
+
+
+```r
+# get help
+?install.packages
+
+# assign value
+one &lt;- 1
+one
+```
+
+```
+## [1] 1
+```
+
+```r
+five &lt;- 5
+five
+```
+
+```
+## [1] 5
+```
+]
+
+.pull-right[ Check for matches
+
+
+```r
+# check matching values (TRUE or FALSE)
+5 == 5
+```
+
+```
+## [1] TRUE
+```
+
+```r
+5 == 6
+```
+
+```
+## [1] FALSE
+```
+
+```r
+five == 5
+```
+
+```
+## [1] TRUE
+```
+]
+---
+class: middle
+
+## R as a calculator
+
+- R works as a basic calculator, using the same annotation you would typically use. 
+
+- It also understands a diverse range of mathematical functions as part of the _base_ package, such as &lt;span style="color:orange"&gt; *log()* &lt;/span&gt;, &lt;span style="color:orange"&gt; *sqrt()* &lt;/span&gt;, or &lt;span style="color:orange"&gt; *sin()* &lt;/span&gt;  
+
+
+```r
+# four times four
+4*4
+```
+
+```
+## [1] 16
+```
+
+```r
+# a much more complicated calculation
+23*sin(19)/sqrt(12) + log(58)
+```
+
+```
+## [1] 5.055557
+```
+
+```r
+# be careful to observe basic rules 
+2 * 2 + 5 == 2 * (2 + 5)
+```
+
+```
+## [1] FALSE
+```
+---
+
+## Naming objects
+
+
+- you can name objects however you want, but misspelling names is one of the most common errors
+- try to develop a standardized system for naming objects!
+- for example, separate object names by "." or "_" and don't use capitals (e.g. "fish.data")
+
+.pull-left[
+
+```r
+# assign obj1 the value of 4*4
+obj1 &lt;- 4*4
+obj1
+```
+
+```
+## [1] 16
+```
+
+```r
+# assign obj2 a more complex value
+obj2 &lt;- 23/sqrt(58)*21^2
+obj2
+```
+
+```
+## [1] 1331.841
+```
+
+```r
+# assign obj3 a non-numerical value
+obj3 &lt;- "fish"
+obj3
+```
+
+```
+## [1] "fish"
+```
+]
+
+.pull-right[
+&lt;img src="1-introduction_files/clown_meme.jpeg" width="75%" /&gt;
+]
+---
+
+## Combine objects
+
+- you can readily combine numeric objects, but you cannot combine a numeric and non-numeric objects
+
+
+```r
+obj4 &lt;- obj1 + obj2 # combine numeric objects
+obj4
+```
+
+```
+## [1] 1347.841
+```
+
+```r
+obj5 &lt;- obj1 + obj3 # attempt to combine numeric and character
+```
+
+```
+## Error in obj1 + obj3: non-numeric argument to binary operator
+```
+😢
+
+- to combine numbers and characters, you need to use a specialized function such as  &lt;span style="color:orange"&gt; *paste()* &lt;/span&gt;
+
+
+```r
+obj6 &lt;- paste(obj1,obj3) # using the paste function
+obj6
+```
+
+```
+## [1] "16 fish"
+```
+---
+class: inverse, center, top
+
+# Exercise 1.1 🏋️‍♀️
+
+### a) Find your current working directory.
+
+### b) Test whether:
+
+
+```r
+(6 * 1^3 + 1)^3 - (6 * 1^3 - 1)^3 - (6 *1^2)^3
+```
+### yields the same value as
+
+```r
+(sin(2) + cos(2))^2 + (sin(2) - cos(2))^2
+```
+
+### c) Create an object that contains the text 'MCE', an object that contains the number 2024, and a new object that combines the two.   
+---
+class: middle, center
+
+# Functions and vectors
+# ⚙️
+
+---
+
+## Functions
+
+- denoted by parentheses
+- perform basic (or very sophisticated) operations with your objects
+- you have already used them! 💡
+
+
+```r
+obj8 &lt;- 9
+sqrt(obj8) # sqrt() is a function
+```
+
+```
+## [1] 3
+```
+
+```r
+obj9 &lt;- paste("fish", "rule") # paste() is a function
+obj9
+```
+
+```
+## [1] "fish rule"
+```
+---
+
+## Vectors
+
+- objects that contain multiple elements 
+- simplest data structure in R
+
+
+```r
+conc.vals &lt;- c(1,2,3,4,5) # c() is the concatenate function - use it to combine numbers
+conc.vals # we have created a cevtor with five numbers
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+conc.text &lt;- c("fish1", "fish2", "fish3", "fish4") # or use it to string together words
+conc.text # we have created a vector with four words
+```
+
+```
+## [1] "fish1" "fish2" "fish3" "fish4"
+```
+
+```r
+conc.fish &lt;- c("&lt;º(((&gt;&lt;", "&lt;º(((&gt;&lt;", "&lt;º(((&gt;&lt;") # you can concatenate almost anything
+conc.fish
+```
+
+```
+## [1] "&lt;º(((&gt;&lt;" "&lt;º(((&gt;&lt;" "&lt;º(((&gt;&lt;"
+```
+---
+## Vectors 🤝 Functions 
+### Create vectors using functions
+- functions consist of **arguments** that need to be specified
+- the &lt;span style="color:orange"&gt; *seq()* &lt;/span&gt; function creates sequence vectors
+- its basic arguments are **_from_**, **_to_**, and **_by_**
+
+
+```r
+seq1 &lt;- seq(from = 1, to = 10, by = 1) # create a sequence from 1 to 10 in intervals of 1
+seq1
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
+seq2 &lt;- seq(1, 10, 1) # you don't have to spell out arguments but it's safer to do so
+seq2
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
+seq3 &lt;- 1:10 # with an easy sequence like this, you can also do this
+seq3
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+---
+
+.pull-left[
+### There are often many ways to perform the same operation! 🤡
+
+### As the tasks at hand get more complex, you're less likely to find alternative pathways 
+
+.scrollable[
+
+```r
+seq4 &lt;- seq(from = 0, to = 12167, by = 23)
+seq4
+```
+
+```
+##   [1]     0    23    46    69    92   115
+##   [7]   138   161   184   207   230   253
+##  [13]   276   299   322   345   368   391
+##  [19]   414   437   460   483   506   529
+##  [25]   552   575   598   621   644   667
+##  [31]   690   713   736   759   782   805
+##  [37]   828   851   874   897   920   943
+##  [43]   966   989  1012  1035  1058  1081
+##  [49]  1104  1127  1150  1173  1196  1219
+##  [55]  1242  1265  1288  1311  1334  1357
+##  [61]  1380  1403  1426  1449  1472  1495
+##  [67]  1518  1541  1564  1587  1610  1633
+##  [73]  1656  1679  1702  1725  1748  1771
+##  [79]  1794  1817  1840  1863  1886  1909
+##  [85]  1932  1955  1978  2001  2024  2047
+##  [91]  2070  2093  2116  2139  2162  2185
+##  [97]  2208  2231  2254  2277  2300  2323
+## [103]  2346  2369  2392  2415  2438  2461
+## [109]  2484  2507  2530  2553  2576  2599
+## [115]  2622  2645  2668  2691  2714  2737
+## [121]  2760  2783  2806  2829  2852  2875
+## [127]  2898  2921  2944  2967  2990  3013
+## [133]  3036  3059  3082  3105  3128  3151
+## [139]  3174  3197  3220  3243  3266  3289
+## [145]  3312  3335  3358  3381  3404  3427
+## [151]  3450  3473  3496  3519  3542  3565
+## [157]  3588  3611  3634  3657  3680  3703
+## [163]  3726  3749  3772  3795  3818  3841
+## [169]  3864  3887  3910  3933  3956  3979
+## [175]  4002  4025  4048  4071  4094  4117
+## [181]  4140  4163  4186  4209  4232  4255
+## [187]  4278  4301  4324  4347  4370  4393
+## [193]  4416  4439  4462  4485  4508  4531
+## [199]  4554  4577  4600  4623  4646  4669
+## [205]  4692  4715  4738  4761  4784  4807
+## [211]  4830  4853  4876  4899  4922  4945
+## [217]  4968  4991  5014  5037  5060  5083
+## [223]  5106  5129  5152  5175  5198  5221
+## [229]  5244  5267  5290  5313  5336  5359
+## [235]  5382  5405  5428  5451  5474  5497
+## [241]  5520  5543  5566  5589  5612  5635
+## [247]  5658  5681  5704  5727  5750  5773
+## [253]  5796  5819  5842  5865  5888  5911
+## [259]  5934  5957  5980  6003  6026  6049
+## [265]  6072  6095  6118  6141  6164  6187
+## [271]  6210  6233  6256  6279  6302  6325
+## [277]  6348  6371  6394  6417  6440  6463
+## [283]  6486  6509  6532  6555  6578  6601
+## [289]  6624  6647  6670  6693  6716  6739
+## [295]  6762  6785  6808  6831  6854  6877
+## [301]  6900  6923  6946  6969  6992  7015
+## [307]  7038  7061  7084  7107  7130  7153
+## [313]  7176  7199  7222  7245  7268  7291
+## [319]  7314  7337  7360  7383  7406  7429
+## [325]  7452  7475  7498  7521  7544  7567
+## [331]  7590  7613  7636  7659  7682  7705
+## [337]  7728  7751  7774  7797  7820  7843
+## [343]  7866  7889  7912  7935  7958  7981
+## [349]  8004  8027  8050  8073  8096  8119
+## [355]  8142  8165  8188  8211  8234  8257
+## [361]  8280  8303  8326  8349  8372  8395
+## [367]  8418  8441  8464  8487  8510  8533
+## [373]  8556  8579  8602  8625  8648  8671
+## [379]  8694  8717  8740  8763  8786  8809
+## [385]  8832  8855  8878  8901  8924  8947
+## [391]  8970  8993  9016  9039  9062  9085
+## [397]  9108  9131  9154  9177  9200  9223
+## [403]  9246  9269  9292  9315  9338  9361
+## [409]  9384  9407  9430  9453  9476  9499
+## [415]  9522  9545  9568  9591  9614  9637
+## [421]  9660  9683  9706  9729  9752  9775
+## [427]  9798  9821  9844  9867  9890  9913
+## [433]  9936  9959  9982 10005 10028 10051
+## [439] 10074 10097 10120 10143 10166 10189
+## [445] 10212 10235 10258 10281 10304 10327
+## [451] 10350 10373 10396 10419 10442 10465
+## [457] 10488 10511 10534 10557 10580 10603
+## [463] 10626 10649 10672 10695 10718 10741
+## [469] 10764 10787 10810 10833 10856 10879
+## [475] 10902 10925 10948 10971 10994 11017
+## [481] 11040 11063 11086 11109 11132 11155
+## [487] 11178 11201 11224 11247 11270 11293
+## [493] 11316 11339 11362 11385 11408 11431
+## [499] 11454 11477 11500 11523 11546 11569
+## [505] 11592 11615 11638 11661 11684 11707
+## [511] 11730 11753 11776 11799 11822 11845
+## [517] 11868 11891 11914 11937 11960 11983
+## [523] 12006 12029 12052 12075 12098 12121
+## [529] 12144 12167
+```
+]
+]
+
+.pull-right[
+&lt;img src="1-introduction_files/samething.jpeg" width="95%" /&gt;
+]
+---
+### Create vectors with repetitions
+- the &lt;span style="color:orange"&gt; *rep()* &lt;/span&gt; function creates repititions
+- its basic arguments are **_x_** (the element to be replicated) and your choice of  **_times_** and/or **_each_** 
+
+
+
+```r
+rep1 &lt;- rep(1:5, times = 10) # replicate the sequence 1:5 ten times
+rep1
+```
+
+```
+##  [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3
+## [49] 4 5
+```
+
+```r
+rep2 &lt;- rep(1:5, esach = 10) # replicate each element in 1:5 ten times
+rep2 # notice the difference between 'times' and 'each'
+```
+
+```
+## [1] 1 2 3 4 5
+```
+
+```r
+rep3 &lt;- rep("fish", times = 8) # you can also repeat text
+rep3
+```
+
+```
+## [1] "fish" "fish" "fish" "fish" "fish" "fish" "fish" "fish"
+```
+---
+### Combining functions to create vectors
+
+- you can use functions within functions (like the &lt;span style="color:orange"&gt; *seq()* &lt;/span&gt; function within the &lt;span style="color:orange"&gt; *rep()* &lt;/span&gt; function)
+- there's no real limit to how many functions you can nest within each other (but going over board may get a little messy)
+
+
+```r
+rep4 &lt;- rep(seq(from = 0, to = 10, by = 2), times = 3) # use seq() within rep() 
+rep4 
+```
+
+```
+##  [1]  0  2  4  6  8 10  0  2  4  6  8 10  0  2  4  6  8 10
+```
+
+```r
+mean.rep &lt;- mean(rep(seq(from = 0, to = 10, by = 2), times = 3)) # use mean(), seq(), and rep()
+mean.rep
+```
+
+```
+## [1] 5
+```
+---
+### Performing functions on vectors
+
+- as the previous operation suggests, you can use functions across vectors
+
+
+```r
+reps.comb &lt;- c(rep2, rep4) # combine two numerical vectors
+reps.comb
+```
+
+```
+##  [1]  1  2  3  4  5  0  2  4  6  8 10  0  2  4  6  8 10  0  2  4  6  8 10
+```
+
+```r
+log.rep2 &lt;- log(rep2) # take the log of rep2
+log.rep2
+```
+
+```
+## [1] 0.0000000 0.6931472 1.0986123 1.3862944 1.6094379
+```
+
+```r
+reps.diff1 &lt;- paste(rep2, rep3) # using paste() to combine vectors of different classes
+reps.diff1 
+```
+
+```
+## [1] "1 fish" "2 fish" "3 fish" "4 fish" "5 fish" "1 fish" "2 fish" "3 fish"
+```
+
+```r
+reps.diff2 &lt;- paste(rep3, rep4) # same operation, but different combination
+reps.diff2
+```
+
+```
+##  [1] "fish 0"  "fish 2"  "fish 4"  "fish 6"  "fish 8"  "fish 10" "fish 0"  "fish 2"  "fish 4" 
+## [10] "fish 6"  "fish 8"  "fish 10" "fish 0"  "fish 2"  "fish 4"  "fish 6"  "fish 8"  "fish 10"
+```
+---
+
+### Elements within vectors
+- you can isolate specific elements in your vectors using square brackets
+
+```r
+seq1 # call one of your vectors to see it
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+```r
+element3 &lt;- seq1[3] # select only the third element
+element3
+```
+
+```
+## [1] 3
+```
+- this also works for multiple elements at a time using the &lt;span style="color:orange"&gt; *c()* &lt;/span&gt; function or ranges
+
+```r
+three.elements &lt;- seq1[c(3,4,5)] # using c() to get elements 3, 4, and 5
+three.elements
+```
+
+```
+## [1] 3 4 5
+```
+
+```r
+last.eight &lt;- seq1[2:10] # using x:y to get the last 8 elements
+last.eight
+```
+
+```
+## [1]  2  3  4  5  6  7  8  9 10
+```
+---
+## Apply logic
+- you can also extract values based on a condition with logical operators
+- operators are pretty standard and works as below
+- the '==' is a common source of error 🤦🏽
+
+
+ ### Overview of common operators
+
+Operator | Meaning
+---------|---------
+&gt;= | values equal or greater
+&lt;= | values equal or smaller
+&gt; | values greater
+&lt; | values smaller
+== | value equals
+!= | value does not equal
+
+---
+## Logic in practice
+- to demonstrate logic, we need a somewhat more compledx vector
+- we're creating this using one of the distributional functions, in this case a randeom selection of integers using the &lt;span style="color:orange"&gt; *rpois()* &lt;/span&gt; function
+
+```r
+random.vals &lt;- rpois(30, lambda = 5) # create a new vector with 30 (somewhat) random integers
+random.vals
+```
+
+```
+##  [1]  4  3  4  8  4  6  7  6  4  6  3 13  5  7 10  9  2  4  3  5  4  9  2  8  5  6  3  4  5  5
+```
+
+```r
+selected.vals &lt;- random.vals[random.vals &gt; 4] # select values that are greater than 4
+selected.vals
+```
+
+```
+##  [1]  8  6  7  6  6 13  5  7 10  9  5  9  8  5  6  5  5
+```
+
+```r
+values.not.6 &lt;- random.vals[random.vals != 6] # select values that are not 6
+values.not.6
+```
+
+```
+##  [1]  4  3  4  8  4  7  4  3 13  5  7 10  9  2  4  3  5  4  9  2  8  5  3  4  5  5
+```
+- note that the [] requires you to re-specify the vector you want to use for the operation ☝️
+
+---
+## Combining logical statements
+- we can use Boolean expressions to combine logical statements
+- three symbols: "&amp;" = AND, "|" = OR, "!" = NOT
+- can be applied separately and in combination
+- NOT ("!") has precedence over AND ("&amp;"), which has precedence over OR ("|")
+
+```r
+boolean.and &lt;- random.vals[random.vals &gt;= 4 &amp; random.vals &lt;= 8] # values between 4 and 8
+boolean.and
+```
+
+```
+##  [1] 4 4 8 4 6 7 6 4 6 5 7 4 5 4 8 5 6 4 5 5
+```
+
+```r
+boolean.or &lt;- random.vals[random.vals == 3 | random.vals == 5] # values that are 3 or 5
+boolean.or
+```
+
+```
+## [1] 3 3 5 3 5 5 3 5 5
+```
+
+```r
+boolean.not &lt;- random.vals[random.vals != 4 &amp; random.vals &gt; 2 &amp; random.vals &lt; 8] # values that are between 2 and 8 but not 4
+boolean.not
+```
+
+```
+##  [1] 3 6 7 6 6 3 5 7 3 5 5 6 3 5 5
+```
+---
+## Assign new values
+- you can also replace values using the same principle
+- works for single values and values selected by logic
+
+```r
+random.vals[1] &lt;- 1000 # replace the first value of the vector with 1000
+random.vals
+```
+
+```
+##  [1] 1000    3    4    8    4    6    7    6    4    6    3   13    5    7   10    9    2    4    3
+## [20]    5    4    9    2    8    5    6    3    4    5    5
+```
+
+```r
+random.vals[random.vals &gt; 5] &lt;- 1000 # replace values &gt;5 with 1000
+random.vals
+```
+
+```
+##  [1] 1000    3    4 1000    4 1000 1000 1000    4 1000    3 1000    5 1000 1000 1000    2    4    3
+## [20]    5    4 1000    2 1000    5 1000    3    4    5    5
+```
+---
+## Non-numerical vectors 🐠
+- vectors can also consist of many different words
+- same principles as for numbers apply, but logical operations are limited
+
+```r
+fish.comm &lt;- paste(rep(c("whitefish", "bluefish", "yellowfish"), 5)) # create a vector of words
+fish.comm
+```
+
+```
+##  [1] "whitefish"  "bluefish"   "yellowfish" "whitefish"  "bluefish"   "yellowfish" "whitefish" 
+##  [8] "bluefish"   "yellowfish" "whitefish"  "bluefish"   "yellowfish" "whitefish"  "bluefish"  
+## [15] "yellowfish"
+```
+
+```r
+white.extinct &lt;- fish.comm[fish.comm != "whitefish"] # remove whitefish
+white.extinct
+```
+
+```
+##  [1] "bluefish"   "yellowfish" "bluefish"   "yellowfish" "bluefish"   "yellowfish" "bluefish"  
+##  [8] "yellowfish" "bluefish"   "yellowfish"
+```
+
+```r
+white.extinct[white.extinct == "yellowfish"] &lt;- "greenfish" # replace yellowfish with greenfish
+white.extinct
+```
+
+```
+##  [1] "bluefish"  "greenfish" "bluefish"  "greenfish" "bluefish"  "greenfish" "bluefish"  "greenfish"
+##  [9] "bluefish"  "greenfish"
+```
+---
+## Ordering vectors
+- sometimes it's useful to sort and order your vectors
+- this can be accomplished using the &lt;span style="color:orange"&gt; *sort()* &lt;/span&gt; function
+
+```r
+more.vals &lt;- rpois(20, 5) # use the rpois() function again to create a vector
+more.vals
+```
+
+```
+##  [1]  4  3  4  6  3  6  7  4 10  5 11  6  5  1  6  4  3  7  5  5
+```
+
+```r
+more.vals.sorted &lt;- sort(more.vals) # use sort() to sort values in increasing order
+more.vals.sorted
+```
+
+```
+##  [1]  1  3  3  3  4  4  4  4  5  5  5  5  6  6  6  6  7  7 10 11
+```
+
+```r
+more.vals.sorted.dec &lt;- rev(sort(more.vals)) # sort the values in decreasing order using "decreasing = TRUE" or the rev() function
+more.vals.sorted.dec
+```
+
+```
+##  [1] 11 10  7  7  6  6  6  6  5  5  5  5  4  4  4  4  3  3  3  1
+```
+---
+## Missing data
+- sometimes, vectors contain elements that aren't there or possible, called 'NAs'
+- this is not always a problem, but can throw some functions that need numeric values
+
+```r
+fish.numbers &lt;- rpois(20, 5) # create vector with rpois()
+fish.numbers
+```
+
+```
+##  [1] 9 7 4 6 3 3 6 2 4 4 1 5 3 3 6 4 7 4 8 2
+```
+
+```r
+fish.numbers[c(5,15)] &lt;- NA # replace some values with NAs
+fish.numbers
+```
+
+```
+##  [1]  9  7  4  6 NA  3  6  2  4  4  1  5  3  3 NA  4  7  4  8  2
+```
+
+```r
+fish.mean &lt;- mean(fish.numbers) # calculate the mean fish number
+fish.mean
+```
+
+```
+## [1] NA
+```
+## 😭
+- luckily, it is easy to remove NAs from some functions, or exclude them from your vector
+
+```r
+fish.mean.nona &lt;- mean(fish.numbers, na.rm = TRUE) # na.rm = TRUE removes NAs within a function
+fish.mean.nona
+```
+
+```
+## [1] 4.555556
+```
+
+```r
+fish.mean.nona &lt;- mean(fish.numbers[!is.na(fish.numbers)]) # !is.na(fish.density) excludes them from the vector prior to the function
+fish.mean.nona
+```
+
+```
+## [1] 4.555556
+```
+---
+class: middle, center
+
+# Data
+# 📉
+
+---
+class: left, top
+
+
+## Data classes
+
+There are several different types of data classes in R
+
+#### - numeric: all numbers 🧮
+#### - integer: whole numbers without decimals 🔢
+#### - logical: TRUE or FALSE (and NA) ✅
+#### - character: character strings and factors (letters, symbols, numbers) 🔠 
+---
+
+## Working with data classes
+
+- it is absolutely critical to understand what class your data are
+- mixups in data classes are a common source of error ❌
+
+
+```r
+numbers &lt;- seq(1:20) # create vector of numbers
+
+class(numbers) # find data class using class() or str()
+```
+
+```
+## [1] "integer"
+```
+
+```r
+is.numeric(numbers) # check data class using "is" and "as"
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is.character(numbers) # check data class using "is" and "as"
+```
+
+```
+## [1] FALSE
+```
+
+```r
+numbers.char &lt;- as.character(numbers) # turn data into characters
+numbers.char # note the quotes around the numbers
+```
+
+```
+##  [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15" "16" "17" "18" "19"
+## [20] "20"
+```
+---
+### Matrices
+- there are several types of data structures in R
+- scalars, vectors, matrices, lists, data frames, arrays
+
+```r
+scalar &lt;- 23 # a single value is called a scalar
+scalar
+```
+
+```
+## [1] 23
+```
+
+```r
+many.scalars &lt;- rep(1:23, 2)  # a collection of scalars is a vector
+many.scalars
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  1  2  3  4  5  6  7  8  9
+## [33] 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+```
+
+```r
+the.matrix &lt;- matrix(1:24, nrow = 4, byrow = FALSE) # when it is in two dimensions, it's a matrix
+the.matrix
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    5    9   13   17   21
+## [2,]    2    6   10   14   18   22
+## [3,]    3    7   11   15   19   23
+## [4,]    4    8   12   16   20   24
+```
+---
+### Rows and columns
+- in two-dimensional arrangements, we can work with columns and rows
+- for example, we can create a dataset of three fish species across six sites 🐟 🐡 🐠
+- matrices can only hold one type of data (usually numeric)
+
+```r
+the.matrix &lt;- matrix(rpois(18, 3), nrow = 6, byrow = FALSE) # create a matrix
+the.matrix
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    2    6    3
+## [2,]    5    4    0
+## [3,]    1    4    1
+## [4,]    7    0    5
+## [5,]    5    2    4
+## [6,]    4    2    3
+```
+
+```r
+colnames(the.matrix) &lt;- c("bluefish", "blowfish", "yellowfish") # assign column names
+
+rownames(the.matrix) &lt;- c("site1", "site2", "site3", "site4", "site5", "site6") # assign row names
+the.matrix
+```
+
+```
+##       bluefish blowfish yellowfish
+## site1        2        6          3
+## site2        5        4          0
+## site3        1        4          1
+## site4        7        0          5
+## site5        5        2          4
+## site6        4        2          3
+```
+---
+## Data frames
+- to combine data of different classes, you need to turn it into a data.frame
+- selecting elements within data.frames can be done using $ and [x,y]
+
+```r
+fish.df &lt;- as.data.frame(the.matrix) # convert matrix to data frame
+fish.df$blowfish # select a specific column using the $ sign 
+```
+
+```
+## [1] 6 4 4 0 2 2
+```
+
+```r
+fish.df[1,] # show the first row
+```
+
+```
+##       bluefish blowfish yellowfish
+## site1        2        6          3
+```
+
+```r
+locations &lt;- c("Australia", "Indonesia", "Philippines", "Fiji", "Solomons", "Papua New Guinea") # make a vector with 6 site locations
+fish.df$location &lt;- locations # add a character vector to a data frame
+fish.df
+```
+
+```
+##       bluefish blowfish yellowfish         location
+## site1        2        6          3        Australia
+## site2        5        4          0        Indonesia
+## site3        1        4          1      Philippines
+## site4        7        0          5             Fiji
+## site5        5        2          4         Solomons
+## site6        4        2          3 Papua New Guinea
+```
+
+---
+## Tibbles
+- tibbles are similar to data.frames but offer more information
+
+```r
+str(fish.df) # check structure of data frame
+```
+
+```
+## 'data.frame':	6 obs. of  4 variables:
+##  $ bluefish  : int  2 5 1 7 5 4
+##  $ blowfish  : int  6 4 4 0 2 2
+##  $ yellowfish: int  3 0 1 5 4 3
+##  $ location  : chr  "Australia" "Indonesia" "Philippines" "Fiji" ...
+```
+
+```r
+fish.tibble &lt;- as_tibble(fish.df) # convert data frame to tibble
+
+fish.tibble # view information provided by tibble
+```
+
+```
+## # A tibble: 6 × 4
+##   bluefish blowfish yellowfish location        
+##      &lt;int&gt;    &lt;int&gt;      &lt;int&gt; &lt;chr&gt;           
+## 1        2        6          3 Australia       
+## 2        5        4          0 Indonesia       
+## 3        1        4          1 Philippines     
+## 4        7        0          5 Fiji            
+## 5        5        2          4 Solomons        
+## 6        4        2          3 Papua New Guinea
+```
+---
+# Loading and saving data
+- you'll often import your data from csv files or save them as such
+- use the &lt;span style="color:orange"&gt; *write.csv()* &lt;/span&gt; function to save a data frame or tibble in your working directory
+- use the &lt;span style="color:orange"&gt; *read.csv()* &lt;/span&gt; function to import data
+
+```r
+write.csv(fish.tibble, file = "data/fishtibble.csv", row.names = FALSE) # row.names = FALSE specifies to not include a column of row numbers in the csv
+
+loaded.fish.tibble &lt;- read.csv(file = "data/fishtibble.csv") # load that csv file back into R
+loaded.fish.tibble
+```
+
+```
+##   bluefish blowfish yellowfish         location
+## 1        2        6          3        Australia
+## 2        5        4          0        Indonesia
+## 3        1        4          1      Philippines
+## 4        7        0          5             Fiji
+## 5        5        2          4         Solomons
+## 6        4        2          3 Papua New Guinea
+```
+---
+class: inverse, center, top
+
+# Exercise 1.2 🏋️‍♀️
+
+### a) Create a sequence of even numbers from 2 to 20
+
+### b) Create a vector with random integer values using rpois(100, 10) and obtain its mean
+
+### c) Retain only values &lt;6 and calculate the mean again
+
+### d) download the dataset called "coralreefherbivores.csv" from Canvas, and put it in your working directory in a folder called "data"
+
+### e) read in the data using the  &lt;span style="color:orange"&gt; *read_csv()* &lt;/span&gt; function, specifying correct path to the "data" folder
+---
+class: center, middle
+# The end
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"ratio": "16:9",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

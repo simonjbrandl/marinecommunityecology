@@ -1,0 +1,9 @@
+---
+title: "Demos"
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+color2: "#85D3D1"
+angle: 130
+listing: demos
+---
+
