@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: |
-  Some infromation about the course
+  Some information about the course
 date: "`r Sys.Date()`"
 output:
   distill::distill_article:
