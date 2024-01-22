@@ -1,0 +1,58 @@
+{
+  "articles": [
+    {
+      "path": "0-overview.html",
+      "title": "Session 0: Overview",
+      "description": "This session provides a quick overview over the course and a short primer to installing and organizing your R environment. \n",
+      "author": [
+        {
+          "name": "Simon J. Brandl, PhD",
+          "url": "https://www.fishandfunctions.com/"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\nContents\nStructure of coding lessons\na. 0: Demo\nb. 0: Slides\nc. 0: Exercises\nd. 0: Solutions\n\nStructure of coding lessons\nAll of the sessions are structured in the same way, presenting the following materials:\na. A narrated slideshow that demos the content we’re working on\nb. The slideshow itself, which allows you to click links, copy code, etc.\nc. A set of training exercises, marked as either ‘Homework’ or ‘Classwork’\nd. Solutions to the training exercises, which will come online after class\n\n—\n\n\n\na. 0: Demo\n\n\n\n\n\n\n\n\nb. 0: Slides\nYou can access the full slideshow used in the 0-Overview narration here.\n\nc. 0: Exercises\nNormally, this section would have exercises to be done as either homework or classwork. However, since it’s still early in the semester, I’ll let you get away without homework on this one! 😉\n\nd. 0: Solutions\nThis section will provide the solutions for homework and classwork exercises. But since there are no exercises, we also don’t have any solutions 😔\n\n\n\n",
+      "last_modified": "2024-01-22T12:32:17-06:00"
+    },
+    {
+      "path": "1-introduction.html",
+      "title": "Session 1: Introduction to R",
+      "description": "This session provides an introduction to the most basic operations and functions in R. \n",
+      "author": [
+        {
+          "name": "Simon J. Brandl, PhD",
+          "url": "https://www.fishandfunctions.com/"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\nContents\na. 1: Demo\nb. 1: Slides\nc. 1: Exercises\nd. 1: Solutions\n\na. 1: Demo\n\n\n\n\n\n\n\n\nb. 1: Slides\nYou can access the full slideshow used in the 1-Introduction narration here.\nThe dataset called ‘coralreefherbivores.csv’ can be downloaded here.\n\nc. 1: Exercises\nNormally, this section would have exercises to be done as either homework or classwork.\n\nd. 1: Solutions\nThis section will provide the solutions for homework and classwork exercises.\n\n\n\n",
+      "last_modified": "2024-01-22T12:32:18-06:00"
+    },
+    {
+      "path": "about.html",
+      "title": "About",
+      "description": "Some information about the course\n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\nCourse synopsis\n\nThis course aims to provide students with a holistic understanding of the assembly and functioning of marine communities. Students will learn about existing and emerging theories and concepts in community ecology and gain insight into traditional and modern techniques to study marine communities, from visual censuses to molecular approaches.\n\nThe course includes quantitative training and practical components using the software R, designed to foster an understanding of basic statistical concepts in community ecology and their thoughtful implementation. No existing experience in R is required but familiarizing yourself with the software early on may be helpful (see resources below).\n\nThe course includes two laboratory sessions to be held on Sat/Sun in February (02/16-02/17) and April (04/27-04/28) during which you will have an opportunity to engage in hands-on research on marine and estuarine communities.\n\n\n\n\n",
+      "last_modified": "2024-01-22T12:32:18-06:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Marine Community Ecology",
+      "author": [],
+      "contents": "\n\n          \n          \n          Marine Community Ecology - UT Austin Marine Science Institute\n          \n          \n          Home\n          About\n          \n          \n          Coding in R\n           \n          ▾\n          \n          \n          0-Overview\n          1-Introduction\n          \n          \n          Instructors\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Marine Community Ecology\n            \n            \n              \n                \n                    \n                      \n                         GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                         Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            🦑 🐠 🐚 🦀 🐳 🐡 🐙 🦈 🦐\n             This is the companion page for\n            MNS352/MNS382: Marine Community Ecology,\n            taught at the University of Texas at Austin Marine Science\n            Institute. The aim of this course is to provide students\n            with a holistic understanding of the assembly and\n            functioning of ecological communities in the marine\n            environment. The course provides an introduction to using R\n            for the analyses of ecological communities. All materials\n            needed to follow and complete the coding lessons and\n            exercises are provided on this page.  🔨This\n            website was built in R using the\n            distill package. All slideshows were created in\n            R using the xaringan package.\n            🔨 \n            License and Citation: This is an\n            Open Educational Resource (OER). You may use or amend the\n            content for you own purposes but please reference it\n            appropriately.\n            \n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Marine Community Ecology\n            \n            \n              \n                \n                                    \n                    \n                       GitHub\n                    \n                  \n                                    \n                    \n                       Email\n                    \n                  \n                                  \n              \n            \n            \n              \n              🦑 🐠 🐚 🦀 🐳 🐡 🐙 🦈 🦐\n               This is the companion page for\n              MNS352/MNS382: Marine Community Ecology,\n              taught at the University of Texas at Austin Marine Science\n              Institute. The aim of this course is to provide students\n              with a holistic understanding of the assembly and\n              functioning of ecological communities in the marine\n              environment. The course provides an introduction to using\n              R for the analyses of ecological communities. All\n              materials needed to follow and complete the coding lessons\n              and exercises are provided on this page.  🔨This\n              website was built in R using the\n              distill package. All slideshows were created\n              in R using the xaringan\n              package. 🔨 \n              License and Citation: This is an\n              Open Educational Resource (OER). You may use or amend the\n              content for you own purposes but please reference it\n              appropriately.\n              \n              \n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2024-01-22T12:32:25-06:00"
+    },
+    {
+      "path": "instructors.html",
+      "title": "Course instructors",
+      "description": "A brief introduction to your course instructors \n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\n\nSimon J. Brandl, PhD\nDr. Brandl is an Assistant Professor in Marine Science at the University of Texas at Austin Marine Science Institute. He maintains a research program that revolves around the causes and consequences of marine community assembly. Dr. Brandl originally developed this course in 2022.\n\nJordan M. Casey, PhD\nDr. Casey is also an Assistant Professor in Marine Science at the University of Texas at Austin Marine Science Institute. She examines ecological communities and trophic interactions among species using molecular techniques. Dr. Casey refined the course materials in 2023.\n\n\n\n",
+      "last_modified": "2024-01-22T12:32:26-06:00"
+    }
+  ],
+  "collections": []
+}
