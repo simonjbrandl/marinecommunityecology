@@ -15,16 +15,12 @@ navbar:
     - text: "About"
       href: about.html
     - text: "Coding in R"
-      href: "coding.html"
+      href: coding.html
       menu:
         - text: "0-Overview"
-          href: "0-overview.html"
+          href: 0-overview.html
         - text: "1-Introduction"
-          href: "1-introduction.html"
+          href: 1-introduction.html
     - text: "Instructors"
-      menu:
-        - text: "Dr. Simon J. Brandl"
-          href: sjb.html
-        - text: "Dr. Jordan M. Casey"
-          href: jmc.html
-output: postcards::onofre
+      href: instructors.html
+output: distill::distill_article

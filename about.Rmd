@@ -1,11 +1,11 @@
 ---
 title: "About"
-color1: "#0D2A47"
 description: |
   Some infromation about the course
 date: "`r Sys.Date()`"
 output:
-  postcards::onofre
+  distill::distill_article:
+color1: "#0D2A47"
 ---
 # Course synopsis
 <br>

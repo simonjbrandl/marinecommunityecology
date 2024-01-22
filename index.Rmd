@@ -1,13 +1,13 @@
 ---
 title: "Marine Community Ecology"
-color1: "#0D2A47"
 links:
   - label: '<i class="fab fa-github"></i> GitHub'
     url: 'https://github.com/simonjbrandl target = "_blank"'
   - label: '<i class="fas fa-envelope"></i> Email'
     url: 'mailto:simon.brandl@austin.utexas.edu target = "_blank"'
 output:
-  postcards::onofre
+  postcards::trestles
+color1: "#0D2A47"
 site: distill::distill_website
 ---
 

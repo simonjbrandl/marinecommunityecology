@@ -1,0 +1,46 @@
+---
+title: "Session 1: Introduction to R"
+description: |
+  This session provides an introduction to the most basic operations and functions in R. 
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: true
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+---
+
+## a. 1: Narrated slideshow
+
+```{r, echo =FALSE, results='hide'}
+library(vembedr)
+embed_url("https://youtu.be/kg7mIYvCArU")
+```
+<br>
+<br>
+
+## b. 1: Slides
+
+You can access the full slideshow used in the **1-Introduction** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/01-introduction.html#1)**. 
+<br>
+<br>
+
+## c. 1: Exercises
+
+Normally, this section would have exercises to be done as either **homework** or **classwork**.
+<br>
+<br>
+
+## d. 1: Solutions
+
+This section will provide the solutions for homework and classwork exercises.
+
