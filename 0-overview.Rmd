@@ -13,7 +13,7 @@ output:
     toc: true
     number_sections: true
     toc_depth: 4
-    code_folding: true
+    code_folding: false
     toc_float: true
     collapsed: false
     smooth_scroll: true

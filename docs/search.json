@@ -25,8 +25,8 @@
         }
       ],
       "date": "`r Sys.Date()`",
-      "contents": "\n\nContents\na. 1: Narrated slideshow\nb. 1: Slides\nc. 1: Exercises\nd. 1: Solutions\n\na. 1: Narrated slideshow\n\n\nShow code\n\nlibrary(vembedr)\nembed_url(\"https://youtu.be/kg7mIYvCArU\")\n\n\n\nb. 1: Slides\nYou can access the full slideshow used in the 1-Introduction narration here.\n\nc. 1: Exercises\nNormally, this section would have exercises to be done as either homework or classwork.\n\nd. 1: Solutions\nThis section will provide the solutions for homework and classwork exercises.\n\n\n\n",
-      "last_modified": "2024-01-21T18:32:57-06:00"
+      "contents": "\n\nContents\na. 1: Narrated slideshow\nb. 1: Slides\nc. 1: Exercises\nd. 1: Solutions\n\na. 1: Narrated slideshow\n\n\n\n\n\n\n\n\nb. 1: Slides\nYou can access the full slideshow used in the 1-Introduction narration here.\nThe dataset called ‘coralreefherbivores.csv’ can be downloaded here.\n\nc. 1: Exercises\nNormally, this section would have exercises to be done as either homework or classwork.\n\nd. 1: Solutions\nThis section will provide the solutions for homework and classwork exercises.\n\n\n\n",
+      "last_modified": "2024-01-21T19:30:35-06:00"
     },
     {
       "path": "about.html",
