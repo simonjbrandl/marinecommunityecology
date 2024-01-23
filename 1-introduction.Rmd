@@ -19,7 +19,7 @@ output:
     smooth_scroll: true
 ---
 
-## a. 1: Demo
+# a. 1: Demo
 
 ```{r, echo = FALSE}
 library(vembedr)
@@ -28,7 +28,7 @@ embed_url("https://youtu.be/kg7mIYvCArU")
 <br>
 <br>
 
-## b. 1: Slides
+# b. 1: Slides
 
 You can access the full slideshow used in the **1-Introduction** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/01-introduction.html#1)**. 
 
@@ -36,13 +36,80 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 <br>
 <br>
 
-## c. 1: Exercises
+# c. 1: Exercises
 
-Normally, this section would have exercises to be done as either **homework** or **classwork**.
+## Homework
+
+_Please complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Monday Jan 29th_
+
+- a) create the following vectors:
+  - 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 
+  - a sequence from 2 to 36, repeated three times
+  - the words "bluefish" "redfish" and "whitefish" in this sequence, six times
+  - combine the last two vectors into a new vector
+- b) create a vector using <span style="color:orange"> *rpois(100, 10)* </span> 
+  - determine the frequency of the number 8 in your vector
+  - determine how many numbers in your vector are greater than 10
+  - determine how many numbers in your vector are smaller than 10 but greater than 5
+- c) build a matrix that looks like this:
+
+ **[,1]** | **[,2]** | **[,3]** | **[,4]** | **[,5]**
+---|---|---|---|---
+**[1,]** | 1 | 2 | 3 | 4
+**[2,]** | 5 | 6 | 7 | 8
+**[3,]** | 9 | 10 | 11 | 12
+**[4,]** | 13 | 14 | 15 | 16
+**[5,]** | 17 | 18 | 19 | 20 
+
+### Bonus homework `r emo::ji('star_struck')`
+
+_Perform these exercises if you want to treat yourself to some extra work. Note that this is not a required part of the homework assignment_
+
+  - create a sequence of multiples of nines between 0 and 100, repeated ten times
+  - create a vector with random values using <span style="color:orange"> rnorm(1000, 0) </span>, with an explanation of what <span style="color:orange"> rnorm() </span> does
+  - create a second vector using rnorm, but this time with 10,000 elements, a mean of 50, and a standard deviation of 10
+  - tell me what the following functions tell you about your vectors: <span style="color:orange"> length(), str(), summary(), head(), tail() </span> 
+  - retain only the elements from your previous vector that are greater than the mean but smaller than the 3rd Quantile
+
+## Classwork
+
+_We will do these exercises in class on Monday, January 29th_
+
+- a) create a vector using <span style="color:orange"> *rpois(500, 10)* </span> 
+  - determine the proportional frequency of numbers that are >15
+  - sort the vector in descending order
+  - take the log of the vector and then determine the mean value
+  - replace every 10th value in the vector with 0, take the log, and calculate the mean. Exclude values that cause the mean to be -Inf
+- b) build a matrix that looks like this: 
+
+ **Site** | **redfish** | **bluefish** | **whitefish** | **yellowfish**
+---|---|---|---|---
+**S1** | 0 | 3 | 6 | 9
+**S2** | 12 | 15 | 18 | 21
+**S3** | 24 | 27 | 30 | 33
+**S4** | 24 | 22 | 20 | 18
+**S5** | 16 | 14 | 12 | 10
+**S6** | 8 | 6 | 4 | 2
+  
+  - turn your matrix into a data.frame and add a column entitled "Location" that contains the following sequence: Texas, Belize, Texas, Belize, Texas
+  - determine the mean number of fish at site S3
+  - determine the difference in the mean number of bluefish and yellowfish across all sites
+  
+- c) build the following matrix:
+  - 100 rows, 20 columns, filled column-wise with randomly-drawn, normally distributed values with a mean of 100 and a standard deviation of 10
+  - determine the value of the second-to-last row in column 5
+  - determine which column has the largest value in the matrix and which column has the greatest deviation from the mean (100) 
+
+- d) load in the 'coralreefherbivores.csv' dataset and
+  - turn it into a tibble
+  - determine the data classes of each column
+  - compare the snoutlength of the species _Chlorurus microrhinos_ and _Zebrasoma velifer_
+  
 <br>
 <br>
 
-## d. 1: Solutions
+
+# d. 1: Solutions
 
 This section will provide the solutions for homework and classwork exercises.
 
