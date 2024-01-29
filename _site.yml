@@ -21,6 +21,10 @@ navbar:
           href: 0-overview.html
         - text: "1-Introduction"
           href: 1-introduction.html
+        - text: "2-Tidyverse"
+          href: 2-tidyverse.html
+        - text: "3-ggplot"
+          href: 3-ggplot.html
     - text: "Instructors"
       href: instructors.html
 output: distill::distill_article
