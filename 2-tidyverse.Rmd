@@ -31,10 +31,12 @@ embed_url("https://youtu.be/kBz1K2s5s98")
 
 # b. 1: Slides
 
-You can access the full slideshow used in the **2-Tidyverse** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/02-tidyverse.html)**. 
+You can access the full slideshow used in the **2-Tidyverse** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/02-tidyverse.html)**.
 
 The dataset called 'fishtibble.csv' can be downloaded [here](data/fishtibble.csv).
+
 The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coralreefherbivores.csv).
+
 The dataset called 'fish_abundance.csv' can be downloaded [here](data/fish_abundance.csv).
 <br>
 <br>
@@ -65,9 +67,6 @@ _Perform these exercises if you want to treat yourself to some extra work. Note 
   - <span style="color:orange"> *unite()* </span>
   - <span style="color:orange"> *separate()* </span>
   - <span style="color:orange"> *drop_na()* </span>
-
-- using the joined trait and abundance dataset, apply the <span style="color:orange"> *case_when()* </span> function to:
-  - create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
     
 ## Classwork
 
@@ -78,7 +77,7 @@ _We will do these exercises in class on Wednesday, January 31st_
 
 The “fish_abundance.csv” dataset contains reef fish abundance information, which was collected by the Reef Life Survey around Lizard Island, Australia. It includes information on the respective survey ID and its metadata (e.g. site, latitude, longitude, date, and depth). It also includes a row for each observed species on a given visual survey, including taxonomic information (family, genus, species, and “genspe”), as well as the number of individuals observed on that survey (‘total’).
 
-- b) Using the fish abundance dataset, perform the following actions:
+- a) Using the fish abundance dataset, perform the following actions:
   - In the family column, replace all occurrences of Scaridae with Labridae.
   - Filter the dataset to only retain the families Acanthuridae, Siganidae, Kyphosidae and Labridae.
   - Calculate the mean abundance of each genus using group_by() and summarize().
@@ -86,6 +85,8 @@ The “fish_abundance.csv” dataset contains reef fish abundance information, w
   - Calculate the mean body depth, snout length, and eye diameter of each genus using gather(), group_by(), and summarize().
   - Turn each trait into a column using spread().
   - Join the coralreefherbivores and fish_abundance datasets in their modified versions, retaining only genera that are present in the coralreefherbivores dataset and using “genus” as the joining variable.
+  - using the joined trait and abundance dataset, apply the <span style="color:orange"> *case_when()* </span> function to:
+  - create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
 
 # d. 1: Solutions
 
