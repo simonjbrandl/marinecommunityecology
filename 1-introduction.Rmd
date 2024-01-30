@@ -82,7 +82,7 @@ _We will do these exercises in class on Monday, January 29th_
   - replace every 10th value in the vector with 0, take the log, and calculate the mean. Exclude values that cause the mean to be -Inf
 - b) build a matrix that looks like this: 
 
- **Site** | **redfish** | **bluefish** | **whitefish** | **yellowfish**
+ **[]** | **redfish** | **bluefish** | **whitefish** | **yellowfish**
 ---|---|---|---|---
 **S1** | 0 | 3 | 6 | 9
 **S2** | 12 | 15 | 18 | 21
@@ -111,5 +111,112 @@ _We will do these exercises in class on Monday, January 29th_
 
 # d. 1: Solutions
 
-This section will provide the solutions for homework and classwork exercises.
+## Homework: 
 
+### a) 
+
+```{r, echo = TRUE}
+a1<-rep(seq(from=4,to=6,by=1),times=6) %>%
+  print()
+
+a2 <- rep(seq(from = 2, to = 36, by = 1), times = 3)
+a2
+
+a3 <- rep(c("bluefish", "redfish", "whitefish"), times = 6)
+a3
+
+a4 <- paste(a2, a3)
+a4
+```
+
+### b) 
+
+```{r, echo = TRUE}
+b1 <- rpois(100,10)
+b1
+
+b2 <- b1[b1 == 8]
+table(b2)
+length(b2)
+
+b3 <- b1[b1 >10]
+b3
+
+b4 <- b1[b1 <10 & b1 >5]
+b4
+```
+
+### c)
+```{r, echo = TRUE}
+c1 <- matrix(1:20, nrow = 5, byrow = TRUE)
+c1
+```
+
+### Bonus work
+
+TBA
+
+## Classwork
+
+### a)
+```{r, echo = TRUE}
+a1 <- rpois(500, 10)
+head(a1)
+
+a2 <- a1[a1 > 15]
+length(a2)/length(a1)
+
+a3 <- rev(sort(a1))
+head(a3)
+
+a4 <- log(a1)
+head(a4)
+
+#a5
+a1[seq(from=0,to=500,by=10)]<-0
+#or
+replace(a1, (seq(from=0, to=500, by=10)), 0)
+
+a5logmean <- mean(log(a1[seq(from=0,to=500,by=10)]<-0)) # doesn't work because of -Inf values, so let's go step-by-step
+
+a5step1 <- replace(a1, (seq(from=0, to=500, by=10)), 0) # replace with 0s
+a5step2 <- a5step1[a5step1 > 0] # remove the 0s
+a5step3 <- mean(log(a5step2)) # take the log of the mean
+```
+
+### b) 
+```{r, echo = TRUE}
+b1 <- matrix(c(seq(from = 0, to = 33, by = 3), seq(from = 24, to = 2, by = -2)), ncol = 4, byrow = TRUE)
+rownames(b1) <- c("S1", "S2", "S3", "S4", "S5", "S6")
+colnames(b1) <- c("redfish", "bluefish", "whitefish", "yellowfish")
+
+b2 <- as.data.frame(b1) # turn into data frame
+b2$Location <- c(rep(c("Texas", "Belize"), times = 3)) # add new column
+
+b3 <- as.matrix(b2[3,c(1:4)]) # turn row 3 and columns 1:4 back into a matrix
+mean(b3) # take the mean of the matrix 
+
+print(b4blue <- mean(b2$bluefish)) # mean of bluefish
+print(b4yellow <- mean(b2$yellowfish)) # mean of yellowfish
+print(b4difference <- b4blue - b4yellow) # difference
+```
+
+### c) 
+```{r, echo = TRUE}
+c1 <- matrix(rnorm(2000, 100, 10), ncol = 20, byrow = F)
+head(c1)
+
+c2 <- c1[98, 5] # look for value in row 98 column 5
+c2
+
+summary(c1) # look for maximum value and largest deviation from the specified mean (100)
+```
+
+### d) 
+```{r, echo = TRUE}
+herbivores <- read.csv(file = "data/coralreefherbivores.csv")
+herbivore.tbl <- dplyr::as_tibble(herbivores) # turn into tibble - might need a new package here ;-)
+herbivore.tbl # tibbles tell you the data classes but str() would also work well
+herbivore.tbl$gen.spe # the two species are rows 31 and 96
+herbivore.tbl[c(31,96),] # check snoutlength
+```
