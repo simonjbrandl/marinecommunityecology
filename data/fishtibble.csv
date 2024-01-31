@@ -1,7 +1,7 @@
-"whitefish","bluefish","greenfish","yellowfish","location"
-9,9,2,3,"Australia"
-3,8,6,4,"Indonesia"
-2,6,5,2,"Philippines"
-5,9,7,7,"Fiji"
-7,4,9,4,"Solomons"
-5,7,6,3,"Papua New Guinea"
+bluefish,blowfish,yellowfish,location
+3,7,4,Australia
+7,2,7,Indonesia
+5,8,1,Philippines
+5,4,6,Fiji
+3,4,6,Solomons
+6,3,9,Papua New Guinea
