@@ -157,24 +157,69 @@ head(ratio)
   - In the family column, replace all occurrences of Scaridae with Labridae.
   - Filter the dataset to only retain the families Acanthuridae, Siganidae, Kyphosidae and Labridae.
   - Examine how many different species are in each genus.
-  - Calculate the mean abundance of each genus across different sites using group_by() and summarize(), while also retaining a variable that indicates the number of species per genus.
+  - Calculate the mean abundance of each genus using group_by() and summarize(), while also retaining a variable that indicates the number of species per genus.
 
 ```{r, echo = TRUE}
+fish.abu <- read.csv(file = "data/fish_abundance.csv")
 
+# how many surveys
+surveys <- fish.abu %>%
+  select(surveyid) %>% 
+  distinct() # distinct gives yu the number of unique occurrences
+nrow(surveys)
 
+# replace Scaridae with Labridae
+fish.abu.recode <- fish.abu %>%
+  mutate(family = recode(family, "Scaridae" = "Labridae")) # use recode within mutate to change the family
+head(fish.abu.recode)
 
+# filter out families
+fish.abu.filtered <- fish.abu.recode %>%
+  filter(family %in% c("Acanthuridae", "Siganidae", "Labridae", "Kyphosidae")) # use filter - also works as family == c("")
+head(fish.abu.filtered)
 
+# count species in each genus
+fish.species.counts <- fish.abu.filtered %>%
+  group_by(genus) %>% # group by genus
+  summarize(number.species = n_distinct(species)) # use n_distinct() to count the rows in each groups ;-) 
+head(fish.species.counts)
+
+# mean abundances and number of species
+fish.genus.abundance <- fish.abu.filtered %>%
+  group_by(genus) %>% # group by family and genus - important because we'll want family in this dataset
+  summarize(mean.abu = mean(total), number.species = n_distinct(species)) # mean and n_distinct
+head(fish.genus.abundance)
 ```
 
 ### b) 
 - Using the herbivore trait dataset, perform the following actions:
-  - Determine whether the median eye diameter differs between species in different social groups.
+  - Determine whether the median eye diameter differs among different social groups.
   - Remove the standard length, size, and schooling categories dataset.
   - Calculate the mean body depth, snout length, and eye diameter of each genus.
   - Turn each trait back into a separate column.
 
 ```{r, echo = TRUE}
+# eye diameter
+herbivore.eyes <- herbivores %>%
+  group_by(schooling) %>% # group by scholing variable
+  summarize(mean.eye = mean(eyediameter)) #summarize()
+herbivore.eyes
 
+herbivore.pruned <- herbivores %>%
+  select(-sl, -size, -schooling) # use select to remove columns
+head(herbivore.pruned)
+
+# mean body depth, snout length, and eye diameter
+herbivore.means <- herbivore.pruned %>%
+  gather(5:7, key = "metric", value = "value") %>% # gather thre three morphometric columns into one
+  group_by(genus, metric) %>% # group by
+  summarize(mean.val = mean(value)) # get mean
+head(herbivore.means)
+  
+# turn traits back into separate columns
+herbivore.spread <- herbivore.means %>%
+  spread(key = "metric", value = "mean.val") # use spread function
+herbivore.spread
 ```
 
 ### c)
@@ -184,5 +229,20 @@ head(ratio)
   - Examine whether high and low abundance genera differ in their mean morphological traits
   
 ```{r, echo = TRUE}
+herbivores.joined <- herbivore.spread %>%
+  left_join(fish.genus.abundance, by = "genus") %>% # use left_join to retain the ones in the traits dataset
+  drop_na(mean.abu) # remove NA values 
+herbivores.joined
 
+herbivores.joined.2 <- herbivores.joined %>%
+  mutate(highvslow = case_when(mean.abu >=2 ~ "high", # use case_when function
+                               TRUE ~ "low"))
+herbivores.joined.2
+
+herbivores.highlow <- herbivores.joined.2 %>%
+  gather(2:5, key = "metric", value = "value") %>% # gathering to make it more efficient
+  group_by(metric, highvslow) %>% # grouping
+  summarize(mean.val = mean(value), # summarizing for mean and sd
+            sd.val = sd(value))
+herbivores.highlow
 ```
