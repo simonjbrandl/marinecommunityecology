@@ -21,7 +21,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-
+```{r, echo = F}
+library(tidyverse)
+```
 # a. 1: Demo
 
 ```{r, echo = FALSE}
@@ -118,11 +120,11 @@ herbivores.filter <- herbivores %>% # mean sl and sd sl
   filter(family == c("Acanthuridae", "Labridae", "Siganidae")) %>%
   group_by(family) %>%
   summarize(mean.sl = mean(sl), sd.sl = sd(sl))
-herbivores.filter
+head(herbivores.filter)
 
 herbivores.size_schooling <- herbivores %>%
   mutate(size_school = paste(size, schooling, sep = "."))
-herbivores.size_schooling
+head(herbivores.size_schooling)
 
 herbivores.size_schooling2 <- unite(herbivores, col = "size_and_schooling", c("size", "schooling"), sep = ".") #alternative solution
 
@@ -131,20 +133,21 @@ zebrasoma.scarus <- herbivores %>%
   filter(genus == c("Zebrasoma", "Scarus")) %>%
   group_by(genus) %>%
   summarize(mean.eye = mean(eyediameter))
-herbivores.size_schooling2
+head(herbivores.size_schooling2)
 
 number.species <- herbivores %>% # solution 1
   select(size) %>%
   group_by(size) %>%
   count(size)
+number.species
 
 crh.d <- herbivores %>% group_by(size) %>% summarize(n_species = n_distinct(gen.spe))
+crh.d
 
 ratio <- herbivores %>%
   group_by(species) %>%
   mutate(ratio.snout.sl = (snoutlength/sl)) %>%
   arrange(desc(ratio.snout.sl))
-
 head(ratio)
 ```
 
