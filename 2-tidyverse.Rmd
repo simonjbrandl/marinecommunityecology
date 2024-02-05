@@ -24,7 +24,7 @@ editor_options:
 ```{r, echo = F}
 library(tidyverse)
 ```
-# a. 1: Demo
+# a. 2: Demo
 
 ```{r, echo = FALSE}
 library(vembedr)
@@ -33,7 +33,7 @@ embed_url("https://youtu.be/kBz1K2s5s98")
 <br>
 <br>
 
-# b. 1: Slides
+# b. 2: Slides
 
 You can access the full slideshow used in the **2-Tidyverse** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/02-tidyverse.html)**.
 
@@ -45,7 +45,7 @@ The dataset called 'fish_abundance.csv' can be downloaded [here](data/fish_abund
 <br>
 <br>
 
-# c. 1: Exercises
+# c. 2: Exercises
 
 ## Homework
 
@@ -101,13 +101,13 @@ The “fish_abundance.csv” dataset contains reef fish abundance information, w
   - Create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
   - Examine whether high and low abundance genera differ in their mean morphological traits
 
-# d. 1: Solutions
+# d. 2: Solutions
 
 ## Homework
 
 ### a) 
 
-Using the herbivore dataset, perform the following actions:
+- Using the herbivore dataset, perform the following actions:
   - Determine the mean standard length and standard deviation for the families Acanthuridae, Labridae, and Siganidae. 
   - Create a variable that combines size and schooling into one column.
   - Examine the mean eye diameter of the genera Zebrasoma and Scarus.

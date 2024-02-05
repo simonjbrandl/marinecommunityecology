@@ -1,0 +1,112 @@
+---
+title: "Session 3: Data visualization in ggplot2"
+description: |
+  This session introduces the basic functionalities of the ggplot2 package, allowing you to create beautiful graphs using R. 
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, echo = F}
+library(tidyverse)
+```
+# a. 3: Demo
+
+```{r, echo = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/gyNf7-KdBDI")
+```
+<br>
+<br>
+
+# b. 3: Slides
+
+You can access the full slideshow used in the **3-ggplot** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/03-ggplot.html)**.
+
+The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coralreefherbivores.csv).
+
+The dataset called 'reef_fishes.csv' can be downloaded [here](data/reef_fishes.csv).
+
+The dataset called 'fish_abundance.csv' can be downloaded [here](data/fish_abundance.csv).
+
+The dataset called 'site_info.csv' can be downloaded [here](data/site_info.csv).
+<br>
+<br>
+
+
+# c. 3: Exercises
+
+## Homework
+
+_Please complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Wednesday Feb 7th_
+
+Start by loading in the two datasets below (which are available for download using the links above).
+
+```{r, echo = TRUE}
+fish.abundance <- read.csv(file = "data/fish_abundance.csv")
+site.info <- read.csv(file = "data/site_info.csv")
+```
+
+Re-familiarize with the "fish_abundance.csv" dataset. The dataset includes many fish species, which were counted across different sites and depths. Fish diversity often decreases with depth on coral reefs, so let's explore whether there is a relationship between depth and diversity.
+
+### Part I
+
+1) Simplify the dataset to include species, site, depth.
+2) Use distinct() to make sure no species were recorded twice.
+3) Calculate species richness by site and depth.
+
+### Part II
+
+1) Plot depth versus species richness.
+2) Add site as a color variable.
+
+### Part III
+
+1) Produce another plot, only including the families Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae.
+2) Use with facet_wrap() or facet_grid() to create separate facets for each family.
+
+### Bonus work `r emo::ji('star_struck')`
+
+1) Explore differences in the species richness of the four families (Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae) using violin or density plots
+2) Color the density plots based on family and include the raw data to create sina plots
+3) Try to sort the violin plot in descending order, starting with the highest species richness
+4) Make it pretty! `r emo::ji('blush')`
+
+## Classwork
+
+_We will do these exercises in class on Wednesday, February 7th_
+
+In the last plot from Exercise 1, it appears as though some sites have higher species richness than others. Let's further examine why species richness across sites using "site_info.csv," which includes metadata on the exposure of each site. 
+
+### Part I
+
+1) Create a dataset that summarizes species richness by surveyid and site.
+2) Join this species richness data with the site exposure metadata.
+
+### Part II
+
+1) Use a violin plot to visualize the species richness of exposed vs. lagoon sites.
+
+### Part III
+
+1) Calculate the average abundance of each family in a given survey.
+2) Plot the average abundance using density curves.
+3) Bonus: Transform the x-axis to make the plot more useful.
+
+# d. 3: Solutions
+
+Solutions will be added here. 
