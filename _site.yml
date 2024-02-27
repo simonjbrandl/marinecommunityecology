@@ -25,6 +25,8 @@ navbar:
           href: 2-tidyverse.html
         - text: "3-ggplot"
           href: 3-ggplot.html
+        - text: "4-Simulations"
+          href: 4-simulations.html
     - text: "Instructors"
       href: instructors.html
 output: distill::distill_article

@@ -1,0 +1,131 @@
+---
+title: "Session 4: Modeling ecological processes"
+description: |
+  This session introduces for loops as means to perform numerical simulations in R and allows you to play with models to simulate ecological processes. 
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r, echo = F}
+library(tidyverse)
+library(fishualize)
+library(ggridges)
+```
+# a. 4: Demo
+
+```{r, echo = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/bHTRZZBh6yc")
+```
+<br>
+<br>
+
+# b. 4: Slides
+
+You can access the full slideshow used in the **4-Simulations** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/04-simulations.html)**.
+<br>
+<br>
+
+# c. 3: Exercises
+
+## Homework
+
+_If you want to, complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Wednesday Feb 28th_
+
+
+- Start by loading the tidyverse package and copy-and-pasting the basic Moran Model into your R. The code for the model is below: 
+
+```{r, echo = TRUE}
+library(tidyverse)
+
+num.sims <- 20 # specify the number of simulations 
+num.years <- 50 # specify the number of years
+freq.1.mat <- matrix(ncol = num.sims, nrow = num.years) # create a matrix for output
+
+# FIRST LOOP FOR DIFFERENT SIMULATIONS
+for (j in 1:num.sims) # use for-loop to run through the number of simulations
+  { 
+  
+  J <- 100 # 100 individuals
+  t0.sp1 <- 0.5*J  # abundance of species 1 at time 0 
+  community <- vector(length = J) # set up community
+  community[1:t0.sp1] <- 1 # specify that half of the community is species 1
+  community[(t0.sp1+1):J] <- 2 # specify the other half is species 2
+  year <- 2 # set 'year' to 2 
+  freq.1.mat[1,j] <- sum(community==1)/J # fill community matrix
+  
+  # SECOND LOOP FOR INDIVIDUAL DEATH/BIRTH
+  for (i in 1:(J*(num.years-1))) # second for-loop to run multiple simulations
+    { 
+    
+    freq.1 <- sum(community==1)/J # freq.1 represents the frequency of species 1
+    pr.1 <- freq.1 # pr.1 represents the frequency of reproduction
+    community[ceiling(J*runif(1))] <- sample(c(1,2), 1, prob=c(pr.1,1-pr.1))  # birth and death rates, based on probabilities
+    if (i %% J == 0)  # record data in the freq.1.mat matrix
+      { 
+      
+      freq.1.mat[year, j] <- sum(community==1)/J
+      year <- year + 1
+      
+    }
+  }
+}
+```
+
+
+- After that, wrangle the data as done in the lecture and produce the beautiful graph below. 
+
+```{r, echo = TRUE}
+colnames(freq.1.mat) <- 1:num.sims # set column names in matrix
+
+freq.sp1.df <- as.data.frame(freq.1.mat) %>% # convert freq.1.mat into data frame 
+  add_column(year = 1:num.years) %>% # add a column called year
+  gather(1:20, key = iteration, value = frequency) # gather into long format
+
+p1 <- ggplot(freq.sp1.df, 
+             aes(x = year, 
+                 y = frequency, 
+                 group = iteration)) +
+  geom_line(aes(color = frequency), 
+            alpha = 0.8) +
+  scale_color_gradient(low = "darkorchid",
+                       high = "goldenrod") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  scale_y_continuous(limits = c(0,1)) +
+  xlab("Years") +
+  ylab("Frequency of species 1")
+
+p1
+```
+
+- Accomplished? Well done. Here are your exercises:
+
+### Part I:
+
+1) Run the same model but change the _number of individuals to 500_ and _increase the number of years to 75_
+
+2) Run the same model but decrease the _number of individuals to 50_, set the _number of years back to 50_, and _increase the number of simulations to 50_. Be careful with changing the number of simulations: you will have to adjust your downstream data wrangling code in the _gather()_ function. 
+
+3) Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.
+
+
+## Classwork
+
+Coming on Wednesday! `r emo::ji('nerd_face')`
