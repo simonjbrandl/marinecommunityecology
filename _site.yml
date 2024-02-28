@@ -1,0 +1,32 @@
+name: "."
+title: "Marine Community Ecology - UT Austin Marine Science Institute"
+description: |
+  Marine Community Ecology
+output_dir: "docs"
+include: ["slides/"]
+creative_commons: CC BY-SA
+repository_url: https://github.com/simonjbrandl/marinecommunityecology
+favicon: images/mns353_logo.png
+theme: mce_theme.css
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Coding in R"
+      href: coding.html
+      menu:
+        - text: "0-Overview"
+          href: 0-overview.html
+        - text: "1-Introduction"
+          href: 1-introduction.html
+        - text: "2-Tidyverse"
+          href: 2-tidyverse.html
+        - text: "3-ggplot"
+          href: 3-ggplot.html
+        - text: "4-Simulations"
+          href: 4-simulations.html
+    - text: "Instructors"
+      href: instructors.html
+output: distill::distill_article

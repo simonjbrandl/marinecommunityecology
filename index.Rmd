@@ -1,0 +1,25 @@
+---
+title: "Marine Community Ecology"
+links:
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: 'https://github.com/simonjbrandl target = "_blank"'
+  - label: '<i class="fas fa-envelope"></i> Email'
+    url: 'mailto:simon.brandl@austin.utexas.edu target = "_blank"'
+output:
+  postcards::trestles
+color1: "#0D2A47"
+site: distill::distill_website
+---
+
+# `r emo::ji('squid')` `r emo::ji('tropical_fish')` `r emo::ji('spiral_shell')` `r emo::ji('crab')` `r emo::ji('whale')` `r emo::ji('blowfish')` `r emo::ji('octopus')` `r emo::ji('shark')` `r emo::ji('shrimp')`
+<br>
+<br>
+This is the companion page for **MNS352/MNS382: Marine Community Ecology**, taught at the University of Texas at Austin Marine Science Institute. The aim of this course is to provide students with a holistic understanding of the assembly and functioning of ecological communities in the marine environment. The course provides an introduction to using R for the analyses of ecological communities. All materials needed to follow and complete the coding lessons and exercises are provided on this page. 
+<br>
+<br>
+`r emo::ji('hammer')`This website was built in **R** using the `distill` package. All slideshows were created in **R** using the `xaringan` package. `r emo::ji('hammer')` 
+<br>
+<br>
+<div class="license">
+_**License and Citation:** This is an Open Educational Resource (OER). You may use or amend the content for you own purposes but please reference it appropriately._
+</div>

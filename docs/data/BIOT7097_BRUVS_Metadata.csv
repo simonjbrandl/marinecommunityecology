@@ -1,0 +1,96 @@
+date,site,region,island,depth,timein,timeout,lat,long,student
+3/3/19,001,Egmont,Ile Sudest,10.1,11:13,12:20,06 41.933,71 23.605,Jonathan Saldeen
+3/3/19,002,Egmont,Ile Sudest,8.5,11:20,12:30,06 41.929,71 23.556,Mona Birgisson
+3/3/19,003,Egmont,Ile Sudest,10.2,11:29,12:40,06 41.925,71 23.428,Angelina Ibarra
+3/3/19,004,Egmont,Ile Sudest,9.9,11:37,12:50,06 41.866,71 23.298,Cassidy Hawk
+3/3/19,005,Egmont,Ile Sudest,10.0,11:51,13:00,06 41.831,71 23.162,Mariana Rivera-Higueras
+3/4/19,006,PerosBanhos,Ile Fouquet,8.0,9:27,10:29,05 28.007,71 48.992,Mona Birgisson
+3/4/19,007,PerosBanhos,Ile Fouquet,9.9,9:33,10:33,05 28.086,71 48.786,Rosie Bravo Ozuna
+3/4/19,008,PerosBanhos,Ile Fouquet,11.5,9:38,10:39,05 28.130,71 48.568,Ariel Wang
+3/4/19,009,PerosBanhos,Ile Fouquet,10.0,9:44,10:44,05 28.115,71 48.360,Jonathan Saldeen
+3/4/19,010,PerosBanhos,Ile Fouquet,10.0,9:48,10:49,05 28.100,71 48.189,
+3/4/19,011,PerosBanhos,Mapou de I'Ile du Coin,9.2,11:06,12:08,05 28.041,71 47.633,
+3/4/19,012,PerosBanhos,Mapou de I'Ile du Coin,8.8,11:13,12:15,,,
+3/4/19,013,PerosBanhos,Mapou de I'Ile du Coin,8.5,11:17,12:21,05 27.933,71 47.322,
+3/4/19,014,PerosBanhos,Mapou de I'Ile du Coin,8.4,11:22,12:25,05 27.869,71 47.169,
+3/4/19,015,PerosBanhos,Mapou de I'Ile du Coin,8.6,11:25,12:29,05 27.818,71 47.010,
+3/4/19,016,PerosBanhos,Ile du Coin,8.4,12:44,13:43,05 27.685,71 46.360,
+3/4/19,017,PerosBanhos,Ile du Coin,8.5,12:50,13:53,05 27.637,71 46.246,
+3/4/19,018,PerosBanhos,Ile du Coin,9.5,12:57,14:00,05 27.612,71 46.145,
+3/4/19,019,PerosBanhos,Ile du Coin,8.4,13:02,14:03,05 27.555,71 46.009,
+3/4/19,020,PerosBanhos,Ile du Coin,7.2,13:08,,05 27.520,71 45.915,
+3/9/19,021,PerosBanhos,North of Petite Ile Coquillage,8.8,8:35,9:33,05 19.530,71 58.300,
+3/9/19,022,PerosBanhos,North of Petite Ile Coquillage,7.0,8:40,9:44,05 19.363,71 58.276,
+3/9/19,023,PerosBanhos,North of Petite Ile Coquillage,8.3,8:45,9:48,05 19.167,71 58.341,
+3/9/19,024,PerosBanhos,North of Petite Ile Coquillage,7.0,8:49,9:52,05 18.891,71 58.398,
+3/9/19,025,PerosBanhos,North of Petite Ile Coquillage,7.3,8:52,9:55,05 18.836,71 58.470,
+3/9/19,026,PerosBanhos,North of Petite Ile Coquillage,7.2,10:01,11:07,05 18.544,71 58.586,
+3/9/19,027,PerosBanhos,North of Petite Ile Coquillage,7.0,10:07,11:11,05 18.375,71 58.656,Lauren James
+3/9/19,028,PerosBanhos,North of Petite Ile Coquillage,9.4,10:10,11:17,05 18.189,71 58.722,
+3/9/19,029,PerosBanhos,North of Petite Ile Coquillage,6.1,10:16,11:22,05 18.010,71 58.594,Caroline Mallinson
+3/9/19,030,PerosBanhos,North of Petite Ile Coquillage,7.4,10:19,11:25,05 17.842,71 58.503,KJ Cipolla
+3/9/19,031,PerosBanhos,South of Ile Yeye,7.0,11:46,12:46,05 16.998,71 58.479,
+3/9/19,032,PerosBanhos,South of Ile Yeye,6.6,11:51,12:55,05 16.813,71 58.448,Will Fynes
+3/9/19,033,PerosBanhos,South of Ile Yeye,6.9,11:55,12:56,05 16.609,71 58.466,Ariel Wang
+3/9/19,034,PerosBanhos,South of Ile Yeye,6.6,12:00,13:00,05 16.372,71 58.452,Jonathan Saldeen
+3/9/19,035,PerosBanhos,South of Ile Yeye,6.8,12:04,13:05,05 16.178,71 58.388,Mona Birgisson
+3/11/19,036,Salomon,Ile Boddam,6.8,10:05,11:06,05 21.059,72 11.889,Rosie Bravo Ozuna
+3/11/19,037,Salomon,Ile Boddam,8.0,10:09,11:10,05 21.220,72 11.931,KJ Cipolla
+3/11/19,038,Salomon,Ile Boddam,7.5,10:12,11:15,05 21.398,72 12.098,Mariana Rivera-Higueras
+3/11/19,039,Salomon,Ile Boddam,8.6,10:16,11:19,05 21.616,72 12.106,Angelina Ibarra
+3/11/19,040,Salomon,Ile Boddam,8.0,10:19,11:22,05 21.789,72 12.176,Isabel Grudowski
+3/11/19,041,Salomon,Ile Anglaise,6.5,11:45,12:45,05 20.250,72 12.860,Angelina Ibarra
+3/11/19,042,Salomon,Ile Anglaise,7.8,11:50,12:50,05 20.073,72 12.979,Will Fynes
+3/11/19,043,Salomon,Ile Anglaise,6.5,11:53,12:55,05 19.948,72 13.088,Yazmine Martinez
+3/11/19,044,Salomon,Ile Anglaise,6.1,11:58,12:58,05 19.787,72 13.168,Isabel Grudowski
+3/11/19,045,Salomon,Ile Anglaise,6.4,12:01,13:02,05 19.611,72 13.204,Cassidy Hawk
+3/11/19,046,Salomon,Ile de la Passe to Ile Mapou,6.3,13:23,14:23,05 17.961,72 15.445,Caroline Mallinson
+3/11/19,047,Salomon,Ile de la Passe to Ile Mapou,6.1,13:27,14:28,05 18.144,72 15.564,Sophie Ramirez
+3/11/19,048,Salomon,Ile de la Passe to Ile Mapou,4.5,13:31,14:32,05 18.272,72 15.707,Lauren James
+3/11/19,049,Salomon,Ile de la Passe to Ile Mapou,5.3,13:35,14:37,05 18.405,72 15.892,Hannah Rempel
+3/11/19,050,Salomon,Ile de la Passe to Ile Mapou,7.7,13:40,14:41,05 18.530,72 16.055,Mariana Rivera-Higueras
+3/13/19,051,Nelson's Island,East of Nelson's Island,12.0,8:25,9:25,05 40.843,72 20.072,Cassidy Hawk
+3/13/19,052,Nelson's Island,East of Nelson's Island,10.0,8:31,9:32,05 40.814,72 20.251,Mona Birgisson
+3/13/19,053,Nelson's Island,East of Nelson's Island,10.2,8:35,9:37,05 40.804,72 20.414,Will Fynes
+3/13/19,054,Nelson's Island,East of Nelson's Island,10.5,8:39,9:40,05 40.759,72 20.548,Isabel Grudowski
+3/13/19,055,Nelson's Island,East of Nelson's Island,11.4,8:43,9:46,05 40.668,72 20.713,Yazmine Martinez
+3/13/19,056,Nelson's Island,Nelson's Island,8.8,10:13,11:15,05 41.181,72 19.261,Angelina Ibarra
+3/13/19,057,Nelson's Island,Nelson's Island,9.3,10:17,11:20,05 41.161,72 19.066,Sophie Ramirez
+3/13/19,058,Nelson's Island,Nelson's Island,9.1,10:20,11:23,05 41.114,72 18.908,Hannah Rempel
+3/13/19,059,Nelson's Island,Nelson's Island,8.4,10:25,11:27,05 41.165,72 18.701,KJ Cipolla
+3/13/19,060,Nelson's Island,Nelson's Island,8.7,10:29,11:30,05 41.195,72 18.518,Mariana Rivera-Higueras
+3/15/19,061,Brothers,North Brother,8.8,8:20,9:20,06 08.336,71 30.386,Hannah Rempel
+3/15/19,062,Brothers,North Brother,7.7,8:25,9:25,06 08.401,71 30.233,Jonathan Saldeen
+3/15/19,063,Brothers,North Brother,10.2,8:29,9:31,06 08.489,71 30.104,KJ Cipolla
+3/15/19,064,Brothers,North Brother,11.5,8:34,9:36,06 08.462,71 29.966,Will Fynes
+3/15/19,065,Brothers,North Brother,10.1,8:39,9:41,06 08.307,71 29.938,Lauren James
+3/15/19,066,Brothers,North Brother,8.2,9:55,10:55,06 08.188,71 30.626,Ariel Wang
+3/15/19,067,Brothers,North Brother,8.7,9:58,10:58,06 08.091,71 30.756,Yazmine Martinez
+3/15/19,068,Brothers,North Brother,10.0,10:03,11:04,06 08.002,71 30.894,Sophie Ramirez
+3/15/19,069,Brothers,North Brother,11.3,10:07,11:08,06 07.834,71 30.914,Caroline Mallinson
+3/15/19,070,Brothers,North Brother,9.4,10:17,11:18,06 08.005,71 30.425,Rosie Bravo Ozuna
+3/16/19,071,Eagle Island,Eagle Island,7.5,8:17,9:19,06 10.585,71 19.834,Hannah Rempel
+3/16/19,072,Eagle Island,Eagle Island,8.8,8:21,9:23,06 10.735,71 19.721,
+3/16/19,073,Eagle Island,Eagle Island,8.9,8:24,9:31,06 10.884,71 19.613,Ariel Wang
+3/16/19,074,Eagle Island,Eagle Island,8.0,8:29,9:38,06 11.071,71 19.481,Lauren James
+3/16/19,075,Eagle Island,Eagle Island,9.7,8:33,9:41,06 11.231,71 19.338,Isabel Grudowski
+3/16/19,076,Eagle Island,Eagle Island,8.4,9:49,10:51,06 11.653,71 19.084,Caroline Mallinson
+3/16/19,077,Eagle Island,Eagle Island,11.9,9:53,10:54,06 11.798,71 18.989,
+3/16/19,078,Eagle Island,Eagle Island,9.8,9:58,10:58,06 11.972,71 18.912,Rosie Bravo Ozuna
+3/16/19,079,Eagle Island,Eagle Island,9.0,10:03,11:01,06 12.115,71 18.805,
+3/16/19,080,Eagle Island,Eagle Island,7.8,10:07,11:07,06 12.242,71 18.684,Cassidy Hawk
+3/17/19,081,Egmont,Ile Des Rats,9.6,8:16,9:16,06 38.094,71 19.276,Sophie Ramirez
+3/17/19,082,Egmont,Ile Des Rats,7.5,8:23,9:24,06 38.138,71 19.118,Will Fynes
+3/17/19,083,Egmont,Ile Des Rats,8.8,8:26,9:27,06 38.204,71 18.977,Yazmine Martinez
+3/17/19,084,Egmont,Ile Des Rats,10.6,8:30,9:31,06 38.297,71 18.836,Hannah Rempel
+3/17/19,085,Egmont,Ile Des Rats,7.0,8:34,9:35,06 38.452,71 18.744,Caroline Mallinson
+3/17/19,086,Egmont,Ile Lubine,7.9,9:51,10:52,06 39.761,71 18.791,Lauren James
+3/17/19,087,Egmont,Ile Lubine,9.3,9:54,10:55,06 39.882,71 18.922,Ariel Wang
+3/17/19,088,Egmont,Ile Lubine,8.3,9:54,10:59,06 39.995,71 19.055,KJ Cipolla
+3/17/19,089,Egmont,Ile Lubine,7.4,10:00,11:03,06 40.091,71 19.202,Jonathan Saldeen
+3/17/19,090,Egmont,Ile Lubine,9.2,10:03,11:05,06 40.226,71 19.347,Isabel Grudowski
+3/17/19,091,Egmont,Ile Carre Pate,11.6,11:19,12:22,06 40.519,71 20.548,Rosie Bravo Ozuna
+3/17/19,092,Egmont,Ile Carre Pate,11.5,11:22,12:27,06 40.483,71 20.722,Cassidy Hawk
+3/17/19,093,Egmont,Ile Carre Pate,11.0,11:25,12:31,06 40.502,71 20.921,Mona Birgisson
+3/17/19,094,Egmont,Ile Carre Pate,9.3,11:29,12:35,06 40.548,71 21.122,Angelina Ibarra
+3/17/19,095,Egmont,Ile Carre Pate,10.5,11:32,12:38,06 40.638,71 21.281,Mariana Rivera-Higueras
