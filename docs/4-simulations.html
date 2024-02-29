@@ -2533,16 +2533,22 @@ Coding in R
 </ul></li>
 <li><a href="#classwork" id="toc-classwork">Classwork</a>
 <ul>
-<li><a href="#part-i-introduce-a-selective-advantage-for-species-1-using-a-fitness-ratio-of-1.2.-the-fitness-ratio-affects-the-probability-of-reproduction-in-the-following-terms-fit.ratio-freq.1-fit.ratio-freq.1-freq.2" id="toc-part-i-introduce-a-selective-advantage-for-species-1-using-a-fitness-ratio-of-1.2.-the-fitness-ratio-affects-the-probability-of-reproduction-in-the-following-terms-fit.ratio-freq.1-fit.ratio-freq.1-freq.2">Part I: Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2)</a></li>
-<li><a href="#part-ii-introduce-negative-frequency-dependence-into-your-model.-to-do-so-you-first-need-to-define-your-average-fitness-ratio-fit.ratio.avg-based-on-the-prevailing-selective-advantage.-frequency-dependence-then-affects-the-fit.ratio-in-the-following-terms-expfreq.dep-freq.1---0.5-logfit.ratio.avg." id="toc-part-ii-introduce-negative-frequency-dependence-into-your-model.-to-do-so-you-first-need-to-define-your-average-fitness-ratio-fit.ratio.avg-based-on-the-prevailing-selective-advantage.-frequency-dependence-then-affects-the-fit.ratio-in-the-following-terms-expfreq.dep-freq.1---0.5-logfit.ratio.avg.">Part II: Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)).</a></li>
-<li><a href="#part-iii-introduce-posityive-frequency-dependence-and-change-your-starting-densities.-to-do-so-follow-the-same-steps-as-above-but-also-adjust-your-initial-populations." id="toc-part-iii-introduce-posityive-frequency-dependence-and-change-your-starting-densities.-to-do-so-follow-the-same-steps-as-above-but-also-adjust-your-initial-populations.">Part III: Introduce posityive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.</a></li>
+<li><a href="#part-i-1" id="toc-part-i-1">Part I</a></li>
+<li><a href="#part-ii" id="toc-part-ii">Part II</a></li>
+<li><a href="#part-iii" id="toc-part-iii">Part III</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#d.-4-solutions" id="toc-d.-4-solutions">d. 4: Solutions</a>
 <ul>
 <li><a href="#homework-solutions" id="toc-homework-solutions">Homework solutions</a>
 <ul>
-<li><a href="#part-i-1" id="toc-part-i-1">Part I:</a></li>
+<li><a href="#part-i-2" id="toc-part-i-2">Part I:</a></li>
+</ul></li>
+<li><a href="#classwork-solutions" id="toc-classwork-solutions">Classwork solutions</a>
+<ul>
+<li><a href="#part-i-3" id="toc-part-i-3">Part I</a></li>
+<li><a href="#part-ii-1" id="toc-part-ii-1">Part II</a></li>
+<li><a href="#part-iii-1" id="toc-part-iii-1">Part III</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2648,38 +2654,428 @@ Coding in R
 <li><p>Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.</p></li>
 </ol>
 <h2 id="classwork">Classwork</h2>
-<h3 id="part-i-introduce-a-selective-advantage-for-species-1-using-a-fitness-ratio-of-1.2.-the-fitness-ratio-affects-the-probability-of-reproduction-in-the-following-terms-fit.ratio-freq.1-fit.ratio-freq.1-freq.2">Part I: Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2)</h3>
+<h3 id="part-i-1">Part I</h3>
+<p>Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2)</p>
 <ol type="1">
 <li><p>Run a model with 300 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes (and make it pretty).</p></li>
 <li><p>Run the same model with 1000 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes next to your previous plot.</p></li>
 </ol>
-<h3 id="part-ii-introduce-negative-frequency-dependence-into-your-model.-to-do-so-you-first-need-to-define-your-average-fitness-ratio-fit.ratio.avg-based-on-the-prevailing-selective-advantage.-frequency-dependence-then-affects-the-fit.ratio-in-the-following-terms-expfreq.dep-freq.1---0.5-logfit.ratio.avg.">Part II: Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)).</h3>
+<h3 id="part-ii">Part II</h3>
+<p>Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)).</p>
 <ol type="1">
 <li><p>Run a model with 300 individuals, 30 simulations, 50 years, an average fitness ratio of 1.2, and a negative frequency dependence of -0.3. Plot your outcomes.</p></li>
 <li><p>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.5, and a negative frequency dependence of -0.5. Plot your outcomes.</p></li>
 </ol>
-<h3 id="part-iii-introduce-posityive-frequency-dependence-and-change-your-starting-densities.-to-do-so-follow-the-same-steps-as-above-but-also-adjust-your-initial-populations.">Part III: Introduce posityive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.</h3>
+<h3 id="part-iii">Part III</h3>
+<p>Introduce positive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.</p>
 <ol type="1">
 <li><p>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.1, and a positive frequency dependence of 0.1, with a starting frequency of Species 1 at 0.3.</p></li>
 <li><p>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.0, a positive frequency dependence of 0.3, and a starting frequency of Species 1 at 0.75.</p></li>
 </ol>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
 <h1 id="d.-4-solutions">d. 4: Solutions</h1>
 <h2 id="homework-solutions">Homework solutions</h2>
-<h3 id="part-i-1">Part I:</h3>
+<h3 id="part-i-2">Part I:</h3>
 <ol type="1">
-<li><p>Run the same model but change the <em>number of individuals to 500</em> and <em>increase the number of years to 75</em></p></li>
-<li><p>Run the same model but decrease the <em>number of individuals to 50</em>, set the <em>number of years back to 50</em>, and <em>increase the number of simulations to 50</em>. Be careful with changing the number of simulations: you will have to adjust your downstream data wrangling code in the <em>gather()</em> function.</p></li>
-<li><p>Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.</p></li>
+<li>Run the same model but change the <em>number of individuals to 500</em> and <em>increase the number of years to 75</em></li>
 </ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>30</span> <span class='co'># specify the number of simulations </span></span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>75</span> <span class='co'># specify the number of years</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span> <span class='co'># create a matrix for output</span></span>
+<span></span>
+<span><span class='co'># FIRST LOOP FOR DIFFERENT SIMULATIONS</span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='co'># use for-loop to run through the number of simulations</span></span>
+<span>  <span class='op'>{</span> </span>
+<span>  </span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>500</span> <span class='co'># 500 individuals</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.5</span><span class='op'>*</span><span class='va'>J</span>  <span class='co'># abundance of species 1 at time 0 </span></span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span> <span class='co'># set up community</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='co'># specify that half of the community is species 1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span> <span class='co'># specify the other half is species 2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span> <span class='co'># set 'year' to 2 </span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> <span class='co'># fill community matrix</span></span>
+<span>  </span>
+<span>  <span class='co'># SECOND LOOP FOR INDIVIDUAL DEATH/BIRTH</span></span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># second for-loop to run multiple simulations</span></span>
+<span>    <span class='op'>{</span> </span>
+<span>    </span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> <span class='co'># freq.1 represents the frequency of species 1</span></span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>freq.1</span> <span class='co'># pr.1 represents the frequency of reproduction</span></span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span>  <span class='co'># birth and death rates, based on probabilities</span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span>  <span class='co'># record data in the freq.1.mat matrix</span></span>
+<span>      <span class='op'>{</span> </span>
+<span>      </span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>      </span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkorchid"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"goldenrod"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<ol start="2" type="1">
+<li>Run the same model but decrease the <em>number of individuals to 50</em>, set the <em>number of years back to 50</em>, and <em>increase the number of simulations to 50</em>. Be careful with changing the number of simulations: you will have to adjust your downstream data wrangling code in the <em>gather()</em> function.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>50</span> <span class='co'># specify the number of simulations </span></span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>50</span> <span class='co'># specify the number of years</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span> <span class='co'># create a matrix for output</span></span>
+<span></span>
+<span><span class='co'># FIRST LOOP FOR DIFFERENT SIMULATIONS</span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='co'># use for-loop to run through the number of simulations</span></span>
+<span>  <span class='op'>{</span> </span>
+<span>  </span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>50</span> <span class='co'># 500 individuals</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.5</span><span class='op'>*</span><span class='va'>J</span>  <span class='co'># abundance of species 1 at time 0 </span></span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span> <span class='co'># set up community</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='co'># specify that half of the community is species 1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span> <span class='co'># specify the other half is species 2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span> <span class='co'># set 'year' to 2 </span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> <span class='co'># fill community matrix</span></span>
+<span>  </span>
+<span>  <span class='co'># SECOND LOOP FOR INDIVIDUAL DEATH/BIRTH</span></span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># second for-loop to run multiple simulations</span></span>
+<span>    <span class='op'>{</span> </span>
+<span>    </span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> <span class='co'># freq.1 represents the frequency of species 1</span></span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>freq.1</span> <span class='co'># pr.1 represents the frequency of reproduction</span></span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span>  <span class='co'># birth and death rates, based on probabilities</span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span>  <span class='co'># record data in the freq.1.mat matrix</span></span>
+<span>      <span class='op'>{</span> </span>
+<span>      </span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>      </span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkorchid"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"goldenrod"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<ol start="3" type="1">
+<li>Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.9</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"forestgreen"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"steelblue"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<h2 id="classwork-solutions">Classwork solutions</h2>
+<h3 id="part-i-3">Part I</h3>
+<p>Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2)</p>
+<ol type="1">
+<li>Run a model with 300 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes (and make it pretty).</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># selection</span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>30</span> </span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>50</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>300</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.5</span><span class='op'>*</span><span class='va'>J</span>  </span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>  </span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> </span>
+<span>    <span class='va'>freq.2</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>-</span> <span class='va'>freq.1</span></span>
+<span>    <span class='va'>fit.ratio</span> <span class='op'>&lt;-</span> <span class='fl'>1.2</span> </span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span><span class='op'>/</span><span class='op'>(</span><span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span> <span class='op'>+</span> <span class='va'>freq.2</span><span class='op'>)</span> </span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span>    </span>
+<span>    <span class='co'># record data in the freq.1.mat matrix   </span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"firebrick"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"turquoise"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+<ol start="2" type="1">
+<li>Run the same model with 1000 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes next to your previous plot.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># selection</span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>30</span> </span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>50</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>1000</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.5</span><span class='op'>*</span><span class='va'>J</span>  </span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>  </span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> </span>
+<span>    <span class='va'>freq.2</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>-</span> <span class='va'>freq.1</span></span>
+<span>    <span class='va'>fit.ratio</span> <span class='op'>&lt;-</span> <span class='fl'>1.2</span> </span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span><span class='op'>/</span><span class='op'>(</span><span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span> <span class='op'>+</span> <span class='va'>freq.2</span><span class='op'>)</span> </span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span>    </span>
+<span>    <span class='co'># record data in the freq.1.mat matrix   </span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"firebrick"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"turquoise"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+</div>
+<h3 id="part-ii-1">Part II</h3>
+<p>Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)).</p>
+<ol type="1">
+<li>Run a model with 300 individuals, 30 simulations, 50 years, an average fitness ratio of 1.2, and a negative frequency dependence of -0.3. Plot your outcomes.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<ol start="2" type="1">
+<li>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.5, and a negative frequency dependence of -0.5. Plot your outcomes.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+</div>
+<h3 id="part-iii-1">Part III</h3>
+<p>Introduce positive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.</p>
+<ol type="1">
+<li>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.1, and a positive frequency dependence of 0.1, with a starting frequency of Species 1 at 0.3.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># positive frequency dependence</span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>30</span> </span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>50</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>freq.dep</span> <span class='op'>=</span> <span class='fl'>0.1</span></span>
+<span><span class='va'>fit.ratio.avg</span> <span class='op'>&lt;-</span> <span class='fl'>1.1</span></span>
+<span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>1000</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.3</span><span class='op'>*</span><span class='va'>J</span>  </span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>  </span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> </span>
+<span>    <span class='va'>freq.2</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>-</span> <span class='va'>freq.1</span></span>
+<span>    <span class='va'>fit.ratio</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>freq.dep</span><span class='op'>*</span><span class='op'>(</span><span class='va'>freq.1</span><span class='op'>-</span><span class='fl'>0.5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>fit.ratio.avg</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span><span class='op'>/</span><span class='op'>(</span><span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span> <span class='op'>+</span> <span class='va'>freq.2</span><span class='op'>)</span></span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span>    </span>
+<span>    <span class='co'># record data in the freq.1.mat matrix   </span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkviolet"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"darkseagreen1"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-12-1.png" width="624" /></p>
+</div>
+<ol start="2" type="1">
+<li>Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.0, a positive frequency dependence of 0.3, and a starting frequency of Species 1 at 0.75.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># positive frequency dependence</span></span>
+<span><span class='va'>num.sims</span> <span class='op'>&lt;-</span> <span class='fl'>30</span> </span>
+<span><span class='va'>num.years</span> <span class='op'>&lt;-</span> <span class='fl'>50</span></span>
+<span><span class='va'>freq.1.mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span>ncol <span class='op'>=</span> <span class='va'>num.sims</span>, nrow <span class='op'>=</span> <span class='va'>num.years</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>freq.dep</span> <span class='op'>=</span> <span class='fl'>0.3</span></span>
+<span><span class='va'>fit.ratio.avg</span> <span class='op'>&lt;-</span> <span class='fl'>1.0</span></span>
+<span></span>
+<span><span class='kw'>for</span> <span class='op'>(</span><span class='va'>j</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='va'>J</span> <span class='op'>&lt;-</span> <span class='fl'>1000</span></span>
+<span>  <span class='va'>t0.sp1</span> <span class='op'>&lt;-</span> <span class='fl'>0.75</span><span class='op'>*</span><span class='va'>J</span>  </span>
+<span>  <span class='va'>community</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/vector.html'>vector</a></span><span class='op'>(</span>length <span class='op'>=</span> <span class='va'>J</span><span class='op'>)</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='va'>t0.sp1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>1</span></span>
+<span>  <span class='va'>community</span><span class='op'>[</span><span class='op'>(</span><span class='va'>t0.sp1</span><span class='op'>+</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='va'>J</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='fl'>2</span></span>
+<span>  <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='fl'>1</span>,<span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>  </span>
+<span>  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='op'>(</span><span class='va'>num.years</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='va'>freq.1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span> </span>
+<span>    <span class='va'>freq.2</span> <span class='op'>&lt;-</span> <span class='fl'>1</span> <span class='op'>-</span> <span class='va'>freq.1</span></span>
+<span>    <span class='va'>fit.ratio</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>freq.dep</span><span class='op'>*</span><span class='op'>(</span><span class='va'>freq.1</span><span class='op'>-</span><span class='fl'>0.5</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>fit.ratio.avg</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>    <span class='va'>pr.1</span> <span class='op'>&lt;-</span> <span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span><span class='op'>/</span><span class='op'>(</span><span class='va'>fit.ratio</span><span class='op'>*</span><span class='va'>freq.1</span> <span class='op'>+</span> <span class='va'>freq.2</span><span class='op'>)</span></span>
+<span>    <span class='va'>community</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>ceiling</a></span><span class='op'>(</span><span class='va'>J</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>)</span>, <span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>pr.1</span>,<span class='fl'>1</span><span class='op'>-</span><span class='va'>pr.1</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span>    </span>
+<span>    <span class='co'># record data in the freq.1.mat matrix   </span></span>
+<span>    <span class='kw'>if</span> <span class='op'>(</span><span class='va'>i</span> <span class='op'><a href='https://rdrr.io/r/base/Arithmetic.html'>%%</a></span> <span class='va'>J</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>      <span class='va'>freq.1.mat</span><span class='op'>[</span><span class='va'>year</span>, <span class='va'>j</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>community</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>/</span><span class='va'>J</span></span>
+<span>      <span class='va'>year</span> <span class='op'>&lt;-</span> <span class='va'>year</span> <span class='op'>+</span> <span class='fl'>1</span></span>
+<span>    <span class='op'>}</span></span>
+<span>  <span class='op'>}</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.sims</span> <span class='co'># set column names in matrix</span></span>
+<span></span>
+<span><span class='va'>freq.sp1.df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>freq.1.mat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># convert freq.1.mat into data frame </span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/add_column.html'>add_column</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='va'>num.years</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='co'># add a column called year</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/gather.html'>gather</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span>, key <span class='op'>=</span> <span class='va'>iteration</span>, value <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span> <span class='co'># gather into long format</span></span>
+<span></span>
+<span><span class='va'>p1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>freq.sp1.df</span>, </span>
+<span>             <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, </span>
+<span>                 y <span class='op'>=</span> <span class='va'>frequency</span>, </span>
+<span>                 group <span class='op'>=</span> <span class='va'>iteration</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>frequency</span><span class='op'>)</span>, </span>
+<span>            alpha <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_color_gradient</a></span><span class='op'>(</span>low <span class='op'>=</span> <span class='st'>"darkviolet"</span>,</span>
+<span>                       high <span class='op'>=</span> <span class='st'>"darkseagreen1"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"Years"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"Frequency of species 1"</span><span class='op'>)</span></span>
+<span><span class='va'>p1</span></span></code></pre>
+</div>
+<p><img src="4-simulations_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
