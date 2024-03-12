@@ -1,0 +1,43 @@
+---
+title: "Session 5: Principal Component Analysis"
+description: |
+  This session introduces Principal Component Analyses, their interpretation, visualization, and other ordination types.  
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r, echo = F}
+library(tidyverse)
+library(fishualize)
+library(ggridges)
+```
+# a. 5: Demo
+
+```{r, echo = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/RcpJ6stmTmA")
+```
+<br>
+<br>
+
+# b. 5: Slides
+
+You can access the full slideshow used in the **5-PCA** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/05-pca.html)**.
+<br>
+<br>
