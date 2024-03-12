@@ -38,6 +38,6 @@ embed_url("https://youtu.be/RcpJ6stmTmA")
 
 # b. 5: Slides
 
-You can access the full slideshow used in the **5-PCA** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/05-pca.html)**.
+You can access the full slideshow used in the **5-PCA** narration **[here](https://simonjbrandl.github.io/mce_xaringan_slides/05-PCA.html)**.
 <br>
 <br>
