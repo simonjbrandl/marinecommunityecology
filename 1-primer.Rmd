@@ -1,0 +1,33 @@
+---
+title: "Week 1: A Primer to Community Ecology"
+description: |
+  This session provides basic information about the course as taught in Spring 2025, as well as a primer to the field of community ecology. 
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Lecture summary
+
+This lecture covers a basic overview of the course structure along with policies, assignments, and grading system. Furthermore, the lecture provides a short primer to community ecology. Specifically, we will explore why we care about ecological communities, what they are, and why they can be a complex subject to study. 
+
+## Lecture slides
+
+The PDF containing the slides for today's lecture can be downloaded [here](lectures/1_Introduction_2025.pdf).
+
+
+
