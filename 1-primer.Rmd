@@ -26,10 +26,19 @@ editor_options:
 This lecture covers a basic overview of the course structure along with policies, assignments, and grading system. Furthermore, the lecture provides a short primer to community ecology. Specifically, we will explore why we care about ecological communities, what they are, and why they can be a complex subject to study.
 
 Note: If you are working through this course independently or are re-using its materials for your own class, feel free to ignore pages 1-52. 
-
+<br>
+<br>
 ## Lecture slides
 
 The PDF containing the slides for today's lecture can be downloaded [here](lectures/1_Introduction_2025.pdf).
+<br>
+<br>
+## Lecture recording
 
-
+```{r, echo = FALSE}
+library(vembedr)
+embed_url("https://youtu.be/RcpJ6stmTmA")
+```
+<br>
+<br>
 
