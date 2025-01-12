@@ -18,7 +18,7 @@ navbar:
       href: lectures.html
       menu:
         - text: "1-Primer to Community Ecology"
-        - href: 1-primer.html
+          href: 1-primer.html
     - text: "Coding in R"
       href: coding.html
       menu:
