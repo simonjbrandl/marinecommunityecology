@@ -4,7 +4,7 @@ description: |
   Marine Community Ecology
 output_dir: "docs"
 include: ["slides/"]
-creative_commons: CC BY-SA
+creative_commons: CC BY-NC
 repository_url: https://github.com/simonjbrandl/marinecommunityecology
 favicon: images/mns353_logo.png
 theme: mce_theme.css

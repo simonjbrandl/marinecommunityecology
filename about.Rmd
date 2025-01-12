@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: |
-  Some information about the course
+  This page offers a brief summary of the course, including the main structural elements, learning objectives, and assignments.
 date: "`r Sys.Date()`"
 output:
   distill::distill_article:
@@ -9,15 +9,45 @@ color1: "#0D2A47"
 ---
 # Course synopsis
 <br>
-This course aims to provide students with a holistic understanding of the assembly and functioning of marine communities. Students will learn about existing and emerging theories and concepts in community ecology and gain insight into traditional and modern techniques to study marine communities, from visual censuses to molecular approaches.
+Goal: This course aims to provide students with a holistic understanding of the assembly and functioning of marine communities. Students will learn about existing and emerging theories and concepts in community ecology and gain insight into traditional and modern techniques to study marine communities, from visual censuses to molecular approaches.
 <br>
 <br>
-The course includes quantitative training and practical components using the software R, designed to foster an understanding of basic statistical concepts in community ecology and their thoughtful implementation. No existing experience in R is required but familiarizing yourself with the software early on may be helpful (see resources below). 
+Coding in R: The course includes quantitative training and practical components using the software R, designed to foster an understanding of basic statistical concepts in community ecology and their thoughtful implementation. No existing experience in R is required but familiarizing yourself with the software early on may be helpful (see resources below).
 <br>
 <br>
-The course includes two laboratory sessions to be held on Sat/Sun in February (02/16-02/17) and April (04/27-04/28) during which you will have an opportunity to engage in hands-on research on marine and estuarine communities. 
+Fieldwork: The course also includes hands-on field surveys and collections, performed in coastal environments in South Texas. Some of them (bird surveys) can be replicated in almost any type of environment to obtain similar data. 
+
+# Learning objectives
+
+All students: 
+
+1)	Gain a thorough understanding of ecological theory
+2)	Acquire/improve computational skills to explore, analyze, and visualize data in R
+3)	Express scientific knowledge in writing via research papers, syntheses, and short essays
+4)	Present your work and follow/contribute to discussions on marine community ecology
+5)	Survey, sample, process, and analyze marine and estuarine communities in the field
+6)	Learn how to assess your own progress and growth in a non-traditional grading format 
+
+Graduate students:
+
+1)	Gain advanced skills in R that allow you to troubleshoot coding issues and help your peers navigate the pitfalls of data wrangling, analyses, and visualization in R
+2)	Develop leadership skills in research, including the capacity to steer discussions, tackle problems, find solutions, and delegate tasks 
+3)	Synthesize research outcomes into a brief, compelling narrative, pitched to a journal using a cover letter, abstract, and figures
+
+# Assignments
+
+Assignments differ depending on your enrollment (undergraduate vs. graduate), as indicated below. For undergraduate students, assignments will include homework, self-evaluations, and three main projects, two of them written and one as a group presentation. For graduate students, there will be one additional presentation and a skeleton paper for journal ‘submission’. 
+
+## Project 1: Paper critique
+
+For the first project, you will compose a 3-page double-spaced critique of a prominent theory in community ecology. At least 10 relevant references should be included on a separate page. You will work in small groups to assemble and review literature on the theory, but each individual will compose their own essay. Theories and groups will be assigned during the second week of class. If you need more space, you are welcome to write up to (but no more) than 5 pages of double-spaced text. This is an individual paper, but you can work in groups to assemble, read, and classify literature.
+
+## Project 2: Research paper
+
+For the second project, you will compose a 5-page double-spaced research paper on the data collected during the first set of field surveys alongside some historical data. At least 15 relevant references should be included on a separate page. You will work together as a class to collect data, then each student will analyze, visualize, and interpret the data in a short research paper. Class time will be given for data analysis and visualization. Further project details will be presented in class.
+
+## Project 3: Research presentation
+
+For the third project, you will combine data collected during the second set of field surveys with some laboratory techniques. You will work as a group, crafting a short presentation (15 mins) that contain your main results and interpretations. Further project details will be presented in class. 
 
 <img align="center" src="images/IMG_4622.jpg" width="1000">
-
-
-
