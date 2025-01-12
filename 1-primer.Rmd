@@ -28,11 +28,13 @@ This lecture covers a basic overview of the course structure along with policies
 Note: If you are working through this course independently or are re-using its materials for your own class, feel free to ignore pages 1-52. 
 <br>
 <br>
+
 ## Lecture slides
 
 The PDF containing the slides for today's lecture can be downloaded [here](lectures/1_Introduction_2025.pdf).
 <br>
 <br>
+
 ## Lecture recording
 
 ```{r, echo = FALSE}

@@ -2819,35 +2819,34 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Poisson.html'>rpois</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>10</span><span class='op'>)</span></span>
 <span><span class='va'>b1</span></span></code></pre>
 </div>
-<pre><code>  [1]  9 17 11  5 11 10 12 11 16 12 13  5  6 14 11 11 10  7 10 12  8
- [22] 17 11 11  9 11 17 14 10  5  6 12  3  6  9 13  8  8 14 10 12 13
- [43]  6 10 11  9  5 13 11  9 14 12  7 10 15  9 10 16  7  3 13  9 12
- [64]  7 11  6 12 15 15 12  7  6  7 10  9  7 10  9  8  4  9 12  5 13
- [85] 15  9 13 11  8  6  5  5 10  9 11  9  8 12  8 11</code></pre>
+<pre><code>  [1] 13 10  7  6  9  6 16  9 11 13 10 12  9 12  7  9  8  5 11  9 15
+ [22]  8 12  7 18 12 10 18  7 12 10 14 10  4 11 10  6 10 13  6 11  8
+ [43]  6  9 15 12 10  7  9  9 12  9 11  6 12 10  6  7  9 14 14  8  2
+ [64]  9 10  6  8  9  3 14  6  9 10 16  9 10 14  8  7  6 12  6 10 10
+ [85]  8 11  8  9  7  9 12  8  7  8 13  9  5 11  8 12</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b2</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>==</span> <span class='fl'>8</span><span class='op'>]</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>b2</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>b2
-8 
-7 </code></pre>
+ 8 
+11 </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>b2</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 7</code></pre>
+<pre><code>[1] 11</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b3</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>&gt;</span><span class='fl'>10</span><span class='op'>]</span></span>
 <span><span class='va'>b3</span></span></code></pre>
 </div>
-<pre><code> [1] 17 11 11 12 11 16 12 13 14 11 11 12 17 11 11 11 17 14 12 13 14 12
-[23] 13 11 13 11 14 12 15 16 13 12 11 12 15 15 12 12 13 15 13 11 11 12
-[45] 11</code></pre>
+<pre><code> [1] 13 16 11 13 12 12 11 15 12 18 12 18 12 14 11 13 11 15 12 12 11 12
+[23] 14 14 14 16 14 12 11 12 13 11 12</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b4</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>&lt;</span><span class='fl'>10</span> <span class='op'>&amp;</span> <span class='va'>b1</span> <span class='op'>&gt;</span><span class='fl'>5</span><span class='op'>]</span></span>
 <span><span class='va'>b4</span></span></code></pre>
 </div>
-<pre><code> [1] 9 6 7 8 9 6 6 9 8 8 6 9 9 7 9 7 9 7 6 7 6 7 9 7 9 8 9 9 8 6 9 9 8
-[34] 8</code></pre>
+<pre><code> [1] 7 6 9 6 9 9 7 9 8 9 8 7 7 6 6 8 6 9 7 9 9 9 6 6 7 9 8 9 6 8 9 6 9
+[34] 9 8 7 6 6 8 8 9 7 9 8 7 8 9 8</code></pre>
 </div>
 <h3 id="c">c)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2871,52 +2870,52 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Poisson.html'>rpois</a></span><span class='op'>(</span><span class='fl'>500</span>, <span class='fl'>10</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1]  5 15  9  8  7 11</code></pre>
+<pre><code>[1] 12  8 11  5 11  8</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a2</span> <span class='op'>&lt;-</span> <span class='va'>a1</span><span class='op'>[</span><span class='va'>a1</span> <span class='op'>&gt;</span> <span class='fl'>15</span><span class='op'>]</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>a2</span><span class='op'>)</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 0.036</code></pre>
+<pre><code>[1] 0.046</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 21 20 18 18 18 17</code></pre>
+<pre><code>[1] 20 19 19 18 18 18</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a4</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 1.609438 2.708050 2.197225 2.079442 1.945910 2.397895</code></pre>
+<pre><code>[1] 2.484907 2.079442 2.397895 1.609438 2.397895 2.079442</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#a5</span></span>
 <span><span class='va'>a1</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>,to<span class='op'>=</span><span class='fl'>500</span>,by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span></span>
 <span><span class='co'>#or</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/replace.html'>replace</a></span><span class='op'>(</span><span class='va'>a1</span>, <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>, to<span class='op'>=</span><span class='fl'>500</span>, by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>, <span class='fl'>0</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>  [1]  5 15  9  8  7 11 15 15 14  0 10  9  5 10  8 14  8 11  9  0  7
- [22] 11  9  8 10  8  5  7 11  0 11 11 11  9 11 10 11  8  9  0  9 12
- [43]  6  5 10 16 12 18 11  0  9 10  9 12 12  8  6  5 10  0 10  8  8
- [64] 15 10 11 14  6 11  0 16 16 11 11  9  9 13  8  8  0 11  7  8  9
- [85] 14 11 10 12 12  0  6 14 10  8 16 12 14  9 13  0  5 12  6 12 10
-[106] 10  5  6 10  0 11  5  9 15 15 10 13  6  7  0 12 10  8 10 11 12
-[127]  7  7 12  0 11  6 12 10  6 10 13  5 10  0  5  9 12 14 10 13 12
-[148]  6  7  0 16  7  8 10  7  7 16  9 10  0 10  9 11  5 14  8 12 13
-[169] 17  0 10 13 11 13  8 16 14  7  8  0 14  8 13 10  8  8 11 10 10
-[190]  0 10 13  7 11 10  6 10  8  6  0  5  7  6  6  7  9  9  9  6  0
-[211] 11 12 13 15  5 10  5 13  7  0  5 13  8 12  5  7  3 10 13  0 12
-[232] 13  8 10  8  8 14 10 15  0 12 11  8  8 12  9  5  9 12  0  9 11
-[253]  9 11 10  5 13 10  3  0  7 12 12 12  8  5  9 11  7  0 15  6  9
-[274] 11  7 10 15 14 21  0 11  5 10 10  7  5  7 10 11  0  6 12  8 13
-[295]  9 13 17 10 10  0 14 13  8 10  8 13  6 13 10  0  3 10  9 13 13
-[316]  9  5  9 14  0 14  8 10 14 10 11 10  6  6  0  8  7 13 12  4  2
-[337]  5  8  9  0  7  7  5 10  6  8 11  6  9  0 11 13 13 10 10 10 11
-[358]  9 11  0 15 18 14  6  8  9  8  6  9  0  8  5  9  8 10  8 11 13
-[379]  9  0 13 16 12 13  9 10  8  9 12  0 10 10  8 12  9 12 16 10 10
-[400]  0 11 16  9 11  7 10 15  7  9  0 13  9 12  9  7  8 11 10 10  0
-[421] 11  7 10  5 10 15 15  7 10  0 10 14 10  9  7 10  8  9 12  0 15
-[442] 11 10 11 13  7  9 15 12  0 12  8  8 13 11  8  8  7  8  0  8 10
-[463] 10 11  9 11 10  8  9  0 11 12  5  5 10 10 13 10 15  0 18 13  8
-[484] 15 14 11  7  8 10  0  7  7  6 11  7 15 10  3  8  0</code></pre>
+<pre><code>  [1] 12  8 11  5 11  8 13 15  9  0 17  5  9  8 10 13  8 10 12  0  8
+ [22]  5 12  5  7  8 10  8 12  0  7  5 10  9  6 12  5 10 12  0 13  9
+ [43]  9 10  7 11 16  6  9  0 16 11 10 12 11 14 17  7  6  0 12 10 14
+ [64] 11  9 11  9 11 11  0  6  7  7 11  3  6 11 11 12  0 14 14 13 14
+ [85]  6  7  9 13  6  0 16  9  9 10  8  9  9  8 12  0  5  6  8 16 11
+[106]  8 13 11 11  0 16 15 11 10  8 13 11 12 12  0 15 11 11  6 11  6
+[127] 12 13 13  0 14  9  9 13 10 10 11  6 13  0  8 12 13  6  8  7  3
+[148] 15 10  0 10 15 19  8  5  9  6  9  7  0 11  7 12 12  9 10 11  7
+[169]  9  0 11 12  6 10 11 10  5 10 14  0 10 10  9  9  6 17 11 13  5
+[190]  0  9 16 10 14  8  9  9  7 12  0 10 10  9  8 11 11 10 12  7  0
+[211]  7  7 10 11 18  8 12  8  9  0 10 15  4 10 12  9  6  7  9  0 14
+[232] 15  4  9 14 10  8 15 11  0  9 10  8 11 13  7 18  7 11  0  8  9
+[253] 10 10  9  9  6 11 12  0  8  8  6  9 14  8  7 16  6  0 13 11  9
+[274] 17 11 13 15 11  4  0  7 13 20  6 11 13  8 12  9  0  8 12  9  7
+[295]  7  6 13 14  6  0  9 11 13  5 12 14 12 12 10  0 10 14  8  6 13
+[316] 10  7  9  3  0 12  9  9  5  6 13 10 11 12  0  8  8  6  6 16 12
+[337] 10 11 15  0  9 13 11 11 11  7 15 11 13  0 13  8 16  5 13  6 11
+[358] 16  8  0 10 10 11 11 12 10  8 15 13  0 10  3 12 10 11  7  8 10
+[379]  9  0  5 13  9  9 12 10  6 13  8  0 13 11  8  7  8 10  6  7  9
+[400]  0  8 10  5 15 15 18 15  9 15  0 11 11  9 17  8 10  8 13 10  0
+[421] 10 11 15  6 10  7 11  7  9  0  9 12  5  8 15 10 11 11 16  0 13
+[442] 11  8  8 12 10  7 12 11  0  5  9 10 11 11  5  9  9  9  0 13  3
+[463]  9 11 19 15 13 10 10  0  8 12  9  7  6 12 13  5 13  0 12  8  9
+[484]  8  7  5 13 14 15  0  8 13  5  7 10 11  8 10 11  0</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a5logmean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>,to<span class='op'>=</span><span class='fl'>500</span>,by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># doesn't work because of -Inf values, so let's go step-by-step</span></span>
 <span></span>
@@ -2958,77 +2957,77 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>c1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>2000</span>, <span class='fl'>100</span>, <span class='fl'>10</span><span class='op'>)</span>, ncol <span class='op'>=</span> <span class='fl'>20</span>, byrow <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>c1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>          [,1]      [,2]      [,3]      [,4]      [,5]     [,6]
-[1,]  98.81246 106.59778  84.86458  92.20387  99.82820 85.74064
-[2,] 120.97675 106.33653  95.71220  88.20657 100.10533 86.78992
-[3,]  87.03539  98.02214 108.35438  99.58188 107.81606 89.68034
-[4,]  79.45154 107.27750  89.04439  89.30756  81.81249 89.28947
-[5,]  94.35169  86.57349  99.79111 104.60130  94.06397 90.21570
-[6,] 101.65442  98.36661 120.12767 104.76612 112.01547 86.60392
+<pre><code>          [,1]      [,2]      [,3]      [,4]      [,5]      [,6]
+[1,] 103.65562 101.22711 105.76859  88.86894 102.22062 106.32632
+[2,] 113.22592  97.69081 117.00387  94.00376  89.26967 115.87062
+[3,]  80.15208 102.01380 113.08119  88.39550  99.58117 105.06630
+[4,] 110.18524  97.01070  93.76947  74.86526 107.39281 109.13008
+[5,]  99.64348  95.42048 112.67507 105.72902 125.05019  98.06804
+[6,] 104.63378  85.03731 105.95855 116.72027  99.32902 115.88835
           [,7]      [,8]      [,9]     [,10]     [,11]     [,12]
-[1,]  83.87669  84.96724 106.67780 100.95814 100.29466 108.82096
-[2,]  86.51624  81.40281  96.85529  91.93172  98.59530 108.09312
-[3,]  90.65950 107.74076  64.34809  93.11353 102.91061 100.36700
-[4,] 109.89907  90.64260 101.43235 110.63815  93.64987 108.33910
-[5,] 108.02179 101.35426 112.61211 102.30456  78.21477  81.76335
-[6,]  78.33054 117.28343 105.00991  94.50092  85.07549 100.94100
+[1,]  87.93976  95.80238 111.64714 110.60323 106.67878 100.80177
+[2,] 114.82316 104.60330  92.10494  95.03110 104.46856  96.82398
+[3,]  99.41770 103.16440  85.71278  90.46003  81.41973  98.30198
+[4,]  99.22325  97.20583  94.68459 101.80531  76.96327  93.53885
+[5,] 106.20944 101.86919  92.94820  88.37779  76.46108  99.28037
+[6,]  92.75100  97.38919 102.18355 110.97636  84.23188  91.52920
          [,13]     [,14]     [,15]     [,16]     [,17]     [,18]
-[1,] 106.85640 100.24861 107.45762  98.88889 112.23043 119.40499
-[2,] 119.58700 103.38782 107.09410  97.82962  88.39468  92.21266
-[3,]  96.34849  94.17355 101.18781 100.43232  76.15241 113.94254
-[4,]  96.04065 108.45132  91.55806 108.60001 120.71480  97.90057
-[5,] 100.72617  95.62181  87.36161 117.55011  88.53095  94.00936
-[6,] 129.28544 102.87900 107.58275  73.88195  85.17821 111.47141
+[1,]  89.25486 121.72119  82.92821  96.66179  92.57092 102.92133
+[2,] 101.91895 111.25251 113.02939  81.54711  97.83780  86.06729
+[3,] 105.49562 102.33688  90.70931 102.43243  97.09849  92.79204
+[4,] 100.20590  96.31525  97.43857  94.84951  92.34941 117.16263
+[5,] 114.83961  83.37157 115.41543 126.26213 114.87900 102.27601
+[6,] 100.57289  99.52390  93.33531 109.77464  94.04768 103.66332
          [,19]     [,20]
-[1,] 100.46661  97.52624
-[2,] 103.57645  89.83869
-[3,]  91.85102 102.12050
-[4,]  95.74432 104.41559
-[5,]  97.44510  90.94305
-[6,] 114.37317  93.37774</code></pre>
+[1,] 108.86376  95.56839
+[2,] 103.07032  85.43460
+[3,] 112.05596  89.66971
+[4,] 107.33602  96.72665
+[5,]  98.40196  77.74847
+[6,]  97.06602 101.91683</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>c2</span> <span class='op'>&lt;-</span> <span class='va'>c1</span><span class='op'>[</span><span class='fl'>98</span>, <span class='fl'>5</span><span class='op'>]</span> <span class='co'># look for value in row 98 column 5</span></span>
 <span><span class='va'>c2</span></span></code></pre>
 </div>
-<pre><code>[1] 101.4546</code></pre>
+<pre><code>[1] 91.02041</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>c1</span><span class='op'>)</span> <span class='co'># look for maximum value and largest deviation from the specified mean (100)</span></span></code></pre>
 </div>
 <pre><code>       V1               V2               V3               V4        
- Min.   : 78.31   Min.   : 76.57   Min.   : 77.90   Min.   : 75.32  
- 1st Qu.: 93.36   1st Qu.: 94.59   1st Qu.: 93.34   1st Qu.: 94.11  
- Median :100.58   Median : 98.79   Median :100.08   Median : 99.69  
- Mean   :100.94   Mean   : 99.31   Mean   :100.60   Mean   : 99.92  
- 3rd Qu.:108.27   3rd Qu.:105.12   3rd Qu.:107.27   3rd Qu.:105.14  
- Max.   :126.54   Max.   :123.91   Max.   :129.74   Max.   :124.53  
+ Min.   : 80.15   Min.   : 74.72   Min.   : 72.93   Min.   : 74.87  
+ 1st Qu.: 94.90   1st Qu.: 92.77   1st Qu.: 92.70   1st Qu.: 93.06  
+ Median :100.76   Median :100.36   Median : 98.83   Median : 99.04  
+ Mean   :101.72   Mean   : 99.07   Mean   : 98.75   Mean   :100.40  
+ 3rd Qu.:108.23   3rd Qu.:106.80   3rd Qu.:104.98   3rd Qu.:108.08  
+ Max.   :129.07   Max.   :115.92   Max.   :124.88   Max.   :126.02  
        V5               V6               V7               V8        
- Min.   : 72.31   Min.   : 73.02   Min.   : 74.61   Min.   : 75.87  
- 1st Qu.: 93.85   1st Qu.: 91.46   1st Qu.: 91.91   1st Qu.: 90.68  
- Median :100.57   Median : 98.31   Median :100.24   Median : 98.54  
- Mean   :100.19   Mean   : 99.59   Mean   : 99.12   Mean   : 99.06  
- 3rd Qu.:106.52   3rd Qu.:107.61   3rd Qu.:106.49   3rd Qu.:107.26  
- Max.   :122.88   Max.   :121.29   Max.   :124.85   Max.   :126.95  
+ Min.   : 72.77   Min.   : 85.38   Min.   : 79.65   Min.   : 74.29  
+ 1st Qu.: 92.29   1st Qu.: 96.01   1st Qu.: 92.93   1st Qu.: 93.26  
+ Median :100.63   Median :101.15   Median : 99.44   Median :101.14  
+ Mean   :100.00   Mean   :102.25   Mean   : 99.49   Mean   :100.32  
+ 3rd Qu.:107.53   3rd Qu.:108.08   3rd Qu.:106.22   3rd Qu.:108.87  
+ Max.   :125.05   Max.   :122.25   Max.   :115.23   Max.   :120.57  
        V9              V10              V11              V12        
- Min.   : 64.35   Min.   : 74.97   Min.   : 69.89   Min.   : 75.67  
- 1st Qu.: 92.95   1st Qu.: 94.20   1st Qu.: 91.90   1st Qu.: 93.52  
- Median :100.14   Median :101.10   Median : 98.67   Median :100.82  
- Mean   : 99.47   Mean   :100.58   Mean   : 98.27   Mean   :101.46  
- 3rd Qu.:105.19   3rd Qu.:108.42   3rd Qu.:104.92   3rd Qu.:109.22  
- Max.   :129.20   Max.   :119.90   Max.   :127.58   Max.   :129.53  
+ Min.   : 77.73   Min.   : 78.41   Min.   : 76.46   Min.   : 69.02  
+ 1st Qu.: 93.48   1st Qu.: 93.55   1st Qu.: 91.43   1st Qu.: 93.01  
+ Median :101.12   Median : 99.71   Median : 99.24   Median : 98.51  
+ Mean   :100.56   Mean   : 99.91   Mean   : 98.76   Mean   : 98.63  
+ 3rd Qu.:107.81   3rd Qu.:106.21   3rd Qu.:105.36   3rd Qu.:104.99  
+ Max.   :123.14   Max.   :122.49   Max.   :130.99   Max.   :123.14  
       V13              V14              V15              V16        
- Min.   : 68.80   Min.   : 77.46   Min.   : 78.79   Min.   : 73.88  
- 1st Qu.: 93.91   1st Qu.: 92.63   1st Qu.: 92.02   1st Qu.: 90.70  
- Median :100.30   Median : 99.91   Median : 99.55   Median :101.73  
- Mean   :101.15   Mean   : 99.27   Mean   :100.30   Mean   :100.28  
- 3rd Qu.:107.70   3rd Qu.:107.49   3rd Qu.:107.58   3rd Qu.:108.29  
- Max.   :129.29   Max.   :121.58   Max.   :121.44   Max.   :128.49  
+ Min.   : 69.68   Min.   : 74.04   Min.   : 74.55   Min.   : 69.32  
+ 1st Qu.: 93.23   1st Qu.: 91.64   1st Qu.: 92.90   1st Qu.: 92.54  
+ Median : 99.71   Median : 98.93   Median :100.04   Median :100.17  
+ Mean   : 98.74   Mean   : 99.32   Mean   : 99.54   Mean   : 99.28  
+ 3rd Qu.:104.09   3rd Qu.:107.21   3rd Qu.:105.33   3rd Qu.:105.48  
+ Max.   :126.21   Max.   :128.91   Max.   :126.30   Max.   :126.26  
       V17              V18              V19              V20        
- Min.   : 76.15   Min.   : 74.93   Min.   : 78.09   Min.   : 78.36  
- 1st Qu.: 91.62   1st Qu.: 93.38   1st Qu.: 95.07   1st Qu.: 93.26  
- Median : 99.59   Median : 98.44   Median : 99.31   Median : 99.66  
- Mean   :100.06   Mean   :100.21   Mean   :100.74   Mean   : 99.51  
- 3rd Qu.:109.17   3rd Qu.:106.73   3rd Qu.:107.09   3rd Qu.:104.76  
- Max.   :124.51   Max.   :122.24   Max.   :126.43   Max.   :124.37  </code></pre>
+ Min.   : 69.91   Min.   : 77.35   Min.   : 72.23   Min.   : 75.97  
+ 1st Qu.: 93.96   1st Qu.: 93.58   1st Qu.: 95.14   1st Qu.: 90.58  
+ Median : 99.99   Median :101.22   Median :100.18   Median : 97.12  
+ Mean   : 99.84   Mean   :100.75   Mean   :100.78   Mean   : 97.96  
+ 3rd Qu.:106.28   3rd Qu.:108.35   3rd Qu.:108.92   3rd Qu.:106.30  
+ Max.   :121.02   Max.   :121.76   Max.   :121.94   Max.   :127.84  </code></pre>
 </div>
 <h3 id="d">d)</h3>
 <div class="layout-chunk" data-layout="l-body">
