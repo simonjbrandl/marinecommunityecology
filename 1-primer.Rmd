@@ -39,7 +39,7 @@ The PDF containing the slides for today's lecture can be downloaded [here](lectu
 
 ```{r, echo = FALSE}
 library(vembedr)
-embed_url("https://youtu.be/RcpJ6stmTmA")
+embed_url("https://youtu.be/cCiytu7posE")
 ```
 <br>
 <br>
