@@ -1,1 +1,1 @@
-usethis::use_github_pages(branch = "main")
+usethis::use_github_pages(branch = "master")
