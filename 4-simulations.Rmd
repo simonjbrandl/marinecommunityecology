@@ -44,11 +44,6 @@ You can access the full slideshow used in the **4-Simulations** narration **[her
 
 # c. 3: Exercises
 
-## Homework
-
-_If you want to, complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Wednesday Feb 28th_
-
-
 - Start by loading the tidyverse package and copy-and-pasting the basic Moran Model into your R. The code for the model is below: 
 
 ```{r, echo = TRUE}
@@ -124,27 +119,30 @@ p1
 2) Run the same model but decrease the _number of individuals to 50_, set the _number of years back to 50_, and _increase the number of simulations to 50_. Be careful with changing the number of simulations: you will have to adjust your downstream data wrangling code in the _gather()_ function. 
 
 3) Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.
+<br>
+<br>
 
-
-## Classwork
-
-### Part I
+### Part II
 
 Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2) 
 
 1) Run a model with 300 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes (and make it pretty).
 
 2) Run the same model with 1000 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes next to your previous plot.
+<br>
+<br>
 
-### Part II
+### Part III
 
 Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)). 
 
 1) Run a model with 300 individuals, 30 simulations, 50 years, an average fitness ratio of 1.2, and a negative frequency dependence of -0.3. Plot your outcomes. 
 
 2) Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.5, and a negative frequency dependence of -0.5. Plot your outcomes. 
+<br>
+<br>
 
-### Part III
+### Part IV
 
 Introduce positive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.
 
@@ -154,13 +152,11 @@ Introduce positive frequency dependence and change your starting densities. To d
 
 # d. 4: Solutions
 
-## Homework solutions
-
 ### Part I:
 
 1) Run the same model but change the _number of individuals to 500_ and _increase the number of years to 75_
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 library(tidyverse)
 
 num.sims <- 30 # specify the number of simulations 
@@ -220,7 +216,7 @@ p1
 
 2) Run the same model but decrease the _number of individuals to 50_, set the _number of years back to 50_, and _increase the number of simulations to 50_. Be careful with changing the number of simulations: you will have to adjust your downstream data wrangling code in the _gather()_ function. 
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 library(tidyverse)
 
 num.sims <- 50 # specify the number of simulations 
@@ -280,7 +276,7 @@ p1
 
 3) Change the colors of your lines to be a beautiful green and blue instead and increase the opacity to 0.9.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 p1 <- ggplot(freq.sp1.df, 
              aes(x = year, 
                  y = frequency, 
@@ -296,16 +292,16 @@ p1 <- ggplot(freq.sp1.df,
   ylab("Frequency of species 1")
 p1
 ```
+<br>
+<br>
 
-## Classwork solutions
-
-### Part I
+### Part II
 
 Introduce a selective advantage for Species 1 using a fitness ratio of 1.2. The fitness ratio affects the probability of reproduction in the following terms: fit.ratio * freq.1 / (fit.ratio * freq.1 + freq.2) 
 
 1) Run a model with 300 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes (and make it pretty).
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # selection
 num.sims <- 30 
 num.years <- 50
@@ -359,7 +355,7 @@ p1
 
 2) Run the same model with 1000 individuals, 30 simulations, 50 years, and a fitness ratio of 1.2. Plot your outcomes next to your previous plot.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # selection
 num.sims <- 30 
 num.years <- 50
@@ -410,8 +406,10 @@ p1 <- ggplot(freq.sp1.df,
   ylab("Frequency of species 1")
 p1
 ```
+<br>
+<br>
 
-### Part II
+### Part III
 
 Introduce negative frequency dependence into your model. To do so, you first need to define your average fitness ratio (fit.ratio.avg) based on the prevailing selective advantage. Frequency dependence then affects the fit.ratio in the following terms: exp(freq.dep * (freq.1 - 0.5) + log(fit.ratio.avg)). 
 
@@ -529,13 +527,13 @@ p1 <- ggplot(freq.sp1.df,
 p1
 ```
 
-### Part III
+### Part IV
 
 Introduce positive frequency dependence and change your starting densities. To do so, follow the same steps as above but also adjust your initial populations.
 
 1) Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.1, and a positive frequency dependence of 0.1, with a starting frequency of Species 1 at 0.3.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # positive frequency dependence
 num.sims <- 30 
 num.years <- 50
@@ -592,7 +590,7 @@ p1
 
 2) Run a model with 1000 individuals, 30 simulations, 50 years, a fitness ratio of 1.0, a positive frequency dependence of 0.3, and a starting frequency of Species 1 at 0.75.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # positive frequency dependence
 num.sims <- 30 
 num.years <- 50

@@ -38,19 +38,21 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 
 # c. 1: Exercises
 
-## Homework
-
-_Please complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Monday Jan 29th_
-
 - a) create the following vectors:
   - 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 
   - a sequence from 2 to 36, repeated three times
   - the words "bluefish" "redfish" and "whitefish" in this sequence, six times
   - combine the last two vectors into a new vector
+<br>
+<br>
+
 - b) create a vector using <span style="color:orange"> *rpois(100, 10)* </span> 
   - determine the frequency of the number 8 in your vector
   - determine how many numbers in your vector are greater than 10
   - determine how many numbers in your vector are smaller than 10 but greater than 5
+<br>
+<br>
+
 - c) build a matrix that looks like this:
 
  **[,1]** | **[,2]** | **[,3]** | **[,4]** | **[,5]**
@@ -61,25 +63,38 @@ _Please complete the following exercises at home after going through the demo ab
 **[4,]** | 13 | 14 | 15 | 16
 **[5,]** | 17 | 18 | 19 | 20 
 
-### Bonus homework `r emo::ji('star_struck')`
-
-_Perform these exercises if you want to treat yourself to some extra work. Note that this is not a required part of the homework assignment_
+<br>
+<br>
 
   - create a sequence of multiples of nines between 0 and 100, repeated ten times
+<br>
+<br>
+
   - create a vector with random values using <span style="color:orange"> rnorm(1000, 0) </span>, with an explanation of what <span style="color:orange"> rnorm() </span> does
+<br>
+<br>
+
   - create a second vector using rnorm, but this time with 10,000 elements, a mean of 50, and a standard deviation of 10
+<br>
+<br>
+
   - tell me what the following functions tell you about your vectors: <span style="color:orange"> length(), str(), summary(), head(), tail() </span> 
+<br>
+<br>
+
   - retain only the elements from your previous vector that are greater than the mean but smaller than the 3rd Quantile
+<br>
+<br>
 
-## Classwork
-
-_We will do these exercises in class on Monday, January 29th_
 
 - a) create a vector using <span style="color:orange"> *rpois(500, 10)* </span> 
   - determine the proportional frequency of numbers that are >15
   - sort the vector in descending order
   - take the log of the vector and then determine the mean value
   - replace every 10th value in the vector with 0, take the log, and calculate the mean. Exclude values that cause the mean to be -Inf
+<br>
+<br>
+
 - b) build a matrix that looks like this: 
 
  **[]** | **redfish** | **bluefish** | **whitefish** | **yellowfish**
@@ -94,28 +109,29 @@ _We will do these exercises in class on Monday, January 29th_
   - turn your matrix into a data.frame and add a column entitled "Location" that contains the following sequence: Texas, Belize, Texas, Belize, Texas
   - determine the mean number of fish at site S3
   - determine the difference in the mean number of bluefish and yellowfish across all sites
-  
+<br>
+<br>
+
 - c) build the following matrix:
   - 100 rows, 20 columns, filled column-wise with randomly-drawn, normally distributed values with a mean of 100 and a standard deviation of 10
   - determine the value of the second-to-last row in column 5
-  - determine which column has the largest value in the matrix and which column has the greatest deviation from the mean (100) 
+  - determine which column has the largest value in the matrix and which column has the greatest deviation from the mean (100)
+<br>
+<br>
 
 - d) load in the 'coralreefherbivores.csv' dataset and
   - turn it into a tibble
   - determine the data classes of each column
   - compare the snoutlength of the species _Chlorurus microrhinos_ and _Zebrasoma velifer_
-  
 <br>
 <br>
 
 
 # d. 1: Solutions
 
-## Homework: 
-
 ### a) 
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 a1<-rep(seq(from=4,to=6,by=1),times=6) %>%
   print()
 
@@ -131,7 +147,7 @@ a4
 
 ### b) 
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 b1 <- rpois(100,10)
 b1
 
@@ -147,19 +163,13 @@ b4
 ```
 
 ### c)
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 c1 <- matrix(1:20, nrow = 5, byrow = TRUE)
 c1
 ```
 
-### Bonus work
-
-TBA
-
-## Classwork
-
 ### a)
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 a1 <- rpois(500, 10)
 head(a1)
 
@@ -185,7 +195,7 @@ a5step3 <- mean(log(a5step2)) # take the log of the mean
 ```
 
 ### b) 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 b1 <- matrix(c(seq(from = 0, to = 33, by = 3), seq(from = 24, to = 2, by = -2)), ncol = 4, byrow = TRUE)
 rownames(b1) <- c("S1", "S2", "S3", "S4", "S5", "S6")
 colnames(b1) <- c("redfish", "bluefish", "whitefish", "yellowfish")
@@ -202,7 +212,7 @@ print(b4difference <- b4blue - b4yellow) # difference
 ```
 
 ### c) 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 c1 <- matrix(rnorm(2000, 100, 10), ncol = 20, byrow = F)
 head(c1)
 
@@ -213,7 +223,7 @@ summary(c1) # look for maximum value and largest deviation from the specified me
 ```
 
 ### d) 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 herbivores <- read.csv(file = "data/coralreefherbivores.csv")
 herbivore.tbl <- dplyr::as_tibble(herbivores) # turn into tibble - might need a new package here ;-)
 herbivore.tbl # tibbles tell you the data classes but str() would also work well

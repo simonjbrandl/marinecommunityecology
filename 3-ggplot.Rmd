@@ -52,10 +52,6 @@ The dataset called 'site_info.csv' can be downloaded [here](data/site_info.csv).
 
 # c. 3: Exercises
 
-## Homework
-
-_Please complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Wednesday Feb 7th_
-
 Start by loading in the two datasets below (which are available for download using the links above).
 
 ```{r, echo = TRUE}
@@ -81,29 +77,26 @@ Re-familiarize with the "fish_abundance.csv" dataset. The dataset includes many 
 1) Produce another plot, only including the families Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae.
 2) Use with facet_wrap() or facet_grid() to create separate facets for each family.
 
-### Bonus work `r emo::ji('star_struck')`
+### Part IV
 
 1) Explore differences in the species richness of the four families (Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae) using violin or density plots
 2) Color the density plots based on family and include the raw data to create sina plots
 3) Try to sort the violin plot in descending order, starting with the highest species richness
 4) Make it pretty! `r emo::ji('blush')`
 
-## Classwork
 
-_We will do these exercises in class on Wednesday, February 7th_
+### Part V
 
 In the last plot from Exercise 1, it appears as though some sites have higher species richness than others. Let's further examine why species richness across sites using "site_info.csv," which includes metadata on the exposure of each site. 
-
-### Part I
 
 1) Create a dataset that summarizes species richness by surveyid and site.
 2) Join this species richness data with the site exposure metadata.
 
-### Part II
+### Part VI
 
 1) Use a violin plot to visualize the species richness of exposed vs. lagoon sites.
 
-### Part III
+### Part VII
 
 1) Calculate the average abundance of each family in a given survey.
 2) Plot the average abundance using density curves.
@@ -111,15 +104,13 @@ In the last plot from Exercise 1, it appears as though some sites have higher sp
 
 # d. 3: Solutions
 
-## Homework solutions
-
 ### Part I
 
 1) Simplify the dataset to include species, site, depth.
 2) Use distinct() to make sure no species were recorded twice.
 3) Calculate species richness by site and depth.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 
 fish.abundance <- read.csv(file = "data/fish_abundance.csv") # load data
 
@@ -137,7 +128,7 @@ head(fish.sprich)
 1) Plot depth versus species richness.
 2) Add site as a color variable.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 
 fish.sprich.plot <- ggplot(fish.sprich, aes(x = depth, y = sprich, color = site)) +
   geom_point() +
@@ -152,7 +143,7 @@ fish.sprich.plot
 1) Produce another plot, only including the families Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae.
 2) Use with facet_wrap() or facet_grid() to create separate facets for each family.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 
 fish.sprich.fam <- fish.abundance %>%
   filter(family %in% c("Acanthuridae", "Chaetodontidae", "Serranidae", "Pomacentridae")) %>%
@@ -170,14 +161,14 @@ fish.sprich.fam.plot <- ggplot(fish.sprich.fam, aes(x = depth, y = sprich, color
 fish.sprich.fam.plot
 ```
 
-## Bonuswork solutions
+### Part IV
 
 1) Explore differences in the species richness of the four families (Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae) using violin or density plots
 2) Color the density plots based on family and include the raw data to create sina plots
 3) Try to sort the violin plot in descending order, starting with the highest species richness
 4) Make it pretty! `r emo::ji('blush')`
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 fish.family.plot <- ggplot(fish.sprich.fam, aes(x = fct_reorder(family, -sprich, .fun = sum), 
                                                 y = sprich, fill = family)) +
   geom_violin(draw_quantiles = c(0.05, 0.5, 0.95), color = "grey23", alpha = 0.8, lwd = 0.5) +
@@ -191,15 +182,12 @@ fish.family.plot <- ggplot(fish.sprich.fam, aes(x = fct_reorder(family, -sprich,
 fish.family.plot
 ```
 
-
-## Classwork solutions
-
-## Part I
+## Part V
 
 1) Create a dataset that summarizes species richness by surveyid and site.
 2) Join this species richness data with the site exposure metadata.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 site.info <- read.csv(file = "data/site_info.csv")
 
 fish.sprich.site <- fish.abundance %>%
@@ -212,11 +200,11 @@ fish.sprich.site <- fish.abundance %>%
 head(fish.sprich.site) 
 ```
 
-## Part II
+## Part VI
 
 1) Use a violin plot to visualize the species richness of exposed vs. lagoon sites.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 fish.sprich.site.plot <- ggplot(fish.sprich.site, aes(x = exposure, y = sprich, fill = exposure)) +
   geom_violin(draw_quantiles = c(0.025, 0.5, 0.975)) +
   geom_jitter(width = 0.1) +
@@ -225,13 +213,13 @@ fish.sprich.site.plot <- ggplot(fish.sprich.site, aes(x = exposure, y = sprich, 
 fish.sprich.site.plot
 ```
 
-## Part III
+## Part VII
 
 1) Calculate the average abundance of each family in a given survey.
 2) Plot the average abundance using density curves.
 3) Bonus: transform the x-axis to make the plot more useful.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # 1) Calculate the average abundance of each family in a given survey.
 fish.abun.survey <- fish.abundance %>%
   group_by(surveyid, family) %>%

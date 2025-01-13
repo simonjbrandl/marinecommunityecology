@@ -47,10 +47,6 @@ The dataset called 'fish_abundance.csv' can be downloaded [here](data/fish_abund
 
 # c. 2: Exercises
 
-## Homework
-
-_Please complete the following exercises at home after going through the demo above. We will go through the solutions to these exercises in class on Wednesday Jan 31st_
-
 Read in the coralreefherbivores.csv dataset (if you haven't already done so). 
 
 <img src="images/microrhinos.jpg" alt="a herbivorous parrotfish" width="600"/>
@@ -63,23 +59,18 @@ The “coralreefherbivores.csv” dataset contains trait information on 93 speci
   - Examine the mean eye diameter of the genera Zebrasoma and Scarus.
   - Count the number of species in each size class.
   - Calculate the ratio of snout length to standard length for each species, then determine which genus has the longest mean ratio of snout length to standard length.
-  
-### Bonus homework `r emo::ji('star_struck')`
+<br>
+<br>
 
-_Perform these exercises if you want to treat yourself to some extra work. Note that this is not a required part of the homework assignment_
-
-- learn about and apply the following functions at your leisure:
+- learn about and apply the following functions:
   - <span style="color:orange"> *unite()* </span>
   - <span style="color:orange"> *separate()* </span>
   - <span style="color:orange"> *distinct()* </span>
   - <span style="color:orange"> *drop_na()* </span>
-    
-## Classwork
-
-_We will do these exercises in class on Wednesday, January 31st_
+<br>
+<br>
 
 <img src="images/IMG_4622.jpg" alt="a herbivorous parrotfish" width="600"/>
-
 
 The “fish_abundance.csv” dataset contains reef fish abundance information, which was collected by the Reef Life Survey around Lizard Island, Australia. It includes information on the respective survey ID and its metadata (e.g. site, latitude, longitude, date, and depth). It also includes a row for each observed species on a given visual survey, including taxonomic information (family, genus, species, and “genspe”), as well as the number of individuals observed on that survey (‘total’).
 
@@ -89,21 +80,26 @@ The “fish_abundance.csv” dataset contains reef fish abundance information, w
   - Filter the dataset to only retain the families Acanthuridae, Siganidae, Kyphosidae and Labridae.
   - Examine how many different species are in each genus.
   - Calculate the mean abundance of each genus across different sites using group_by() and summarize(), while also retaining a variable that indicates the number of species per genus.
+<br>
+<br>
 
 - b) Using the herbivore trait dataset, perform the following actions:
   - Determine whether the median eye diameter differs between species in different social groups.
   - Remove the standard length, size, and schooling categories dataset.
   - Calculate the mean body depth, snout length, and eye diameter of each genus.
   - Turn each trait into a separate column.
+<br>
+<br>
   
 - c) Combine the two datasets:
   - Join the coralreefherbivores and fish_abundance datasets in their modified versions, retaining only genera that are present in the coralreefherbivores dataset and using “genus” as the joining variable.
   - Create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
   - Examine whether high and low abundance genera differ in their mean morphological traits
+<br>
+<br>
 
 # d. 2: Solutions
 
-## Homework
 
 ### a) 
 
@@ -114,7 +110,7 @@ The “fish_abundance.csv” dataset contains reef fish abundance information, w
   - Count the number of species in each size class.
   - Calculate the ratio of snout length to standard length for each species, then determine which genus has the longest mean ratio of snout length to standard length.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 herbivores <- read.csv(file = "data/coralreefherbivores.csv")
 herbivores.filter <- herbivores %>% # mean sl and sd sl
   filter(family == c("Acanthuridae", "Labridae", "Siganidae")) %>%
@@ -151,8 +147,6 @@ ratio <- herbivores %>%
 head(ratio)
 ```
 
-## Classwork
-
 ### a) 
 
 - Using the fish abundance dataset, perform the following actions:
@@ -162,7 +156,7 @@ head(ratio)
   - Examine how many different species are in each genus.
   - Calculate the mean abundance of each genus using group_by() and summarize(), while also retaining a variable that indicates the number of species per genus.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 fish.abu <- read.csv(file = "data/fish_abundance.csv")
 
 # how many surveys
@@ -201,7 +195,7 @@ head(fish.genus.abundance)
   - Calculate the mean body depth, snout length, and eye diameter of each genus.
   - Turn each trait back into a separate column.
 
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 # eye diameter
 herbivore.eyes <- herbivores %>%
   group_by(schooling) %>% # group by scholing variable
@@ -231,7 +225,7 @@ herbivore.spread
   - Create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
   - Examine whether high and low abundance genera differ in their mean morphological traits
   
-```{r, echo = TRUE}
+```{r, echo = FALSE}
 herbivores.joined <- herbivore.spread %>%
   left_join(fish.genus.abundance, by = "genus") %>% # use left_join to retain the ones in the traits dataset
   drop_na(mean.abu) # remove NA values 
