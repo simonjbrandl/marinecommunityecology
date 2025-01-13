@@ -2636,16 +2636,7 @@ Coding in R
 <li>Calculate species richness by site and depth.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 × 3
-# Groups:   site [2]
-  site        depth sprich
-  &lt;chr&gt;       &lt;dbl&gt;  &lt;int&gt;
-1 Bird Islets   2.5    107
-2 Bird Islets   3      117
-3 Bird Islets   3.1     64
-4 Bird Islets  10       40
-5 Blue Hole     2       68
-6 Blue Hole     3.5     71</code></pre>
+
 </div>
 <h3 id="part-ii-1">Part II</h3>
 <ol type="1">
@@ -2653,7 +2644,7 @@ Coding in R
 <li>Add site as a color variable.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="3-ggplot_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+
 </div>
 <h3 id="part-iii-1">Part III</h3>
 <ol type="1">
@@ -2661,17 +2652,7 @@ Coding in R
 <li>Use with facet_wrap() or facet_grid() to create separate facets for each family.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 × 4
-# Groups:   site, depth [2]
-  site        depth family         sprich
-  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;int&gt;
-1 Bird Islets   2.5 Acanthuridae        9
-2 Bird Islets   2.5 Chaetodontidae      6
-3 Bird Islets   2.5 Pomacentridae      29
-4 Bird Islets   2.5 Serranidae          2
-5 Bird Islets   3   Acanthuridae        5
-6 Bird Islets   3   Chaetodontidae      9</code></pre>
-<p><img src="3-ggplot_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+
 </div>
 <h3 id="part-iv-1">Part IV</h3>
 <ol type="1">
@@ -2681,7 +2662,7 @@ Coding in R
 <li>Make it pretty! 😊</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="3-ggplot_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+
 </div>
 <h2 id="part-v-1">Part V</h2>
 <ol type="1">
@@ -2689,23 +2670,14 @@ Coding in R
 <li>Join this species richness data with the site exposure metadata.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 × 4
-# Groups:   surveyid [6]
-  surveyid site                sprich exposure
-     &lt;int&gt; &lt;chr&gt;                &lt;int&gt; &lt;chr&gt;   
-1  4000720 Watsons Bay north       87 lagoon  
-2  4000721 Watsons Bay north       84 lagoon  
-3  4000722 Watsons-Turtle Reef     71 lagoon  
-4  4000723 Watsons-Turtle Reef     82 lagoon  
-5  4000724 Horseshoe Reef          60 lagoon  
-6  4000725 Horseshoe Reef          68 lagoon  </code></pre>
+
 </div>
 <h2 id="part-vi-1">Part VI</h2>
 <ol type="1">
 <li>Use a violin plot to visualize the species richness of exposed vs. lagoon sites.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="3-ggplot_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+
 </div>
 <h2 id="part-vii-1">Part VII</h2>
 <ol type="1">
@@ -2714,19 +2686,9 @@ Coding in R
 <li>Bonus: transform the x-axis to make the plot more useful.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 6 × 3
-# Groups:   surveyid [1]
-  surveyid family         total.fish
-     &lt;int&gt; &lt;chr&gt;               &lt;int&gt;
-1  4000720 Acanthuridae           37
-2  4000720 Blenniidae              9
-3  4000720 Carangidae              2
-4  4000720 Chaetodontidae         33
-5  4000720 Gobiidae                5
-6  4000720 Haemulidae              3</code></pre>
-<p><img src="3-ggplot_files/figure-html5/unnamed-chunk-10-1.png" width="624" /><img src="3-ggplot_files/figure-html5/unnamed-chunk-10-2.png" width="624" /></p>
+
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

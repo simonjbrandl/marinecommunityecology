@@ -25,7 +25,7 @@ All of the sessions are structured in the same way, presenting the following mat
 
 - _a. A narrated slideshow that demos the content we're working on_
 - _b. The slideshow itself, which allows you to click links, copy code, etc._
-- _c. A set of training exercises, marked as either 'Homework' or 'Classwork'_
+- _c. A set of training exercises_
 - _d. Solutions to the training exercises, which will come online after class_
 <br>
 <br>

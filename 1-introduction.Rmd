@@ -38,6 +38,8 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 
 # c. 1: Exercises
 
+### Part I 
+
 - a) create the following vectors:
   - 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 4 5 6 
   - a sequence from 2 to 36, repeated three times
@@ -86,6 +88,7 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 <br>
 <br>
 
+### Part II
 
 - a) create a vector using <span style="color:orange"> *rpois(500, 10)* </span> 
   - determine the proportional frequency of numbers that are >15
@@ -129,9 +132,11 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 
 # d. 1: Solutions
 
-### a) 
+### Part I
 
-```{r, echo = FALSE}
+a) 
+
+```{r, echo = FALSE, results = FALSE}
 a1<-rep(seq(from=4,to=6,by=1),times=6) %>%
   print()
 
@@ -145,9 +150,9 @@ a4 <- paste(a2, a3)
 a4
 ```
 
-### b) 
+b) 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, results = FALSE}
 b1 <- rpois(100,10)
 b1
 
@@ -162,14 +167,18 @@ b4 <- b1[b1 <10 & b1 >5]
 b4
 ```
 
-### c)
-```{r, echo = FALSE}
+c)
+```{r, echo = FALSE, results = FALSE}
 c1 <- matrix(1:20, nrow = 5, byrow = TRUE)
 c1
 ```
+<br>
+<br>
 
-### a)
-```{r, echo = FALSE}
+### Part II
+
+a)
+```{r, echo = FALSE, results = FALSE}
 a1 <- rpois(500, 10)
 head(a1)
 
@@ -194,8 +203,8 @@ a5step2 <- a5step1[a5step1 > 0] # remove the 0s
 a5step3 <- mean(log(a5step2)) # take the log of the mean
 ```
 
-### b) 
-```{r, echo = FALSE}
+b) 
+```{r, echo = FALSE, results = FALSE}
 b1 <- matrix(c(seq(from = 0, to = 33, by = 3), seq(from = 24, to = 2, by = -2)), ncol = 4, byrow = TRUE)
 rownames(b1) <- c("S1", "S2", "S3", "S4", "S5", "S6")
 colnames(b1) <- c("redfish", "bluefish", "whitefish", "yellowfish")
@@ -211,8 +220,8 @@ print(b4yellow <- mean(b2$yellowfish)) # mean of yellowfish
 print(b4difference <- b4blue - b4yellow) # difference
 ```
 
-### c) 
-```{r, echo = FALSE}
+c) 
+```{r, echo = FALSE, results = FALSE}
 c1 <- matrix(rnorm(2000, 100, 10), ncol = 20, byrow = F)
 head(c1)
 
@@ -222,8 +231,8 @@ c2
 summary(c1) # look for maximum value and largest deviation from the specified mean (100)
 ```
 
-### d) 
-```{r, echo = FALSE}
+d) 
+```{r, echo = FALSE, results = FALSE}
 herbivores <- read.csv(file = "data/coralreefherbivores.csv")
 herbivore.tbl <- dplyr::as_tibble(herbivores) # turn into tibble - might need a new package here ;-)
 herbivore.tbl # tibbles tell you the data classes but str() would also work well
