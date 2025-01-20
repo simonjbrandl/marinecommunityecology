@@ -134,9 +134,9 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 
 ### Part I
 
-a) 
+-a) 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 a1<-rep(seq(from=4,to=6,by=1),times=6) %>%
   print()
 
@@ -150,9 +150,9 @@ a4 <- paste(a2, a3)
 a4
 ```
 
-b) 
+-b) 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 b1 <- rpois(100,10)
 b1
 
@@ -167,8 +167,8 @@ b4 <- b1[b1 <10 & b1 >5]
 b4
 ```
 
-c)
-```{r, echo = FALSE, results = FALSE}
+-c)
+```{r, echo = TRUE, results = TRUE}
 c1 <- matrix(1:20, nrow = 5, byrow = TRUE)
 c1
 ```
@@ -177,8 +177,9 @@ c1
 
 ### Part II
 
-a)
-```{r, echo = FALSE, results = FALSE}
+-a)
+
+```{r, echo = TRUE, results = TRUE}
 a1 <- rpois(500, 10)
 head(a1)
 
@@ -203,8 +204,9 @@ a5step2 <- a5step1[a5step1 > 0] # remove the 0s
 a5step3 <- mean(log(a5step2)) # take the log of the mean
 ```
 
-b) 
-```{r, echo = FALSE, results = FALSE}
+-b) 
+
+```{r, echo = TRUE, results = TRUE}
 b1 <- matrix(c(seq(from = 0, to = 33, by = 3), seq(from = 24, to = 2, by = -2)), ncol = 4, byrow = TRUE)
 rownames(b1) <- c("S1", "S2", "S3", "S4", "S5", "S6")
 colnames(b1) <- c("redfish", "bluefish", "whitefish", "yellowfish")
@@ -220,8 +222,9 @@ print(b4yellow <- mean(b2$yellowfish)) # mean of yellowfish
 print(b4difference <- b4blue - b4yellow) # difference
 ```
 
-c) 
-```{r, echo = FALSE, results = FALSE}
+-c) 
+
+```{r, echo = TRUE, results = TRUE}
 c1 <- matrix(rnorm(2000, 100, 10), ncol = 20, byrow = F)
 head(c1)
 
@@ -231,8 +234,9 @@ c2
 summary(c1) # look for maximum value and largest deviation from the specified mean (100)
 ```
 
-d) 
-```{r, echo = FALSE, results = FALSE}
+-d) 
+
+```{r, echo = TRUE, results = TRUE}
 herbivores <- read.csv(file = "data/coralreefherbivores.csv")
 herbivore.tbl <- dplyr::as_tibble(herbivores) # turn into tibble - might need a new package here ;-)
 herbivore.tbl # tibbles tell you the data classes but str() would also work well
