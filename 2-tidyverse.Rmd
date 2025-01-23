@@ -90,7 +90,7 @@ The “fish_abundance.csv” dataset contains reef fish abundance information, w
 <br>
 
 - b) Using the herbivore trait dataset, perform the following actions:
-  - Determine whether the median eye diameter differs between species in different social groups.
+  - Determine whether the median eye diameter differs in different social groups.
   - Remove the standard length, size, and schooling categories dataset.
   - Calculate the mean body depth, snout length, and eye diameter of each genus.
   - Turn each trait into a separate column.
@@ -116,7 +116,7 @@ a)
   - Count the number of species in each size class.
   - Calculate the ratio of snout length to standard length for each species, then determine which genus has the longest mean ratio of snout length to standard length.
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 herbivores <- read.csv(file = "data/coralreefherbivores.csv")
 herbivores.filter <- herbivores %>% # mean sl and sd sl
   filter(family == c("Acanthuridae", "Labridae", "Siganidae")) %>%
@@ -128,14 +128,20 @@ herbivores.size_schooling <- herbivores %>%
   mutate(size_school = paste(size, schooling, sep = "."))
 head(herbivores.size_schooling)
 
-herbivores.size_schooling2 <- unite(herbivores, col = "size_and_schooling", c("size", "schooling"), sep = ".") #alternative solution
+herbivores.size_schooling2 <- unite(herbivores, col = "size_and_schooling", c("size", "schooling"), sep = ".") 
+head(herbivores.size_schooling2)
+#alternative solution
 
 
 zebrasoma.scarus <- herbivores %>%
   filter(genus == c("Zebrasoma", "Scarus")) %>%
   group_by(genus) %>%
   summarize(mean.eye = mean(eyediameter))
-head(herbivores.size_schooling2)
+
+zebrasoma.scarus <- herbivores %>%
+  filter(genus %in% c("Zebrasoma", "Scarus")) %>%
+  group_by(genus) %>%
+  summarize(mean.eye = mean(eyediameter))
 
 number.species <- herbivores %>% # solution 1
   select(size) %>%
@@ -143,13 +149,18 @@ number.species <- herbivores %>% # solution 1
   count(size)
 number.species
 
-crh.d <- herbivores %>% group_by(size) %>% summarize(n_species = n_distinct(gen.spe))
+crh.d <- herbivores %>% 
+  group_by(size) %>% 
+  summarize(n_species = n_distinct(gen.spe))
 crh.d
 
 ratio <- herbivores %>%
   group_by(species) %>%
   mutate(ratio.snout.sl = (snoutlength/sl)) %>%
-  arrange(desc(ratio.snout.sl))
+  ungroup() %>%
+  group_by(genus) %>%
+  summarize(mean.ratio = mean(ratio.snout.sl)) %>%
+  arrange(desc(mean.ratio))
 head(ratio)
 ```
 
@@ -163,13 +174,14 @@ a)
   - Examine how many different species are in each genus.
   - Calculate the mean abundance of each genus using group_by() and summarize(), while also retaining a variable that indicates the number of species per genus.
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 fish.abu <- read.csv(file = "data/fish_abundance.csv")
+
 
 # how many surveys
 surveys <- fish.abu %>%
   select(surveyid) %>% 
-  distinct() # distinct gives yu the number of unique occurrences
+  distinct() # distinct gives you the number of unique occurrences
 nrow(surveys)
 
 # replace Scaridae with Labridae
@@ -198,15 +210,16 @@ head(fish.genus.abundance)
 b) 
 - Using the herbivore trait dataset, perform the following actions:
   - Determine whether the median eye diameter differs among different social groups.
-  - Remove the standard length, size, and schooling categories dataset.
+  - Remove the standard length, size, and schooling categories from the dataset.
   - Calculate the mean body depth, snout length, and eye diameter of each genus.
   - Turn each trait back into a separate column.
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 # eye diameter
 herbivore.eyes <- herbivores %>%
-  group_by(schooling) %>% # group by scholing variable
-  summarize(mean.eye = mean(eyediameter)) #summarize()
+  ungroup() %>%
+  group_by(schooling) %>% # group by schooling variable
+  summarize(median.eye = median(eyediameter)) #summarize()
 herbivore.eyes
 
 herbivore.pruned <- herbivores %>%
@@ -232,7 +245,7 @@ c)
   - Create a new variable that separates genera into high (>=2.0) and low (<2.0) abundance genera
   - Examine whether high and low abundance genera differ in their mean morphological traits
   
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 herbivores.joined <- herbivore.spread %>%
   left_join(fish.genus.abundance, by = "genus") %>% # use left_join to retain the ones in the traits dataset
   drop_na(mean.abu) # remove NA values 
