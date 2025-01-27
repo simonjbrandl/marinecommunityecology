@@ -35,7 +35,7 @@ The PDF containing the slides for today's lecture can be downloaded [here](lectu
 
 ## Lecture recording
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = FALSE}
 library(vembedr)
 embed_url("https://youtu.be/wnf-2E0ugDA")
 ```
