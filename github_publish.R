@@ -1,2 +1,2 @@
-usethis::use_github_pages(branch = "master", path = "/docs")
+usethis::use_github_pages(branch = "main", path = "/docs")
 
