@@ -110,7 +110,7 @@ In the last plot from Exercise 1, it appears as though some sites have higher sp
 2) Use distinct() to make sure no species were recorded twice.
 3) Calculate species richness by site and depth.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 
 fish.abundance <- read.csv(file = "data/fish_abundance.csv") # load data
 
@@ -120,6 +120,12 @@ fish.sprich <- fish.abundance %>%
   group_by(site, depth) %>%
   summarize(sprich = n())
 
+fish.sprich2 <- fish.abundance %>%
+  select(site, depth, genspe) %>%
+  group_by(site, depth) %>%
+  summarize(sprich = n_distinct(genspe))
+
+
 head(fish.sprich)
 ```
 
@@ -128,9 +134,9 @@ head(fish.sprich)
 1) Plot depth versus species richness.
 2) Add site as a color variable.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 
-fish.sprich.plot <- ggplot(fish.sprich, aes(x = depth, y = sprich, color = site)) +
+fish.sprich.plot <- ggplot(data = fish.sprich, aes(x = depth, y = sprich, color = site)) +
   geom_point() +
   scale_color_fish_d(option = "Synchiropus_splendidus") +
   theme_bw()
@@ -143,7 +149,7 @@ fish.sprich.plot
 1) Produce another plot, only including the families Serranidae, Acanthuridae, Pomacentridae, and Chaetodontidae.
 2) Use with facet_wrap() or facet_grid() to create separate facets for each family.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 
 fish.sprich.fam <- fish.abundance %>%
   filter(family %in% c("Acanthuridae", "Chaetodontidae", "Serranidae", "Pomacentridae")) %>%
@@ -155,7 +161,7 @@ head(fish.sprich.fam)
 
 fish.sprich.fam.plot <- ggplot(fish.sprich.fam, aes(x = depth, y = sprich, color = site)) +
   geom_point() + 
-  facet_wrap(.~family, scales = "free") +
+  facet_wrap(.~family, scales = "free_y") +
     scale_color_fish_d(option = "Synchiropus_splendidus") +
   theme_bw()
 fish.sprich.fam.plot
@@ -168,8 +174,8 @@ fish.sprich.fam.plot
 3) Try to sort the violin plot in descending order, starting with the highest species richness
 4) Make it pretty! `r emo::ji('blush')`
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
-fish.family.plot <- ggplot(fish.sprich.fam, aes(x = fct_reorder(family, -sprich, .fun = sum), 
+```{r, echo = TRUE, results = TRUE}
+fish.family.plot <- ggplot(fish.sprich.fam, aes(x = fct_reorder(family, -sprich, .fun = mean), 
                                                 y = sprich, fill = family)) +
   geom_violin(draw_quantiles = c(0.05, 0.5, 0.95), color = "grey23", alpha = 0.8, lwd = 0.5) +
   geom_jitter(aes(shape = family), alpha = 0.5, color = "black", size = 3, width = 0.2) +
@@ -187,7 +193,7 @@ fish.family.plot
 1) Create a dataset that summarizes species richness by surveyid and site.
 2) Join this species richness data with the site exposure metadata.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 site.info <- read.csv(file = "data/site_info.csv")
 
 fish.sprich.site <- fish.abundance %>%
@@ -204,7 +210,7 @@ head(fish.sprich.site)
 
 1) Use a violin plot to visualize the species richness of exposed vs. lagoon sites.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 fish.sprich.site.plot <- ggplot(fish.sprich.site, aes(x = exposure, y = sprich, fill = exposure)) +
   geom_violin(draw_quantiles = c(0.025, 0.5, 0.975)) +
   geom_jitter(width = 0.1) +
@@ -215,11 +221,11 @@ fish.sprich.site.plot
 
 ## Part VII
 
-1) Calculate the average abundance of each family in a given survey.
+1) Calculate the average abundance of each family in a given survey (surveyid).
 2) Plot the average abundance using density curves.
 3) Bonus: transform the x-axis to make the plot more useful.
 
-```{r, echo = FALSE, results = FALSE, fig.show='hide'}
+```{r, echo = TRUE, results = TRUE}
 # 1) Calculate the average abundance of each family in a given survey.
 fish.abun.survey <- fish.abundance %>%
   group_by(surveyid, family) %>%
@@ -239,7 +245,7 @@ fish.abun.plot2 <- ggplot(fish.abun.survey,
                         aes(x = log10(total.fish), #use log10 transformation
                             y = fct_reorder(family, total.fish, .fun = sum))) + # use fct_reorder() to reorder the y-variable as descending based on the total sum of fish in each family
                           geom_density_ridges(alpha = 0.5, rel_min_height = 0.005, fill = "forestgreen") +
-  xlab("Species richness (log)") +
+  xlab("Abundance (log)") +
   ylab("Fish family") +
   theme_bw()
 fish.abun.plot2
