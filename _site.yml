@@ -21,6 +21,8 @@ navbar:
           href: 1-primer.html
         - text: "2-A brief overview and history"
           href: 2-history.html
+        - text: "3-A general theory of ecological communities I"
+          href: 3-theoryI.html
     - text: "Coding in R"
       href: coding.html
       menu:

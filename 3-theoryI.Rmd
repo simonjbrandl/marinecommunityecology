@@ -1,0 +1,44 @@
+---
+title: "Week 3: A general theory of ecological communities I"
+description: |
+  This lecture introduces a new general theory of ecological communinities.
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Lecture summary
+
+This lecture introduces a new theory of ecological communities, consisting of four overarching processes (drift, dispersal, selection, and speciation) that emulate the four main processes in population genetics. I provide a detailed description of these processes, along with five second-order processes that underpin selection.
+<br>
+<br>
+
+## Lecture slides
+
+The PDF containing the slides for today's lecture can be downloaded [here](lectures/3_A general theory of ecological communities I_2025.pdf).
+<br>
+<br>
+
+## Lecture recording
+
+```{r, echo = FALSE}
+library(vembedr)
+embed_url("https://www.youtube.com/watch?v=RiDZuwy0eJo&t=17s")
+```
+<br>
+<br>
+
