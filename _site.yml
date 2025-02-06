@@ -38,6 +38,11 @@ navbar:
           href: 4-simulations.html
         - text: "5-PCA"
           href: 5-pca.html
+    - text: "Labs"
+      href: labs.html
+      menu:
+        - text: "1-Coastal Birds"
+          href: 1-coastalbirds.html
     - text: "Instructors"
       href: instructors.html
 output: distill::distill_article

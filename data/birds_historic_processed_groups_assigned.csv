@@ -1,0 +1,357 @@
+species,group,group2
+Eurasian Collared-Dove,other,NA
+White-winged Dove,other,NA
+Mourning Dove,other,NA
+Ruby-throated Hummingbird,other,NA
+Inca Dove,other,NA
+Common Nighthawk,other,NA
+Yellow-billed Cuckoo,other,NA
+Ruby-crowned Kinglet,other,NA
+Lesser Nighthawk,other,NA
+Ladder-backed Woodpecker,other,NA
+Common Ground Dove,other,NA
+Chuck-will's-widow,other,NA
+Northern Bobwhite,other,NA
+Black-chinned Hummingbird,other,NA
+Green Kingfisher,other,NA
+Yellow-bellied Sapsucker,other,NA
+Golden-fronted Woodpecker,other,NA
+Northern Flicker,other,NA
+Wild Turkey,other,NA
+Black-billed Cuckoo,other,NA
+Buff-bellied Hummingbird,other,NA
+Eastern Whip-poor-will,other,NA
+Common Pauraque,other,NA
+Anna's Hummingbird,other,NA
+Downy Woodpecker,other,NA
+Rufous Hummingbird,other,NA
+Broad-tailed Hummingbird,other,NA
+Boat-tailed Grackle,other,NA
+Green Jay,other,NA
+White-tipped Dove,other,NA
+Common Grackle,other,NA
+Turkey Vulture,raptors,NA
+Osprey,raptors,NA
+Mississippi Kite,raptors,NA
+Northern Harrier,raptors,NA
+White-tailed Hawk,raptors,NA
+Red-tailed Hawk,raptors,NA
+Belted Kingfisher,raptors,NA
+Crested Caracara,raptors,NA
+American Kestrel,raptors,NA
+Peregrine Falcon,raptors,NA
+Aplomado Falcon,raptors,NA
+Merlin,raptors,NA
+White-tailed Kite,raptors,NA
+Cooper's Hawk,raptors,NA
+Black Vulture,raptors,NA
+Barn Owl,raptors,NA
+Burrowing Owl,raptors,NA
+Harris's Hawk,raptors,NA
+Sharp-shinned Hawk,raptors,NA
+Red-shouldered Hawk,raptors,NA
+Swainson's Hawk,raptors,NA
+Swallow-tailed Kite,raptors,NA
+Ferruginous Hawk,raptors,NA
+Great Horned Owl,raptors,NA
+Bald Eagle,raptors,NA
+Broad-winged Hawk,raptors,NA
+Barred Owl,raptors,NA
+Magnificent Frigatebird,seabirds,suliformes
+Northern Gannet,seabirds,suliformes
+Masked Booby,seabirds,suliformes
+Double-crested Cormorant,seabirds,suliformes
+Neotropic Cormorant,seabirds,suliformes
+American White Pelican,seabirds,pelicans
+Brown Pelican,seabirds,pelicans
+Brown Booby,seabirds,suliformes
+Pomarine Jaeger,seabirds,gulls
+Surf Scoter,seabirds,ducks
+Harlequin Duck,seabirds,ducks
+Black Scoter,seabirds,ducks
+Parasitic Jaeger,seabirds,gulls
+Trindade Petrel,seabirds,procellariidae
+Brown Noddy,seabirds,terns
+White-winged Scoter,seabirds,ducks
+Red-footed Booby,seabirds,suliformes
+Black-necked Stilt,shorebirds,charadrii
+American Avocet,shorebirds,charadrii
+American Oystercatcher,shorebirds,charadrii
+Black-bellied Plover,shorebirds,charadrii
+American Golden-Plover,shorebirds,charadrii
+Killdeer,shorebirds,charadrii
+Semipalmated Plover,shorebirds,charadrii
+Wilson's Plover,shorebirds,charadrii
+Whimbrel,shorebirds,scolopacidae
+Long-billed Curlew,shorebirds,scolopacidae
+Marbled Godwit,shorebirds,scolopacidae
+Short-billed Dowitcher,shorebirds,scolopacidae
+Red-necked Phalarope,shorebirds,scolopacidae
+Spotted Sandpiper,shorebirds,scolopacidae
+Solitary Sandpiper,shorebirds,scolopacidae
+Lesser Yellowlegs,shorebirds,scolopacidae
+Willet,shorebirds,scolopacidae
+Ruddy Turnstone,shorebirds,charadrii
+Red Knot,shorebirds,scolopacidae
+Sanderling,shorebirds,scolopacidae
+Dunlin,shorebirds,scolopacidae
+Least Sandpiper,shorebirds,scolopacidae
+Pectoral Sandpiper,shorebirds,scolopacidae
+Western Sandpiper,shorebirds,scolopacidae
+Semipalmated Sandpiper,shorebirds,scolopacidae
+Little Gull,shorebirds,gulls
+Bonaparte's Gull,shorebirds,gulls
+Laughing Gull,shorebirds,gulls
+Franklin's Gull,shorebirds,gulls
+Ring-billed Gull,shorebirds,gulls
+Herring Gull,shorebirds,gulls
+Lesser Black-backed Gull,shorebirds,gulls
+Black Skimmer,shorebirds,terns
+Least Tern,shorebirds,terns
+Gull-billed Tern,shorebirds,terns
+Caspian Tern,shorebirds,terns
+Black Tern,shorebirds,terns
+Forster's Tern,shorebirds,terns
+Common Tern,shorebirds,terns
+Sandwich Tern,shorebirds,terns
+Royal Tern,shorebirds,terns
+Piping Plover,shorebirds,charadrii
+Long-billed Dowitcher,shorebirds,scolopacidae
+Greater Yellowlegs,shorebirds,scolopacidae
+Baird's Sandpiper,shorebirds,scolopacidae
+Bridled Tern,shorebirds,terns
+Snowy Plover,shorebirds,charadrii
+Black-legged Kittiwake,shorebirds,gulls
+Sooty Tern,shorebirds,terns
+Wilson's Phalarope,shorebirds,scolopacidae
+California Gull,shorebirds,gulls
+Stilt Sandpiper,shorebirds,scolopacidae
+White-rumped Sandpiper,shorebirds,scolopacidae
+Western Gull,shorebirds,gulls
+Wilson's Snipe,shorebirds,scolopacidae
+Sabine's Gull,shorebirds,gulls
+Elegant Tern,shorebirds,terns
+Limpkin,waterbirds,rallidae
+Hudsonian Godwit,shorebirds,scolopacidae
+Buff-breasted Sandpiper,shorebirds,scolopacidae
+Short-billed Gull,shorebirds,gulls
+American Flamingo,shorebirds,flamingos
+Ruff,shorebirds,scolopacidae
+Eastern Phoebe,songbirds,NA
+Loggerhead Shrike,songbirds,NA
+Horned Lark,songbirds,NA
+Tree Swallow,songbirds,NA
+Northern Rough-winged Swallow,songbirds,NA
+Barn Swallow,songbirds,NA
+Cliff Swallow,songbirds,NA
+European Starling,songbirds,NA
+Northern Mockingbird,songbirds,NA
+House Sparrow,songbirds,NA
+American Pipit,songbirds,NA
+Savannah Sparrow,songbirds,NA
+Eastern Meadowlark,songbirds,NA
+Red-winged Blackbird,songbirds,NA
+Bronzed Cowbird,songbirds,NA
+Great-tailed Grackle,songbirds,NA
+Yellow Warbler,songbirds,NA
+Indigo Bunting,songbirds,NA
+Eastern Kingbird,songbirds,NA
+Scissor-tailed Flycatcher,songbirds,NA
+Bank Swallow,songbirds,NA
+Purple Martin,songbirds,NA
+Cave Swallow,songbirds,NA
+Brown-headed Cowbird,songbirds,NA
+Great Kiskadee,songbirds,NA
+Northern Waterthrush,songbirds,NA
+Palm Warbler,songbirds,NA
+Chimney Swift,songbirds,NA
+Eastern Wood-Pewee,songbirds,NA
+Lincoln's Sparrow,songbirds,NA
+Western Meadowlark,songbirds,NA
+Blue Grosbeak,songbirds,NA
+Olive-sided Flycatcher,songbirds,NA
+Yellow-bellied Flycatcher,songbirds,NA
+Song Sparrow,songbirds,NA
+Yellow-headed Blackbird,songbirds,NA
+Pyrrhuloxia,songbirds,NA
+Grasshopper Sparrow,songbirds,NA
+Orange-crowned Warbler,songbirds,NA
+Northern Parula,songbirds,NA
+Northern Cardinal,songbirds,NA
+Marsh Wren,songbirds,NA
+House Wren,songbirds,NA
+Sedge Wren,songbirds,NA
+Gray Catbird,songbirds,NA
+White-crowned Sparrow,songbirds,NA
+LeConte's Sparrow,songbirds,NA
+Yellow-breasted Chat,songbirds,NA
+Tennessee Warbler,songbirds,NA
+Common Yellowthroat,songbirds,NA
+Bay-breasted Warbler,songbirds,NA
+Yellow-rumped Warbler,songbirds,NA
+Yellow-throated Warbler,songbirds,NA
+Vesper Sparrow,songbirds,NA
+Tropical Kingbird,songbirds,NA
+Baltimore Oriole,songbirds,NA
+Blackpoll Warbler,songbirds,NA
+Rose-breasted Grosbeak,songbirds,NA
+Upland Sandpiper,songbirds,NA
+Least Flycatcher,songbirds,NA
+Great Crested Flycatcher,songbirds,NA
+Western Kingbird,songbirds,NA
+Lesser Goldfinch,songbirds,NA
+Clay-colored Sparrow,songbirds,NA
+Brewer's Blackbird,songbirds,NA
+Nashville Warbler,songbirds,NA
+Mourning Warbler,songbirds,NA
+Dickcissel,songbirds,NA
+Blue-gray Gnatcatcher,songbirds,NA
+Sage Thrasher,songbirds,NA
+Cedar Waxwing,songbirds,NA
+Blue-winged Warbler,songbirds,NA
+Hooded Warbler,songbirds,NA
+Summer Tanager,songbirds,NA
+Painted Bunting,songbirds,NA
+American Robin,songbirds,NA
+Orchard Oriole,songbirds,NA
+Black-crested Titmouse,songbirds,NA
+Spotted Towhee,songbirds,NA
+Willow Flycatcher,songbirds,NA
+Couch's Kingbird,songbirds,NA
+White-eyed Vireo,songbirds,NA
+Yellow-throated Vireo,songbirds,NA
+Blue-headed Vireo,songbirds,NA
+Philadelphia Vireo,songbirds,NA
+Warbling Vireo,songbirds,NA
+Red-eyed Vireo,songbirds,NA
+Golden-crowned Kinglet,songbirds,NA
+Red-breasted Nuthatch,songbirds,NA
+Brown Creeper,songbirds,NA
+Winter Wren,songbirds,NA
+Carolina Wren,songbirds,NA
+Gray-cheeked Thrush,songbirds,NA
+Swainson's Thrush,songbirds,NA
+Hermit Thrush,songbirds,NA
+Wood Thrush,songbirds,NA
+Cassin's Sparrow,songbirds,NA
+Olive Sparrow,songbirds,NA
+Chipping Sparrow,songbirds,NA
+Lark Sparrow,songbirds,NA
+Swamp Sparrow,songbirds,NA
+Hooded Oriole,songbirds,NA
+Bullock's Oriole,songbirds,NA
+Ovenbird,songbirds,NA
+Worm-eating Warbler,songbirds,NA
+Louisiana Waterthrush,songbirds,NA
+Golden-winged Warbler,songbirds,NA
+Black-and-white Warbler,songbirds,NA
+Prothonotary Warbler,songbirds,NA
+Kentucky Warbler,songbirds,NA
+American Redstart,songbirds,NA
+Cape May Warbler,songbirds,NA
+Cerulean Warbler,songbirds,NA
+Magnolia Warbler,songbirds,NA
+Blackburnian Warbler,songbirds,NA
+Chestnut-sided Warbler,songbirds,NA
+Pine Warbler,songbirds,NA
+Black-throated Green Warbler,songbirds,NA
+Canada Warbler,songbirds,NA
+Wilson's Warbler,songbirds,NA
+Scarlet Tanager,songbirds,NA
+Groove-billed Ani,songbirds,NA
+Acadian Flycatcher,songbirds,NA
+Alder Flycatcher,songbirds,NA
+Cassin's Vireo,songbirds,NA
+Black-whiskered Vireo,songbirds,NA
+Brown Thrasher,songbirds,NA
+Veery,songbirds,NA
+Nelson's Sparrow,songbirds,NA
+Bobolink,songbirds,NA
+Swainson's Warbler,songbirds,NA
+Prairie Warbler,songbirds,NA
+Black-throated Gray Warbler,songbirds,NA
+American Goldfinch,songbirds,NA
+Black-throated Blue Warbler,songbirds,NA
+Vermilion Flycatcher,songbirds,NA
+Brown-crested Flycatcher,songbirds,NA
+Bell's Vireo,songbirds,NA
+Bewick's Wren,songbirds,NA
+Pine Siskin,songbirds,NA
+White-throated Sparrow,songbirds,NA
+Lucy's Warbler,songbirds,NA
+Townsend's Warbler,songbirds,NA
+Western Tanager,songbirds,NA
+Black-headed Grosbeak,songbirds,NA
+Hammond's Flycatcher,songbirds,NA
+Sprague's Pipit,songbirds,NA
+MacGillivray's Warbler,songbirds,NA
+Eastern Bluebird,songbirds,NA
+Field Sparrow,songbirds,NA
+Dark-eyed Junco,songbirds,NA
+Long-billed Thrasher,songbirds,NA
+Tropical Parula,songbirds,NA
+Ash-throated Flycatcher,songbirds,NA
+Plumbeous Vireo,songbirds,NA
+Scaly-breasted Munia,songbirds,NA
+Blue-winged Teal,waterbirds,ducks
+Northern Shoveler,waterbirds,ducks
+American Wigeon,waterbirds,ducks
+Northern Pintail,waterbirds,ducks
+Redhead,waterbirds,ducks
+Ring-necked Duck,waterbirds,ducks
+Greater Scaup,waterbirds,ducks
+Lesser Scaup,waterbirds,ducks
+Bufflehead,waterbirds,ducks
+Common Goldeneye,waterbirds,ducks
+Red-breasted Merganser,waterbirds,ducks
+Eared Grebe,waterbirds,grebes
+Rock Pigeon,other,NA
+American Coot,waterbirds,rallidae
+Common Loon,waterbirds,loons
+Yellow-crowned Night Heron,waterbirds,herons
+Black-crowned Night Heron,waterbirds,herons
+Little Blue Heron,waterbirds,herons
+Tricolored Heron,waterbirds,herons
+Reddish Egret,waterbirds,herons
+Snowy Egret,waterbirds,herons
+Western Cattle Egret,waterbirds,herons
+Great Egret,waterbirds,herons
+Great Blue Heron,waterbirds,herons
+White Ibis,waterbirds,threskiornithidae
+Roseate Spoonbill,waterbirds,threskiornithidae
+Fulvous Whistling-Duck,waterbirds,ducks
+Cinnamon Teal,waterbirds,ducks
+Gadwall,waterbirds,ducks
+Green-winged Teal,waterbirds,ducks
+Hooded Merganser,waterbirds,ducks
+Pied-billed Grebe,waterbirds,grebes
+Mallard,waterbirds,ducks
+Western Grebe,waterbirds,grebes
+White-faced Ibis,waterbirds,threskiornithidae
+Ruddy Duck,waterbirds,ducks
+Mottled Duck,waterbirds,ducks
+Green Heron,waterbirds,herons
+Black-bellied Whistling-Duck,waterbirds,ducks
+Canvasback,waterbirds,ducks
+Least Grebe,waterbirds,grebes
+Clapper Rail,waterbirds,rallidae
+Virginia Rail,waterbirds,rallidae
+Whooping Crane,waterbirds,gruidae
+Wood Stork,waterbirds,storks
+Greater White-fronted Goose,waterbirds,geese
+Long-tailed Duck,waterbirds,ducks
+Sandhill Crane,waterbirds,gruidae
+Pacific Loon,waterbirds,loons
+Common Gallinule,waterbirds,rallidae
+Snow Goose,waterbirds,geese
+Wood Duck,waterbirds,ducks
+King Rail,waterbirds,rallidae
+Sora,waterbirds,rallidae
+Purple Gallinule,waterbirds,rallidae
+Anhinga,waterbirds,suliformes
+American Bittern,waterbirds,herons
+Least Bittern,waterbirds,herons
+Ross's Goose,waterbirds,geese
+Greater Flamingo,waterbirds,flamingos
+Glossy Ibis,waterbirds,threskiornithidae
+Egyptian Goose,waterbirds,geese

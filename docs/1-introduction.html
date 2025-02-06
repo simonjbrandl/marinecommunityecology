@@ -21,7 +21,7 @@
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -96,8 +96,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <link rel="icon" type="image/png" href="images/mns353_logo.png"/>
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-02-05"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-02-05"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-02-06"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-02-06"/>
   <meta name="article:author" content="Simon J. Brandl, PhD"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","color1","output"]}},"value":[{"type":"character","attributes":{},"value":["Session 1: Introduction to R"]},{"type":"character","attributes":{},"value":["This session provides an introduction to the most basic operations and functions in R. \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Simon J. Brandl, PhD"]},{"type":"character","attributes":{},"value":["https://www.fishandfunctions.com/"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]}]}]},{"type":"character","attributes":{},"value":["2025-02-05"]},{"type":"character","attributes":{},"value":["#0D2A47"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","number_sections","toc_depth","code_folding","toc_float","collapsed","smooth_scroll"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","color1","output"]}},"value":[{"type":"character","attributes":{},"value":["Session 1: Introduction to R"]},{"type":"character","attributes":{},"value":["This session provides an introduction to the most basic operations and functions in R. \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Simon J. Brandl, PhD"]},{"type":"character","attributes":{},"value":["https://www.fishandfunctions.com/"]},{"type":"character","attributes":{},"value":["The University of Texas at Austin"]}]}]},{"type":"character","attributes":{},"value":["2025-02-06"]},{"type":"character","attributes":{},"value":["#0D2A47"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","number_sections","toc_depth","code_folding","toc_float","collapsed","smooth_scroll"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -464,8 +464,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2447,7 +2447,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <link href="site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2468,7 +2468,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Session 1: Introduction to R","description":"This session provides an introduction to the most basic operations and functions in R.","authors":[{"author":"Simon J. Brandl, PhD","authorURL":"https://www.fishandfunctions.com/","affiliation":"The University of Texas at Austin","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-02-05T00:00:00.000-06:00","citationText":"PhD, 2025"}
+{"title":"Session 1: Introduction to R","description":"This session provides an introduction to the most basic operations and functions in R.","authors":[{"author":"Simon J. Brandl, PhD","authorURL":"https://www.fishandfunctions.com/","affiliation":"The University of Texas at Austin","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-02-06T00:00:00.000-06:00","citationText":"PhD, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2508,6 +2508,16 @@ Coding in R
 <a href="5-pca.html">5-PCA</a>
 </div>
 </div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Labs
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="1-coastalbirds.html">1-Coastal Birds</a>
+</div>
+</div>
 <a href="instructors.html">Instructors</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2528,7 +2538,7 @@ Coding in R
 <div class="d-byline">
   Simon J. Brandl, PhD <a href="https://www.fishandfunctions.com/" class="uri">https://www.fishandfunctions.com/</a> (The University of Texas at Austin)
   
-<br/>2025-02-05
+<br/>2025-02-06
 </div>
 
 <div class="d-article">
@@ -2824,34 +2834,33 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Poisson.html'>rpois</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>10</span><span class='op'>)</span></span>
 <span><span class='va'>b1</span></span></code></pre>
 </div>
-<pre><code>  [1] 10  6 14  7  9  9 13 14 12 10 12  9  6 11  9 10 12  7 13  8 11
- [22] 10 11 10 10 12 11 10  9 11 10 11 14  5 10 11 11  6 14  9  8 11
- [43] 11  8  6 13 13  5  8 11 12 11 13  8  7  9 15  6  7 14  3 14  8
- [64]  3 11  6  8 10 10 10  6 14  9 14 12 10 12  9  5  7 16  8  7  8
- [85]  5  6  7  6 12  6  6 11 11 13  8  8 10  7 11 11</code></pre>
+<pre><code>  [1] 13  7  4 11  8 10 14  6 17  6 10  9 12  7 12  8  5 10  9  4  8
+ [22] 12 13  8  8  6  8 10 11 10  7  7  6  7 10 11  8 12 10 13 13  7
+ [43] 11 15 10 13 11  4 11 20  8 11 12 16 13 12  3  8 10 14 11 13  5
+ [64]  9 15 12  8 12  8 10 13 12 10  9 13 10  7 17 10 11  6  4 14  9
+ [85]  7  7 10 15  9 11  7 11 10 10 11  8 10 14 10 10</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b2</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>==</span> <span class='fl'>8</span><span class='op'>]</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>b2</span><span class='op'>)</span></span></code></pre>
 </div>
 <pre><code>b2
  8 
-11 </code></pre>
+12 </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>b2</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 11</code></pre>
+<pre><code>[1] 12</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b3</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>&gt;</span><span class='fl'>10</span><span class='op'>]</span></span>
 <span><span class='va'>b3</span></span></code></pre>
 </div>
-<pre><code> [1] 14 13 14 12 12 11 12 13 11 11 12 11 11 11 14 11 11 14 11 11 13 13
-[23] 11 12 11 13 15 14 14 11 14 14 12 12 16 12 11 11 13 11 11</code></pre>
+<pre><code> [1] 13 11 14 17 12 12 12 13 11 11 12 13 13 11 15 13 11 11 20 11 12 16
+[23] 13 12 14 11 13 15 12 12 13 12 13 17 11 14 15 11 11 11 14</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>b4</span> <span class='op'>&lt;-</span> <span class='va'>b1</span><span class='op'>[</span><span class='va'>b1</span> <span class='op'>&lt;</span><span class='fl'>10</span> <span class='op'>&amp;</span> <span class='va'>b1</span> <span class='op'>&gt;</span><span class='fl'>5</span><span class='op'>]</span></span>
 <span><span class='va'>b4</span></span></code></pre>
 </div>
-<pre><code> [1] 6 7 9 9 9 6 9 7 8 9 6 9 8 8 6 8 8 7 9 6 7 8 6 8 6 9 9 7 8 7 8 6 7
-[34] 6 6 6 8 8 7</code></pre>
+<pre><code> [1] 7 8 6 6 9 7 8 9 8 8 8 6 8 7 7 6 7 8 7 8 8 9 8 8 9 7 6 9 7 7 9 7 8</code></pre>
 </div>
 -c)
 <div class="layout-chunk" data-layout="l-body">
@@ -2875,52 +2884,52 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Poisson.html'>rpois</a></span><span class='op'>(</span><span class='fl'>500</span>, <span class='fl'>10</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 15 11 12  6 14  9</code></pre>
+<pre><code>[1]  7 16  8  9  8  8</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a2</span> <span class='op'>&lt;-</span> <span class='va'>a1</span><span class='op'>[</span><span class='va'>a1</span> <span class='op'>&gt;</span> <span class='fl'>15</span><span class='op'>]</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>a2</span><span class='op'>)</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 0.044</code></pre>
+<pre><code>[1] 0.066</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a3</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 19 19 18 18 18 18</code></pre>
+<pre><code>[1] 22 21 20 20 19 19</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>a4</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] 2.708050 2.397895 2.484907 1.791759 2.639057 2.197225</code></pre>
+<pre><code>[1] 1.945910 2.772589 2.079442 2.197225 2.079442 2.079442</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>#a5</span></span>
 <span><span class='va'>a1</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>,to<span class='op'>=</span><span class='fl'>500</span>,by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span></span>
 <span><span class='co'>#or</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/replace.html'>replace</a></span><span class='op'>(</span><span class='va'>a1</span>, <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>, to<span class='op'>=</span><span class='fl'>500</span>, by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>, <span class='fl'>0</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>  [1] 15 11 12  6 14  9 11 11 12  0 18 18  6  9 15  6  9  4  7  0  3
- [22]  8 12  9 16  8  9 13  6  0 14 14  6  9 11  7 11  9 11  0  7 11
- [43]  7  8 10  9 11  9  5  0 14  7 10  6  5  7 10  7 13  0 11  8  6
- [64] 12  7 16 13 18  9  0 12  7  8  9 15 12  6  6 11  0 10  4  7  7
- [85]  6 11 10 10 11  0 11 13  9 11 13  9  5 10 12  0  9  9 17 10  7
-[106] 13 10  6 10  0  7 11  7 18 12  8  5 11  9  0  7  4 13 10  6  9
-[127]  3 12 11  0 14 12 12 16 11  8  6  4 11  0 10  8  8  9 10  9 11
-[148] 14  5  0  8 13  6 10 16 14  8 12  6  0 10 19 12 11 10 12  7  8
-[169]  8  0 11  9 11  8  6  8 10 10 10  0  7  9 11 10 14 13 16  8 10
-[190]  0  7  7  7 11 13  7 10  8  9  0  7 13  7 10  8 10  8 11  8  0
-[211] 10 12 11  8  9 12 12 13 12  0  9 14 15  9  6 12 11 11  8  0  7
-[232] 10 13  5 11  8 12 11  8  0  9 12 10 11  8 12  4 11 10  0  9  8
-[253]  5 14 12 10 14 12  9  0  9 14 11  6  8  5  6 11 11  0 13 15  4
-[274] 11 11 10  9 15  9  0  7 15 10 14 11  5 13  8 11  0 12  4  8  8
-[295]  7 12 10 10 14  0 11 11 13 11 10 16  9  4 12  0 11 11  6  9  9
-[316]  9 10  4 10  0  5 11  8  4 11 10  8  8 11  0 12  7  4  5 10  8
-[337]  9  5  5  0  7 12 13 11  6  7 14  9 19  0 10 16 10 13  8  6 12
-[358] 11  8  0 12 12  6 12 10  7  7  6 14  0 10 10 17 17 11  6 10  9
-[379] 10  0  4  9 16 14  7 12 10 13 12  0 11  9  7 11 12  5 14 13  5
-[400]  0 12 14  7 11 11  7 13 12 11  0 11 10 17 10 13  8 11 13 10  0
-[421]  5 12  7 14  7  5 10  6  6  0 10 10  7  7  8 11 15  6 13  0 10
-[442] 10  9  7  6  9  9 15  6  0  6 15  4  3  8 11  9 10 11  0  9 17
-[463] 14 10  6 13 14 10 12  0 10 11 13  9 11 18 11  7 17  0 15 11  3
-[484] 10  8  7 13  4 12  0  7  6  6 11  8 13  9 14 11  0</code></pre>
+<pre><code>  [1]  7 16  8  9  8  8 10  7 13  0 14 12 12  9  7 16 12  5  2  0 13
+ [22] 10  9  8 10  7 13 10 12  0 16 14 12 11 13 15  5 12 11  0  7  9
+ [43] 10 15  4  6 11  9  8  0 10  9  4 12  8  9  7  4 10  0  4 12 10
+ [64]  9 14 10 12  8  4  0  9  5 14 11  3  9 13 13 12  0  8 10 17  7
+ [85]  9 14 11  7  8  0  8  8  4  7 12 10  8  8  7  0  8  7 11 12 13
+[106]  9  7 14  7  0  7  9 14 13 12 18  9 11 11  0 15  8  8  9 11 14
+[127]  7 10  9  0 15  6 13  7 11 16  6  8  9  0 19 19 12 14  9 16  7
+[148] 10  7  0 14 10 13  9  6  6 11  8 12  0  6 10 11 12  8 11 11  9
+[169] 10  0 10 11  6 14 14 10  7 10  9  0  8 11  5  7  6  4 17 12 16
+[190]  0  9  6  8  8  9 15 10  6 11  0  7 10 11 14 10 16 10 14 15  0
+[211] 17 15  9  6 11  8 12 10  7  0  9 12 20  7 11  9  5  9 11  0  5
+[232] 13 16 12 10  7  5 12 10  0  7  7  5 12 12 12 11 13  8  0 13 14
+[253] 12  7 14 12  6 15  6  0 12  7 17 14  8  6 16 11 11  0  9 10 13
+[274] 11  8 14 12  7  9  0  9  8  4 13  8 10  8  6  8  0  4  8 13  8
+[295] 11  9  8 11 18  0  8 10 10  9 10 10  8  4 10  0 13 14  7  9  8
+[316]  5 15  6 22  0 11 15  8  7  6  5 16 12 11  0 11 11  3  5  9 10
+[337] 11 16 13  0  7 12 11  8 16 14 12  8 11  0 17  5  9  6 10 21  7
+[358]  8  7  0 13 10  8 13  8 16  9 10 12  0 12  9  3 15  7 13  7  9
+[379] 15  0 10 11  7  9 11 13  6 11  9  0 12 13  8  6 15 10  8 10 13
+[400]  0  7 10 11  9 14 12  5 11  9  0 11  9 10  9  9 17 11  8  9  0
+[421]  8  7 14 12 11  7 17  9 12  0 14  7  8 11  7 16  6 14 12  0  8
+[442] 12 20 13  9  7  6  4  6  0  9 11 10 11  8 16 10  9 17  0 10 12
+[463] 13  9  5 14 10 12 13  0  7 12 11 10  3 10 11 11  9  0 15 13  6
+[484]  8  9 10 10 12  7  0  6 10 13 10 12 12 19 11 11  0</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>a5logmean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>a1</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span>from<span class='op'>=</span><span class='fl'>0</span>,to<span class='op'>=</span><span class='fl'>500</span>,by<span class='op'>=</span><span class='fl'>10</span><span class='op'>)</span><span class='op'>]</span><span class='op'>&lt;-</span><span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># doesn't work because of -Inf values, so let's go step-by-step</span></span>
 <span></span>
@@ -2962,77 +2971,77 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>c1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>2000</span>, <span class='fl'>100</span>, <span class='fl'>10</span><span class='op'>)</span>, ncol <span class='op'>=</span> <span class='fl'>20</span>, byrow <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>c1</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>          [,1]      [,2]     [,3]     [,4]      [,5]      [,6]
-[1,] 100.34719 103.18509 96.93510 97.31872  80.52349 115.50637
-[2,]  99.87513 114.27879 79.70003 84.14128  95.69252 103.29178
-[3,]  82.60395  94.35825 93.19218 86.95275 106.16856 109.80555
-[4,]  93.18324  99.00100 95.21033 86.83501 100.74839  97.64474
-[5,] 105.87398 106.69982 99.60376 83.40581  84.23984 115.28489
-[6,] 102.80426 107.09029 89.56824 96.80511 110.00097 108.96510
-          [,7]      [,8]      [,9]     [,10]     [,11]     [,12]
-[1,]  91.19624 101.44774  88.40958  80.34642 107.18571  81.33001
-[2,] 118.83628 112.45222  99.69508  94.39118 103.84617  93.06540
-[3,] 113.52999 102.09545  91.72853  96.53545 131.04943  97.40829
-[4,]  89.84537 106.46747 118.95795 104.73183  99.52693 109.76270
-[5,]  88.49112  86.50625 112.31546  79.32893 113.19165 107.59353
-[6,] 100.96130  86.07348  99.53153 103.17846 120.35725  92.91636
-         [,13]     [,14]     [,15]    [,16]     [,17]     [,18]
-[1,]  95.07148  94.63323 110.69034  98.5546 123.11196 102.82229
-[2,]  85.00859  86.33232  98.97363 110.3707 103.56141 102.15679
-[3,]  96.54965 100.13069 104.77478 105.9653  98.31524 119.07126
-[4,]  97.23681 102.00632 108.49641 101.4281 106.23679  89.90097
-[5,] 103.48786 100.89050  94.91530 104.7252 119.10807 102.15801
-[6,] 114.82351 100.74044  88.24853 102.3180 104.32876  94.52271
+<pre><code>          [,1]      [,2]      [,3]      [,4]      [,5]      [,6]
+[1,]  96.61065 108.67509 105.43242 103.19654  99.34371 109.59578
+[2,] 102.64189  88.14189 104.44824 112.51739  85.91686 106.97305
+[3,] 109.09482  97.20275  84.93590 105.02739  89.06156  89.53176
+[4,]  81.35198  97.23677 103.48327  93.82990 108.84266 106.16678
+[5,]  97.30847  95.38160  97.07335 114.34806  99.42091 106.70836
+[6,]  96.44045 106.06686 116.25508  99.44869  85.82876  91.67978
+          [,7]      [,8]     [,9]     [,10]     [,11]     [,12]
+[1,] 102.14622 104.79520 109.3569  93.38923 112.09265 105.39739
+[2,]  88.15114 100.08934 101.2673 110.43460 105.43410  94.54280
+[3,] 103.94960  86.89925 112.7630 106.57372  97.08572 113.27581
+[4,] 104.76246  95.35504 102.1452 102.44783  99.43063  88.44064
+[5,] 111.26455 107.14029 110.8487 113.83058  95.08456  87.56414
+[6,] 103.78543  92.27640 118.4600 107.54795 103.14237 107.68534
+         [,13]    [,14]     [,15]     [,16]     [,17]     [,18]
+[1,]  95.92893 101.5093  93.11898 103.67358 121.30287  96.79054
+[2,]  98.45479  92.8465  85.28979  96.09919 100.65690 103.10782
+[3,] 100.87299 107.8385 100.36997 102.74908 119.91944 101.26112
+[4,]  86.29866 108.3878  91.77388  95.54323  99.78604 112.91985
+[5,] 102.32453 103.1428 103.20899  86.98382 100.19044 109.53248
+[6,] 106.11298 102.0821  99.26768 100.19793 104.94832  94.23413
          [,19]     [,20]
-[1,] 102.61629  74.29416
-[2,]  95.03153 111.31720
-[3,] 106.63571 102.29912
-[4,] 100.48377  80.69099
-[5,]  96.63478  99.97704
-[6,] 105.71001 106.51623</code></pre>
+[1,]  94.08211  89.51875
+[2,] 103.60277  90.33703
+[3,]  98.92783 107.53716
+[4,]  96.10889 104.75595
+[5,] 105.89140 102.42708
+[6,] 103.14474 117.25202</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>c2</span> <span class='op'>&lt;-</span> <span class='va'>c1</span><span class='op'>[</span><span class='fl'>98</span>, <span class='fl'>5</span><span class='op'>]</span> <span class='co'># look for value in row 98 column 5</span></span>
 <span><span class='va'>c2</span></span></code></pre>
 </div>
-<pre><code>[1] 101.8319</code></pre>
+<pre><code>[1] 93.77073</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>c1</span><span class='op'>)</span> <span class='co'># look for maximum value and largest deviation from the specified mean (100)</span></span></code></pre>
 </div>
 <pre><code>       V1               V2               V3               V4        
- Min.   : 70.06   Min.   : 72.09   Min.   : 75.11   Min.   : 75.75  
- 1st Qu.: 92.71   1st Qu.: 91.00   1st Qu.: 91.36   1st Qu.: 91.16  
- Median :101.24   Median : 97.49   Median : 99.74   Median : 97.63  
- Mean   :100.37   Mean   : 97.63   Mean   : 99.50   Mean   : 98.39  
- 3rd Qu.:107.16   3rd Qu.:104.24   3rd Qu.:107.03   3rd Qu.:104.52  
- Max.   :124.52   Max.   :124.97   Max.   :122.20   Max.   :125.06  
+ Min.   : 76.93   Min.   : 75.59   Min.   : 77.57   Min.   : 77.65  
+ 1st Qu.: 93.84   1st Qu.: 94.44   1st Qu.: 94.72   1st Qu.: 94.16  
+ Median : 98.91   Median :100.66   Median :100.00   Median : 99.54  
+ Mean   : 99.95   Mean   :100.98   Mean   :100.04   Mean   :100.25  
+ 3rd Qu.:105.92   3rd Qu.:108.51   3rd Qu.:105.62   3rd Qu.:105.89  
+ Max.   :123.17   Max.   :125.95   Max.   :123.13   Max.   :124.34  
        V5               V6               V7               V8        
- Min.   : 79.07   Min.   : 73.63   Min.   : 65.95   Min.   : 75.68  
- 1st Qu.: 93.25   1st Qu.: 91.64   1st Qu.: 91.93   1st Qu.: 93.84  
- Median :100.05   Median : 98.00   Median : 98.18   Median : 98.41  
- Mean   : 99.82   Mean   : 98.95   Mean   : 99.45   Mean   :100.19  
- 3rd Qu.:105.74   3rd Qu.:107.20   3rd Qu.:107.31   3rd Qu.:107.41  
- Max.   :125.65   Max.   :121.06   Max.   :123.67   Max.   :132.48  
+ Min.   : 63.03   Min.   : 69.69   Min.   : 74.27   Min.   : 76.32  
+ 1st Qu.: 91.77   1st Qu.: 92.05   1st Qu.: 93.22   1st Qu.: 91.72  
+ Median : 99.58   Median : 98.95   Median :100.16   Median : 98.49  
+ Mean   : 98.94   Mean   : 99.32   Mean   :100.53   Mean   : 98.56  
+ 3rd Qu.:105.50   3rd Qu.:106.74   3rd Qu.:107.28   3rd Qu.:105.32  
+ Max.   :120.36   Max.   :135.51   Max.   :123.22   Max.   :128.93  
        V9              V10              V11              V12        
- Min.   : 80.19   Min.   : 73.89   Min.   : 74.34   Min.   : 75.51  
- 1st Qu.: 92.71   1st Qu.: 94.44   1st Qu.: 95.28   1st Qu.: 94.95  
- Median : 96.68   Median : 99.12   Median : 99.97   Median : 99.58  
- Mean   : 98.45   Mean   : 99.94   Mean   :101.54   Mean   :101.12  
- 3rd Qu.:102.70   3rd Qu.:106.40   3rd Qu.:107.28   3rd Qu.:107.65  
- Max.   :122.16   Max.   :124.68   Max.   :131.05   Max.   :124.26  
+ Min.   : 69.67   Min.   : 75.89   Min.   : 75.04   Min.   : 77.85  
+ 1st Qu.: 94.23   1st Qu.: 93.21   1st Qu.: 93.39   1st Qu.: 94.52  
+ Median :102.17   Median :100.36   Median : 98.54   Median :101.65  
+ Mean   :100.98   Mean   :100.81   Mean   : 99.10   Mean   :100.54  
+ 3rd Qu.:107.57   3rd Qu.:107.01   3rd Qu.:105.81   3rd Qu.:107.72  
+ Max.   :122.40   Max.   :131.94   Max.   :119.09   Max.   :126.13  
       V13              V14              V15              V16        
- Min.   : 84.76   Min.   : 72.66   Min.   : 74.89   Min.   : 77.28  
- 1st Qu.: 94.95   1st Qu.: 93.03   1st Qu.: 95.15   1st Qu.: 93.93  
- Median :100.18   Median :100.77   Median : 99.63   Median :100.32  
- Mean   :100.99   Mean   :100.04   Mean   :101.14   Mean   :100.26  
- 3rd Qu.:106.74   3rd Qu.:106.01   3rd Qu.:108.23   3rd Qu.:107.50  
- Max.   :119.53   Max.   :122.22   Max.   :122.19   Max.   :121.01  
+ Min.   : 70.78   Min.   : 83.53   Min.   : 78.11   Min.   : 79.06  
+ 1st Qu.: 93.42   1st Qu.: 94.85   1st Qu.: 94.09   1st Qu.: 92.95  
+ Median :100.89   Median :101.22   Median : 99.54   Median : 99.16  
+ Mean   : 99.87   Mean   :100.83   Mean   :100.44   Mean   : 99.33  
+ 3rd Qu.:106.12   3rd Qu.:106.18   3rd Qu.:106.61   3rd Qu.:105.63  
+ Max.   :123.34   Max.   :134.72   Max.   :132.16   Max.   :130.32  
       V17              V18              V19              V20        
- Min.   : 78.10   Min.   : 56.72   Min.   : 77.88   Min.   : 74.29  
- 1st Qu.: 93.34   1st Qu.: 94.69   1st Qu.: 94.79   1st Qu.: 96.47  
- Median :100.44   Median :100.38   Median :101.67   Median :101.05  
- Mean   : 99.93   Mean   :100.22   Mean   :100.82   Mean   :101.30  
- 3rd Qu.:105.58   3rd Qu.:108.01   3rd Qu.:106.41   3rd Qu.:107.40  
- Max.   :123.11   Max.   :127.02   Max.   :126.77   Max.   :122.96  </code></pre>
+ Min.   : 77.21   Min.   : 81.56   Min.   : 64.03   Min.   : 77.61  
+ 1st Qu.: 96.36   1st Qu.: 92.04   1st Qu.: 93.69   1st Qu.: 94.17  
+ Median :102.10   Median : 99.52   Median : 99.79   Median :100.49  
+ Mean   :101.18   Mean   : 99.13   Mean   : 99.72   Mean   :100.80  
+ 3rd Qu.:106.13   3rd Qu.:105.23   3rd Qu.:105.32   3rd Qu.:107.57  
+ Max.   :123.86   Max.   :122.40   Max.   :121.28   Max.   :122.45  </code></pre>
 </div>
 <p>-d)</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -3042,20 +3051,20 @@ Coding in R
 <span><span class='va'>herbivore.tbl</span> <span class='co'># tibbles tell you the data classes but str() would also work well</span></span></code></pre>
 </div>
 <pre><code># A tibble: 96 × 10
-   family       genus      species gen.spe    sl bodydepth snoutlength
-   &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
- 1 Acanthuridae Acanthurus achill… Acanth… 164.      0.554       0.488
- 2 Acanthuridae Acanthurus albipe… Acanth… 213.      0.441       0.440
- 3 Acanthuridae Acanthurus aurant… Acanth… 216       0.473       0.539
- 4 Acanthuridae Acanthurus blochii Acanth…  82.9     0.559       0.478
- 5 Acanthuridae Acanthurus dussum… Acanth… 194.      0.546       0.566
- 6 Acanthuridae Acanthurus fowleri Acanth… 266       0.467       0.595
- 7 Acanthuridae Acanthurus guttat… Acanth… 150       0.680       0.404
- 8 Acanthuridae Acanthurus leucoc… Acanth… 229.      0.491       0.563
- 9 Acanthuridae Acanthurus leucop… Acanth… 190.      0.578       0.490
-10 Acanthuridae Acanthurus lineat… Acanth… 133.      0.499       0.464
-# ℹ 86 more rows
-# ℹ 3 more variables: eyediameter &lt;dbl&gt;, size &lt;chr&gt;, schooling &lt;chr&gt;</code></pre>
+   family    genus species gen.spe    sl bodyd…¹ snout…² eyedi…³ size 
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;
+ 1 Acanthur… Acan… achill… Acanth… 164.    0.554   0.488   0.351 S    
+ 2 Acanthur… Acan… albipe… Acanth… 213.    0.441   0.440   0.256 M    
+ 3 Acanthur… Acan… aurant… Acanth… 216     0.473   0.539   0.245 M    
+ 4 Acanthur… Acan… blochii Acanth…  82.9   0.559   0.478   0.320 M    
+ 5 Acanthur… Acan… dussum… Acanth… 194.    0.546   0.566   0.281 L    
+ 6 Acanthur… Acan… fowleri Acanth… 266     0.467   0.595   0.222 M    
+ 7 Acanthur… Acan… guttat… Acanth… 150     0.680   0.404   0.288 S    
+ 8 Acanthur… Acan… leucoc… Acanth… 229.    0.491   0.563   0.340 M    
+ 9 Acanthur… Acan… leucop… Acanth… 190.    0.578   0.490   0.273 S    
+10 Acanthur… Acan… lineat… Acanth… 133.    0.499   0.464   0.269 M    
+# … with 86 more rows, 1 more variable: schooling &lt;chr&gt;, and
+#   abbreviated variable names ¹​bodydepth, ²​snoutlength, ³​eyediameter</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>herbivore.tbl</span><span class='op'>$</span><span class='va'>gen.spe</span> <span class='co'># the two species are rows 31 and 96</span></span></code></pre>
 </div>
@@ -3111,11 +3120,12 @@ Coding in R
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>herbivore.tbl</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>31</span>,<span class='fl'>96</span><span class='op'>)</span>,<span class='op'>]</span> <span class='co'># check snoutlength</span></span></code></pre>
 </div>
 <pre><code># A tibble: 2 × 10
-  family genus species gen.spe    sl bodydepth snoutlength eyediameter
-  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-1 Labri… Chlo… micror… Chloru…   417     0.402       0.359       0.149
-2 Acant… Zebr… velifer Zebras…   153     0.548       0.625       0.359
-# ℹ 2 more variables: size &lt;chr&gt;, schooling &lt;chr&gt;</code></pre>
+  family     genus species gen.spe    sl bodyd…¹ snout…² eyedi…³ size 
+  &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;
+1 Labridae   Chlo… micror… Chloru…   417   0.402   0.359   0.149 L    
+2 Acanthuri… Zebr… velifer Zebras…   153   0.548   0.625   0.359 M    
+# … with 1 more variable: schooling &lt;chr&gt;, and abbreviated variable
+#   names ¹​bodydepth, ²​snoutlength, ³​eyediameter</code></pre>
 </div>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
