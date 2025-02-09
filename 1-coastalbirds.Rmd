@@ -17,6 +17,8 @@ output:
     toc_float: true
     collapsed: false
     smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 # a. 1: Description
@@ -41,7 +43,7 @@ I. Read in the two datasets above. Then, using the "birds_historic_processed.csv
   2) calculate the species richness per unit effort
   2) plot the average species richness per unit effort for each year at each location 
 
-```{r, echo = FALSE, results = TRUE}
+```{r, echo = TRUE, results = TRUE}
 library(dplyr)
 library(ggplot2)
 library(forcats)
@@ -74,7 +76,7 @@ sprichplot
 
 II. Join the bird dataset with the group assignments. Then, calculate the total occurrence of each species each year across the two locations for the following three groups: waterbirds, shorebirds, and seabirds. With the resulting data, plot the species-specific abundances at the two locations using box- or violin plots, choosing an intuitive order on the x- or y-axis. 
 
-```{r, echo = FALSE, results = TRUE}
+```{r, echo = TRUE, results = TRUE}
 group.assignments <- read.csv(file = "data/birds_historic_processed_groups_assigned.csv")
 
 birds.processed.groups <- bird.data.processed %>%
@@ -98,7 +100,7 @@ waterbird.abundance.plot
 
 III. Find and plot the occurrences of the three most abundant ducks, plovers, and sandpipers at Leonabelle over the examined years.
 
-```{r, echo = FALSE, results = TRUE}
+```{r, echo = TRUE, results = TRUE}
 ducks <- birds.processed.groups %>%
   filter(group2 == "ducks",
          location == "Leonabelle") %>%
