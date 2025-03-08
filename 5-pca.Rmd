@@ -45,3 +45,217 @@ The dataset called 'coralreefherbivores.csv' can be downloaded [here](data/coral
 The dataset called 'fishcoms_lizardisland.csv' can be downloaded [here](data/fishcoms_lizardisland.csv).
 <br>
 <br>
+
+# c. 3: Exercises
+
+- Start by installing and loading the *vegan* and the *ape* package into your environment, along with *dplyr*, *ggplot* and *patchwork* (or load the former two via the *tidyverse* package)
+
+- Then, read in the fishcoms_lizardisland dataset, which is available above
+
+### Part I
+
+- Retain only species in the family Chaetodontidae (butterflyfishes) in the dataset, and summarize each species' abundance across sites, while also retaining information on each site's exposure level. Bring the data to wide format.
+
+```{r, echo = FALSE, results = FALSE}
+library(vegan)
+library(tidyverse)
+library(ape)
+library(patchwork)
+# re-familiarize with the Lizard Island fish community dataset
+lfish <- read.csv(file =  "data/fishcoms_lizardisland.csv")
+head(lfish)
+lizard.sum <- lfish %>%
+  filter(Family == "Chaetodontidae") %>%
+  group_by(Site, Exposure, species) %>%
+  summarize(abundance = sum(abundance))
+lizard.sum
+
+# spread into wide format and get rid of NAs
+lizard.wide <- lizard.sum %>%
+  spread(key = species, value = abundance, fill = 0)
+lizard.wide
+```
+
+- Divide your dataset into metadata and abundance data, run a PCA on the Hellinger transformed data, and plot the data using ggplot. See how the data changes depending on whether you scale and center your data. 
+
+```{r, echo = FALSE, results = FALSE}
+# isolate metadata
+lizard.meta <- lizard.wide[1:2]
+lizard.meta
+
+# isolate numeric data
+lizard.raw <- lizard.wide %>%
+  ungroup() %>%
+  select(-c(1:2))
+lizard.raw
+
+# the decostand() function in vegan allows for transformations like Hellinger
+lizard.hell <- decostand(lizard.raw, method = "hellinger")
+head(lizard.hell)
+
+# run a PCA and retain percent variation explained by PC1 and PC2
+lizard.pca <- summary(rda(lizard.hell, scale = T))
+lizard.pca
+
+# extract the site scores and merge with metadata
+lizard.scores <- as.data.frame(lizard.pca$sites) %>%
+  bind_cols(lizard.meta)
+
+# create convex hulls grouped by site exposure based on site scores
+lizard.hulls <- lizard.scores %>%
+  group_by(Exposure) %>%
+  slice(chull(PC1, PC2))
+
+# extract the loadings from species scores
+lizard.loadings <- as.data.frame(lizard.pca$species) %>%
+  mutate(species = rownames(.))
+
+# plot the PCA results with color and convex hulls as exposure and species as loadings
+lizard.plot2 <- ggplot() +
+  geom_point(data = lizard.scores, aes(x = PC1, y = PC2, color = Exposure), size = 2) +
+  geom_polygon(data = lizard.hulls, aes(x = PC1, PC2, fill = Exposure), alpha = 0.5) +
+  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1*3,
+                                           y = 0, yend = PC2*3), lwd = 0.1) +
+  geom_text(data = lizard.loadings, aes(x = PC1*3, y = PC2*3, label = species), size = 3) +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme_bw() +
+  xlab("PC1 (21.8%)") +
+  ylab("PC2 (17.8%)") +
+  ggtitle("Hellinger transformed PCA, scale = T")
+lizard.plot2
+
+# run the same PCA, but with scale = F
+# retain percent variation explained by PC1 and PC2
+lizard.pca <- summary(rda(lizard.hell, scale = F))
+
+# extract the site scores and merge with metadata
+lizard.scores <- as.data.frame(lizard.pca$sites) %>%
+  bind_cols(lizard.meta)
+
+# create convex hulls grouped by site exposure based on site scores
+lizard.hulls <- lizard.scores %>%
+  group_by(Exposure) %>%
+  slice(chull(PC1, PC2))
+
+# extract the loadings from species scores
+lizard.loadings <- as.data.frame(lizard.pca$species) %>%
+  mutate(species = rownames(.))
+
+# plot the PCA results with color and convex hulls as exposure and species as loadings
+lizard.plot3 <- ggplot() +
+  geom_point(data = lizard.scores, aes(x = PC1, y = PC2, color = Exposure), size = 2) +
+  geom_polygon(data = lizard.hulls, aes(x = PC1, PC2, fill = Exposure), alpha = 0.5) +
+  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1*2,
+                                           y = 0, yend = PC2*2), lwd = 0.1) +
+  geom_text(data = lizard.loadings, aes(x = PC1*2, y = PC2*2, label = species), size = 3) +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme_bw() +
+  xlab("PC1 (30.3%)") +
+  ylab("PC2 (20.5%)") +
+  ggtitle("Hellinger transformed PCA, scale = F")
+lizard.plot3
+```
+
+Part II 
+
+- We now want to examine how the four regimes of wave action impact reef fish community composition across all families. With more than 200 fish species across all families, this is a tough ask for PCA so we will move to distance based ordinations.
+
+- Group the data by transect, site, exposure, and species, and sum up the number of individuals (abundance). Turn the data into wide format and split it into meta and raw data as previously. 
+
+```{r, echo = FALSE, results = FALSE}
+# call the entire dataset
+# group by transect, site, exposure, and species
+# summarize the species abundances
+lizard.sum <- lfish %>%
+  group_by(transect, Site, Exposure, species) %>%
+  summarize(abundance = sum(abundance))
+
+# convert data to wide format
+lizard.wide <- lizard.sum %>%
+  spread(key = species, value = abundance, fill = 0)
+
+# isolate metadata
+lizard.meta <- lizard.wide[1:3]
+
+# isolate numeric data
+lizard.raw <- lizard.wide %>%
+  ungroup() %>%
+  select(-c(1:3))
+```
+
+- Create a distance matrix using the *vegdist* function and a Bray-Curtis dissimilarity metric. Then, run a PCoA using the *pcoa* function, choosing the cailliez correction for negative eigenvalues. Visualize the output using ggplot. 
+
+```{r, echo = FALSE, results = FALSE}
+# create a distance matrix with vegdist() from the vegan package
+# use the Bray-Curtis dissimilarity metric, which is a dissimilarity measure designed to handle abundance data
+lizard.dist <- vegdist(lizard.raw, method = "bray")
+
+# run the PCoA using the cmdscale() function
+lizard.pcoa <- pcoa(lizard.dist, correction = "cailliez")
+lizard.pcoa
+
+# extract the site scores and merge with metadata
+lizard.scores <- as.data.frame(lizard.pcoa$vectors) %>%
+  bind_cols(lizard.meta)
+
+# create convex hulls grouped by site exposure based on site scores
+lizard.hulls <- lizard.scores %>%
+  group_by(Exposure) %>%
+  slice(chull(Axis.1, Axis.2))
+
+# plot PCoA with color and convex hulls as exposure
+# you cannot add loadings to a PCoA because it only works as a distance matrix
+lizard.plot.pcoa <- ggplot() +
+  geom_point(data = lizard.scores, aes(x = Axis.1, y = Axis.2, color = Exposure), size = 2) +
+  geom_polygon(data = lizard.hulls, aes(x = Axis.1, Axis.2, fill = Exposure), alpha = 0.5) +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme_bw() +
+  xlab("PCo1") +
+  ylab("PCo2") +
+  ggtitle("PCoA")
+lizard.plot.pcoa
+```
+
+
+- run a non-metric multidimensional scaling ordination (NMDS) on the raw data using the *metaMDS* function, a Bray-Curtis dissimilarity metric, and two dimensions. Check the stress and plot the results using ggplot. Investigate your PCoA and NMDS side-by-side. 
+
+```{r, echo = FALSE, results = FALSE}
+# use metaMDS() to run the nMDS
+# specify the data, the dimensions, the number of tries to give the nMDS to find a solution, and the distance metric
+lizard.mds <- metaMDS(comm = lizard.raw, k = 2, trymax = 1000, distance = "bray")
+
+# view results of nMDS
+lizard.mds
+
+# view stressplot
+stressplot(lizard.mds)
+
+# extract the site scores and merge with metadata
+lizard.scores <- as.data.frame(lizard.mds$points) %>%
+  bind_cols(lizard.meta)
+
+# create convex hulls grouped by site exposure based on site scores
+lizard.hulls <- lizard.scores %>%
+  group_by(Exposure) %>%
+  slice(chull(MDS1, MDS2))
+
+# plot nMDS with color and convex hulls as exposure
+lizard.plot.mds <- ggplot() +
+  geom_point(data = lizard.scores, aes(x = MDS1, y = MDS2, color = Exposure), size = 2) +
+  geom_polygon(data = lizard.hulls, aes(x = MDS1, MDS2, fill = Exposure), alpha = 0.5) +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme_bw() +
+  xlab("MDS1") +
+  ylab("MDS2") +
+  ggtitle("nMDS")
+lizard.plot.mds
+
+# view PcOA and nMDS together for comparison
+# despite using the same distance metric (Bray-Curtis), the nMDS produces a cleaner, better separation among the transects than the PCoA.
+pcoamds <- lizard.plot.pcoa / lizard.plot.mds
+pcoamds
+```
