@@ -2551,10 +2551,12 @@ Labs
 <li><a href="#c.-5-exercises" id="toc-c.-5-exercises">c. 5: Exercises</a>
 <ul>
 <li><a href="#part-i" id="toc-part-i">Part I</a></li>
+<li><a href="#part-iv" id="toc-part-iv">Part IV</a></li>
 </ul></li>
 <li><a href="#d.-5-solutions" id="toc-d.-5-solutions">d. 5: Solutions</a>
 <ul>
 <li><a href="#part-i-1" id="toc-part-i-1">Part I</a></li>
+<li><a href="#part-iv-1" id="toc-part-iv-1">Part IV</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2616,6 +2618,24 @@ Labs
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="5-pca_files/figure-html5/unnamed-chunk-7-1.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-7-2.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-7-3.png" width="624" /></p>
 </div>
+<h3 id="part-iv">Part IV</h3>
+<p>We will continue using the “fishcoms_lizardisland.csv” dataset, but this time, we will explore differences in fish communities between the two years, 2011 and 2015.</p>
+<ol type="1">
+<li>Calculate fish abundance per transect, site, and year for each species.</li>
+<li>Put the dataset in wide format.</li>
+<li>Split the metadata from the numeric data.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<ol type="1">
+<li>Run a PCoA with Bray-Curtis dissimilarity.</li>
+<li>Check eigenvalues. Add a correction if needed.</li>
+<li>Plot the PCoA with different colors and polygons for the two years.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="5-pca_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
+</div>
 <h1 id="d.-5-solutions">d. 5: Solutions</h1>
 <ul>
 <li><p>Start by installing and loading the <em>vegan</em> and the <em>ape</em> package into your environment, along with <em>dplyr</em>, <em>ggplot</em> and <em>patchwork</em> (or load the former two via the <em>tidyverse</em> package)</p></li>
@@ -2632,7 +2652,7 @@ Labs
 <li>Divide your dataset into metadata and abundance data, run a PCA on the Hellinger transformed data, and plot the data using ggplot. See how the data changes depending on whether you scale and center your data.</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="5-pca_files/figure-html5/unnamed-chunk-9-1.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-9-2.png" width="624" /></p>
+<p><img src="5-pca_files/figure-html5/unnamed-chunk-11-1.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-11-2.png" width="624" /></p>
 </div>
 <p>Part II</p>
 <ul>
@@ -2646,13 +2666,71 @@ Labs
 <li>Create a distance matrix using the <em>vegdist</em> function and a Bray-Curtis dissimilarity metric. Then, run a PCoA using the <em>pcoa</em> function, choosing the cailliez correction for negative eigenvalues. Visualize the output using ggplot.</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="5-pca_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
+<p><img src="5-pca_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
 </div>
 <ul>
 <li>run a non-metric multidimensional scaling ordination (NMDS) on the raw data using the <em>metaMDS</em> function, a Bray-Curtis dissimilarity metric, and two dimensions. Check the stress and plot the results using ggplot. Investigate your PCoA and NMDS side-by-side.</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="5-pca_files/figure-html5/unnamed-chunk-12-1.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-12-2.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-12-3.png" width="624" /></p>
+<p><img src="5-pca_files/figure-html5/unnamed-chunk-14-1.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-14-2.png" width="624" /><img src="5-pca_files/figure-html5/unnamed-chunk-14-3.png" width="624" /></p>
+</div>
+<h3 id="part-iv-1">Part IV</h3>
+<p>We will continue using the “fishcoms_lizardisland.csv” dataset, but this time, we will explore differences in fish communities between the two years, 2011 and 2015.</p>
+<ol type="1">
+<li>Calculate fish abundance per transect, site, and year for each species.</li>
+<li>Put the dataset in wide format.</li>
+<li>Split the metadata from the numeric data.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lizard.sum</span> <span class='op'>&lt;-</span> <span class='va'>lfish</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Site</span>, <span class='va'>transect</span>, <span class='va'>year</span>, <span class='va'>species</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>abundance <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>abundance</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.wide</span> <span class='op'>&lt;-</span> <span class='va'>lizard.sum</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/spread.html'>spread</a></span><span class='op'>(</span>key <span class='op'>=</span> <span class='va'>species</span>, value <span class='op'>=</span> <span class='va'>abundance</span>, fill <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.meta</span> <span class='op'>&lt;-</span> <span class='va'>lizard.wide</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span></span>
+<span></span>
+<span><span class='va'>lizard.raw</span> <span class='op'>&lt;-</span> <span class='va'>lizard.wide</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<ol type="1">
+<li>Run a PCoA with Bray-Curtis dissimilarity.</li>
+<li>Check eigenvalues. Add a correction if needed.</li>
+<li>Plot the PCoA with different colors and polygons for the two years.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/nschiett/fishualize'>fishualize</a></span><span class='op'>)</span></span>
+<span><span class='va'>lizard.d.bray</span> <span class='op'>&lt;-</span> <span class='fu'>vegdist</span><span class='op'>(</span><span class='va'>lizard.raw</span>, method <span class='op'>=</span> <span class='st'>"bray"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.pcoa.bray</span> <span class='op'>&lt;-</span>  <span class='fu'>pcoa</span><span class='op'>(</span><span class='va'>lizard.d.bray</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.pcoa.bray</span> <span class='op'>&lt;-</span>  <span class='fu'>pcoa</span><span class='op'>(</span><span class='va'>lizard.d.bray</span>, correction <span class='op'>=</span> <span class='st'>"cailliez"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.scores.b</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>lizard.pcoa.bray</span><span class='op'>$</span><span class='va'>vectors</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/bind_cols.html'>bind_cols</a></span><span class='op'>(</span><span class='va'>lizard.meta</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.hulls.b</span> <span class='op'>&lt;-</span> <span class='va'>lizard.scores.b</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/grDevices/chull.html'>chull</a></span><span class='op'>(</span><span class='va'>Axis.1</span>, <span class='va'>Axis.2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>lizard.plot.b</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>lizard.scores.b</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Axis.1</span>, y <span class='op'>=</span> <span class='va'>Axis.2</span>, color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_polygon.html'>geom_polygon</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>lizard.hulls.b</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Axis.1</span>, <span class='va'>Axis.2</span>, fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span><span class='op'>)</span>, alpha <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/fishualize/man/scale_fish.html'>scale_fill_fish_d</a></span><span class='op'>(</span>option <span class='op'>=</span> <span class='st'>"Stegastes_nigricans"</span>, end <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://rdrr.io/pkg/fishualize/man/scale_fish.html'>scale_color_fish_d</a></span><span class='op'>(</span>option <span class='op'>=</span> <span class='st'>"Stegastes_nigricans"</span>, end <span class='op'>=</span> <span class='fl'>0.8</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span><span class='op'>(</span><span class='st'>"PCo1 (12.5%)"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span><span class='op'>(</span><span class='st'>"PCo2 (8.4%)"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ggtitle</a></span><span class='op'>(</span><span class='st'>"PCoA"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guide_legend.html'>guide_legend</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Year"</span><span class='op'>)</span>, fill <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span></span>
+<span><span class='va'>lizard.plot.b</span></span></code></pre>
+</div>
+<p><img src="5-pca_files/figure-html5/unnamed-chunk-16-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
