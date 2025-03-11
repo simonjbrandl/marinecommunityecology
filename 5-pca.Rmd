@@ -114,9 +114,9 @@ lizard.loadings <- as.data.frame(lizard.pca$species) %>%
 lizard.plot2 <- ggplot() +
   geom_point(data = lizard.scores, aes(x = PC1, y = PC2, color = Exposure), size = 2) +
   geom_polygon(data = lizard.hulls, aes(x = PC1, PC2, fill = Exposure), alpha = 0.5) +
-  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1*3,
-                                           y = 0, yend = PC2*3), lwd = 0.1) +
-  geom_text(data = lizard.loadings, aes(x = PC1*3, y = PC2*3, label = species), size = 3) +
+  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1,
+                                           y = 0, yend = PC2), lwd = 0.1) +
+  geom_label(data = lizard.loadings, aes(x = PC1, y = PC2, label = species), size = 3) +
   scale_fill_viridis_d() +
   scale_color_viridis_d() +
   theme_bw() +
@@ -146,9 +146,9 @@ lizard.loadings <- as.data.frame(lizard.pca$species) %>%
 lizard.plot3 <- ggplot() +
   geom_point(data = lizard.scores, aes(x = PC1, y = PC2, color = Exposure), size = 2) +
   geom_polygon(data = lizard.hulls, aes(x = PC1, PC2, fill = Exposure), alpha = 0.5) +
-  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1*2,
-                                           y = 0, yend = PC2*2), lwd = 0.1) +
-  geom_text(data = lizard.loadings, aes(x = PC1*2, y = PC2*2, label = species), size = 3) +
+  geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1,
+                                           y = 0, yend = PC2), lwd = 0.1) +
+  geom_label(data = lizard.loadings, aes(x = PC1, y = PC2, label = species), size = 3) +
   scale_fill_viridis_d() +
   scale_color_viridis_d() +
   theme_bw() +
@@ -326,7 +326,7 @@ lizard.plot.b
 
 - Retain only species in the family Chaetodontidae (butterflyfishes) in the dataset, and summarize each species' abundance across sites, while also retaining information on each site's exposure level. Bring the data to wide format.
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 library(vegan)
 library(tidyverse)
 library(ape)
@@ -348,7 +348,7 @@ lizard.wide
 
 - Divide your dataset into metadata and abundance data, run a PCA on the Hellinger transformed data, and plot the data using ggplot. See how the data changes depending on whether you scale and center your data. 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 # isolate metadata
 lizard.meta <- lizard.wide[1:2]
 lizard.meta
@@ -418,7 +418,7 @@ lizard.plot3 <- ggplot() +
   geom_polygon(data = lizard.hulls, aes(x = PC1, PC2, fill = Exposure), alpha = 0.5) +
   geom_segment(data = lizard.loadings, aes(x = 0, xend = PC1*2,
                                            y = 0, yend = PC2*2), lwd = 0.1) +
-  geom_text(data = lizard.loadings, aes(x = PC1*2, y = PC2*2, label = species), size = 3) +
+  geom_text(data = lizard.loadings, aes(x = PC1*2, y = PC2*2, label = species), size = 3) + # you can spread out loadings by multiplying values
   scale_fill_viridis_d() +
   scale_color_viridis_d() +
   theme_bw() +
@@ -434,7 +434,7 @@ Part II
 
 - Group the data by transect, site, exposure, and species, and sum up the number of individuals (abundance). Turn the data into wide format and split it into meta and raw data as previously. 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 # call the entire dataset
 # group by transect, site, exposure, and species
 # summarize the species abundances
@@ -457,7 +457,7 @@ lizard.raw <- lizard.wide %>%
 
 - Create a distance matrix using the *vegdist* function and a Bray-Curtis dissimilarity metric. Then, run a PCoA using the *pcoa* function, choosing the cailliez correction for negative eigenvalues. Visualize the output using ggplot. 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 # create a distance matrix with vegdist() from the vegan package
 # use the Bray-Curtis dissimilarity metric, which is a dissimilarity measure designed to handle abundance data
 lizard.dist <- vegdist(lizard.raw, method = "bray")
@@ -492,7 +492,7 @@ lizard.plot.pcoa
 
 - run a non-metric multidimensional scaling ordination (NMDS) on the raw data using the *metaMDS* function, a Bray-Curtis dissimilarity metric, and two dimensions. Check the stress and plot the results using ggplot. Investigate your PCoA and NMDS side-by-side. 
 
-```{r, echo = FALSE, results = FALSE}
+```{r, echo = TRUE, results = TRUE}
 # use metaMDS() to run the nMDS
 # specify the data, the dimensions, the number of tries to give the nMDS to find a solution, and the distance metric
 lizard.mds <- metaMDS(comm = lizard.raw, k = 2, trymax = 1000, distance = "bray")
