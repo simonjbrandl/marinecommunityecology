@@ -1,0 +1,23 @@
+Site,Seine No.,Individual,Species ID,Fish,Crust,Mollusc,SAV,AOM,Other
+Bridge,3,So1,Sciaenops ocellatus,0,1,0,1,1,0
+Bridge,3,Lr1,Lagodon rhomboides,0,0,0,1,1,1
+Bridge,3,Lr2,Lagodon rhomboides,0,0,0,1,0,0
+Bridge,3,So2,Sciaenops ocellatus,0,1,0,1,1,0
+Bridge,3,So3,Sciaenops ocellatus,0,0,0,1,0,0
+Bridge,4,Mc1,Mugil cephalus,0,0,0,0,1,0
+Bridge,4,Lr3,Lagodon rhomboides,0,0,0,1,0,0
+Bridge,4,Lr4,Lagodon rhomboides,0,0,1,1,1,0
+Bridge,4,So4,Sciaenops ocellatus,0,0,1,0,1,0
+Bridge,4,Sp1,Symphurus plagiusa,0,0,0,1,1,0
+Bridge,4,Fx1,Fundulus xenicus,0,0,0,0,0,1
+Channel,1,Lr5,Lagodon rhomboides,0,1,0,1,1,1
+Channel,1,Mu1,Micropogonias undulatus,1,1,0,0,0,0
+Channel,1,Cb1,Ctenogobious boleosoma,0,0,0,1,1,0
+Channel,1,Cb2,Ctenogobious boleosoma,0,1,0,0,1,0
+Channel,1,Fs1,Fundulus similis,1,0,0,0,1,0
+Channel,5,Lr6,Lagodon rhomboides,0,1,1,0,1,1
+Channel,5,Lx1,Leiostomus xanthurus,0,0,0,0,1,0
+Channel,5,Mb1,Menidia beryllina,0,1,0,0,0,0
+Channel,5,Fs2,Fundulus similis,0,1,0,1,1,1
+Channel,5,So5,Sciaenops ocellatus,0,0,0,0,1,1
+Channel,5,Fs3,Fundulus similis,0,0,0,0,1,0
