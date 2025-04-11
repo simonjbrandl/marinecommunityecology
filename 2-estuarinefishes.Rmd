@@ -48,7 +48,7 @@ I. Read in the communities dataset. Then perform the following actions:
 
 • bring the data to long format, calculate the species richness and total abundance of fishes in each seine, and plot the two metrics (species richness and abundance) across the two sites (bridge and channel).
 
-```{r, echo = FALSE, results = TRUE}
+```{r, echo = TRUE, results = TRUE}
 library(tidyverse)
 library(fishualize)
 library(patchwork)
@@ -134,7 +134,7 @@ II. Read in the guts dataset. Then perform the following actions:
 
 • plot the percent occurrence of prey items across the ten species in a barchart, using axes and colors to delineate both fish species and their prey.
 
-```{r, echo=FALSE, results=TRUE}
+```{r, echo=TRUE, results=TRUE}
 # gut content % occurrence
 
 guts <- read.csv(file = "data/fish_lab/guts.csv") %>%
@@ -166,7 +166,7 @@ III. Read in the morphometrics dataset. Then perform the following actions:
 
 • run a PCA on the morphological traits to examine morphological variation across fish species, makign sure that you plot the vectors alongside your species.
 
-```{r, echo=FALSE, results=TRUE}
+```{r, echo=TRUE, results=TRUE}
 # morphometrics
 
 morph <- read.csv(file = "data/fish_lab/morphometrics.csv")
