@@ -56,7 +56,7 @@ library(ggformula)
 
 Data wrangling:
 
-- We will first work with a reef fish dataset that was used for trait-based analyses in Brandl et al. 2016 (Ecosphere). The trait data are [here](data/traits.csv) and the site data, which contains biomass calculations for each community, are [here](data/reeffishcomms.csv), which we will call "sites". Load the data into your environment and then use the "column_to_rownames" function to turn the "Species" column (trait dataset) into your rownames. 
+- We will first work with a reef fish dataset that was used for trait-based analyses in Brandl et al. 2016 (Ecosphere). The trait data are [here](data/traits.csv) and the site data, which contains biomass calculations for each community, are [here](sites.csv), which we will call "sites". Load the data into your environment and then use the "column_to_rownames" function to turn the "Species" column (trait dataset) into your rownames. 
 
 - For the sites dataset, remove the year column from the dataset and then use the "column_to_rowname" function again, this time for the "site" column. Then turn the sites data.frame into a matrix using the "as.matrix" function. 
 
