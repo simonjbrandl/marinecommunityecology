@@ -1,0 +1,160 @@
+---
+title: "Session 6: Functional trait based analyses"
+description: |
+  This session introduces trait-based analyses as means to analyze communities under the consideration of ecological differences. 
+author:
+  - name: Simon J. Brandl, PhD
+    url: https://www.fishandfunctions.com/
+    affiliation: The University of Texas at Austin
+date: "`r Sys.Date()`"
+color1: "#0D2A47"
+output:
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+    code_folding: false
+    toc_float: true
+    collapsed: false
+    smooth_scroll: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+# a. 6: Exercises
+
+- Start by loading the following packages (remember that you may have to install some of them): 
+
+```{r, echo = TRUE}
+library(tidyverse)
+library(fishualize)
+library(patchwork)
+library(vegan)
+library(FD)
+library(patchwork)
+library(ggformula)
+```
+
+```{r, echo = FALSE}
+# traits <- read.csv(file = "data/traits_biomass_comb.csv") %>%
+#   filter(Species != "sco.line") %>%
+#   select(Species, Diet, Habitat, Territorial, Sizeclass)
+# 
+# sites <- read.csv(file = "data/traits_biomass_comb.csv") %>%
+#   select(-Diet, -Habitat, -Territorial, -Sizeclass, - ID) %>%
+#   pivot_longer(cols = 2:29, names_to = "site", values_to = "biomass") %>%
+#   filter(biomass >0) %>%
+#   pivot_wider(names_from = Species, values_from = biomass, values_fill = 0) %>%
+#   mutate(year = case_when(grepl("2011", site) ~ 2011,
+#                           TRUE ~ 2015))%>%
+#   relocate(site, year)
+# 
+# write.csv(traits, file = "data/traits.csv", row.names = F)
+# write.csv(sites, file = "data/sites.csv", row.names = F)
+```
+
+Data wrangling:
+
+- We will first work with a reef fish dataset that was used for trait-based analyses in Brandl et al. 2016 (Ecosphere). The trait data are [here](data/traits.csv) and the site data, which contains biomass calculations for each community, are [here](data/reeffishcomms.csv), which we will call "sites". Load the data into your environment and then use the "column_to_rownames" function to turn the "Species" column (trait dataset) into your rownames. 
+
+- For the sites dataset, remove the year column from the dataset and then use the "column_to_rowname" function again, this time for the "site" column. Then turn the sites data.frame into a matrix using the "as.matrix" function. 
+
+- Finally, check that the rownames of the trait dataset match the column names of the sites dataset
+
+```{r, echo = TRUE, results = TRUE}
+traits = read.csv(file = "data/traits.csv")
+sites = read.csv(file = "data/sites.csv")
+
+traits1 <- traits %>%  
+  mutate(Diet = as.factor(Diet),
+         Habitat = as.factor(Habitat),
+         Territorial = as.factor(Territorial),
+         Sizeclass = as.factor(Sizeclass)) %>%
+    column_to_rownames("Species")
+
+sites1 <- sites %>%
+  select(-year) %>%
+  column_to_rownames("site") %>%
+  as.matrix()
+
+rownames(traits1) == colnames(sites1)
+```
+
+
+Running FD:
+
+- To calculate the most common functional indices, we will use the dbFD function. Specify the traits dataset and the sites dataset as the two inputs, choose a correction for negative eigenvalues (usually cailliez or lingoes), and make sure to specify "print.pco = TRUE".
+
+- Pull the number of species (nbsp), functional richness (FRic), functional evenness (FEve), and functional dispersion (FDis) values into a new dataset that also has your sites and the year (from the original sites dataset)
+
+```{r, echo = TRUE, results = TRUE}
+calc <- dbFD(x = traits1, a = sites1, corr = "lingoes", print.pco = T)
+
+
+functional_metrics <- sites %>%
+  select(site, year) %>%
+  bind_cols(calc$nbsp, calc$FRic, calc$FEve, calc$FDis) %>%
+  rename("Spric" = "...3",
+    "FRichness" = "...4",
+         "FEveness" = "...5",
+         "FDispersion" = "...6")
+```
+
+Plotting: 
+
+- Plot species richness against functional richness, fitting a line that suggests the best fit to the data
+
+- Plot the four indices in 2011 and 2015 using boxplots, violins, or similar
+
+- Plot the functional space across the two years, calling on the "x.axes" column in the output of the dbFD function
+
+```{r, echo = TRUE, results = TRUE}
+spric_fric <- ggplot(functional_metrics, aes(x = Spric, y = FRichness)) +
+  geom_point(color = "sienna2") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "sienna2", fill = "sienna4") +
+  theme_classic() +
+  ylab("Functional richness") +
+  xlab("Species richness")
+spric_fric
+
+functional_metrics_long <- functional_metrics %>%
+  pivot_longer(cols = 3:6, names_to = "metric", values_to = "value")
+  
+diversity_plots <- ggplot(functional_metrics_long, aes(x = as.factor(year), y = value, fill = as.factor(year))) +
+  geom_boxplot() +
+  facet_wrap(.~metric, scales = "free") +
+  scale_fill_manual(values = c("sienna2", "steelblue")) +
+  theme_classic() +
+  xlab("Year") +
+  ylab("") +
+  theme(legend.position = "none")
+diversity_plots
+
+### plot functional space
+
+species.coords <- data.frame(calc$x.axes) %>%
+  select(A1, A2) %>%
+  mutate(species = rownames(.)) %>%
+  mutate(A1 = round(A1, 4),
+         A2 = round(A2, 4))
+
+sites.coords <- sites %>%
+  pivot_longer(cols = 3:275, names_to = "species", values_to = "biomass") %>%
+  inner_join(species.coords) %>%
+  filter(biomass > 0) %>%
+  group_by(site, year, A1, A2) %>%
+  summarize(biomass = sum(biomass))
+  
+functional.space <- ggplot(sites.coords, aes(x = A1, y = A2, fill = as.factor(year))) +
+  geom_point(aes(size = biomass*10), shape = 21, alpha = 0.3) +
+  facet_wrap(. ~ year) +
+  scale_fill_manual(values = c("sienna2", "steelblue")) +
+  theme_classic() +
+  xlab("Axis1") +
+  ylab("Axis2") +
+  theme(legend.position = "none")
+functional.space
+```
+
+

@@ -42,7 +42,7 @@ You can access the full slideshow used in the **4-Simulations** narration **[her
 <br>
 <br>
 
-# c. 3: Exercises
+# c. 4: Exercises
 
 - Start by loading the tidyverse package and copy-and-pasting the basic Moran Model into your R. The code for the model is below: 
 

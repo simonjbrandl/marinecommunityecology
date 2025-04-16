@@ -38,6 +38,8 @@ navbar:
           href: 4-simulations.html
         - text: "5-PCA"
           href: 5-pca.html
+        - text: "6-Traits"
+          href: 6-traits.html
     - text: "Labs"
       href: labs.html
       menu:
