@@ -162,7 +162,7 @@ functional.space
 
 Part II: estuarine fish data
 
-- Download the datasets that contain the traits (found [here](data/fish_lab/traits_ed.csv)]) and the community data (found [here](data/fish_lab/communities.csv)) and read them into your R environment
+- Download the datasets that contain the traits: [here](data/fish_lab/traits_ed.csv)) and the community data: [here](data/fish_lab/communities.csv) and read them into your R environment
 
 - Follow the steps above to calculate functional richness, evenness, dispersion, and diversity and plot them across the two communities (the bridge and the channel)
 
