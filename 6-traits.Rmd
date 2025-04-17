@@ -36,6 +36,8 @@ library(patchwork)
 library(ggformula)
 ```
 
+Part I: reef fish traits
+
 ```{r, echo = FALSE}
 # traits <- read.csv(file = "data/traits_biomass_comb.csv") %>%
 #   filter(Species != "sco.line") %>%
@@ -158,3 +160,190 @@ functional.space
 ```
 
 
+Part II: estuarine fish data
+
+- Download the datasets that contain the traits (found [here](data/fish_lab/traits_ed.csv)]) and the community data (found [here](data/fish_lab/communities.csv)) and read them into your R environment
+
+- Follow the steps above to calculate functional richness, evenness, dispersion, and diversity and plot them across the two communities (the bridge and the channel)
+
+- Plot the relationship between the functional indices and species richness in four scatterplots
+
+Hints:
+
+- make sure your trait lists and community lists match each other, including the alphabetical order. The arrange function will help with this.
+
+- remove any species from the community dataset that do not have a clear taxonomic identity, as they cannot be assigned traits (e.g. larvae)
+
+- make sure your traits are factors, not characters
+
+```{r, echo = F, results = TRUE}
+
+### TRAIT COMPOSITION IN ESTUARINE FISHES
+
+library(tidyverse)
+library(fishualize)
+library(patchwork)
+library(vegan)
+library(FD)
+library(patchwork)
+library(ggformula)
+
+#reading in community dataset
+
+#We convert each of the trait variables to factors We also need to ensure the order of the trait dataset matches EXACTLY the order of the community composition dataset.
+
+#To do do, we will simply arrange both the order of the trait dataset and the community composition dataset in alphabetical order
+
+fish_traits <- read.csv("data/fish_lab/traits_ed.csv", header = T) %>%
+  arrange(Name) %>%
+  column_to_rownames("Name") %>%
+  mutate(Home_range = as.factor(Home_range),
+         Diel_activity = as.factor(Diel_activity),
+         Level_water = as.factor(Level_water),
+         Body_shape = as.factor(Body_shape),
+         Home_range = as.factor(Home_range),
+         Diet = as.factor(Diet),
+         Spawning = as.factor(Spawning))
+
+#reading in community composition dataset
+
+# First, we will remove the Leptocephalus.larvae and the Larvae species, as we can not reliably ascribe traits to these taxa. Next, we create a unique ID to be used for the rownames by pasteing the Site and Seine number. Last, we rename the two species that are misspelled, as in the trait dataset they are spelled correctly and we need these to match
+
+community.comp <- read.csv(file = "data/fish_lab/communities.csv") %>%
+  select(-Leptocephalus.larvae, -Larvae) %>%
+  mutate(ID = paste0(Site, "_", Seine)) %>%
+  select(-Seine, -Site) %>%
+  column_to_rownames("ID") %>%
+  select(order(colnames(.))) %>%
+  as.matrix()
+
+#checking the rownames match the column names
+rownames(fish_traits) == colnames(community.comp)
+
+
+
+
+#############################################################################################################################
+###   Now calculating a suite of functional trait metrics for our community using the dbFD function from the FD package   ###
+#############################################################################################################################
+
+#functional trait calculation
+calc <- dbFD(fish_traits, community.comp, corr = "cailliez")
+
+
+functional_metrics <- bind_cols(calc$FRic, calc$FEve, calc$FDiv, calc$FDis) %>%
+  rename("FRichness" = "...1",
+         "FEveness" = "...2",
+         "FDiversity" = "...3",
+         "FDispersion" = "...4") %>%
+  mutate(Site = c(rep("Bridge", 5), rep("Channel", 5)),
+         ID = paste0(Site, "_", rep(1:5, 2)))
+
+rownames(functional_metrics) <- functional_metrics$ID
+
+
+
+#Now plotting our different metrics to explore how these functional traits relate to structured vs open habitats
+
+plot_richness <- ggplot(data = functional_metrics, aes(x = Site, y = FRichness, color = Site, fill = Site)) +
+  stat_summary(fun.data=function(x){mean_cl_normal(x, conf.int=.683)}, geom="linerange", 
+               linewidth=1, alpha=0.7) +
+  stat_summary(fun.y=mean, geom="point", pch=21, size=5, color = "black") +
+  geom_jitter(width = 0.1, size = 2, pch = 21, color = "black") +
+  theme_classic() +
+  scale_fill_manual(values = c("wheat4", "skyblue3")) +
+  scale_color_manual(values = c("wheat4", "skyblue3")) +
+  theme(legend.position = "none") +
+  xlab("")
+
+plot_eveness <- ggplot(data = functional_metrics, aes(x = Site, y = FEveness, color = Site, fill = Site)) +
+  stat_summary(fun.data=function(x){mean_cl_normal(x, conf.int=.683)}, geom="linerange", 
+               linewidth=1, alpha=0.7) +
+  stat_summary(fun.y=mean, geom="point", pch=21, size=5, color = "black") +
+  geom_jitter(width = 0.1, size = 2, pch = 21, color = "black") +
+  theme_classic() +
+  scale_fill_manual(values = c("wheat4", "skyblue3")) +
+  scale_color_manual(values = c("wheat4", "skyblue3")) +
+  theme(legend.position = "none") +
+  xlab("")
+
+plot_diversity <- ggplot(data = functional_metrics, aes(x = Site, y = FDiversity, color = Site, fill = Site)) +
+  stat_summary(fun.data=function(x){mean_cl_normal(x, conf.int=.683)}, geom="linerange", 
+               linewidth=1, alpha=0.7) +
+  stat_summary(fun.y=mean, geom="point", pch=21, size=5, color = "black") +
+  geom_jitter(width = 0.1, size = 2, pch = 21, color = "black") +
+  theme_classic() +
+  scale_fill_manual(values = c("wheat4", "skyblue3")) +
+  scale_color_manual(values = c("wheat4", "skyblue3")) +
+  theme(legend.position = "none") +
+  xlab("")
+
+plot_dispersion <- ggplot(data = functional_metrics, aes(x = Site, y = FDispersion, color = Site, fill = Site)) +
+  stat_summary(fun.data=function(x){mean_cl_normal(x, conf.int=.683)}, geom="linerange", 
+               linewidth=1, alpha=0.7) +
+  stat_summary(fun.y=mean, geom="point", pch=21, size=5) +
+  stat_summary(fun.y=mean, geom="point", pch=21, size=5, color = "black") +
+  geom_jitter(width = 0.1, size = 2, pch = 21, color = "black") +
+  theme_classic() +
+  scale_fill_manual(values = c("wheat4", "skyblue3")) +
+  scale_color_manual(values = c("wheat4", "skyblue3")) +
+  theme(legend.position = "none") +
+  xlab("")
+
+
+fdplots <- (plot_richness | plot_eveness) / (plot_diversity | plot_dispersion)
+fdplots
+
+
+#########################################################################
+###  Last, well explore how these metrics relate to species richness  ###
+#########################################################################
+
+#species richness and abundance per seine
+
+com.str <- read.csv(file = "data/fish_lab/communities.csv") %>%
+  pivot_longer(cols = -c("Site", "Seine")) %>%
+  filter(!name %in% c("Leptocephalus.larvae", "Larvae")) %>%
+  group_by(Site, Seine) %>%
+  filter(value > 0) %>%
+  summarize(sprich = n_distinct(name), abundance = sum(value)) %>%
+  mutate(ID = paste0(Site, "_", Seine))
+
+merged_data <- left_join(com.str, functional_metrics)
+
+a.1 <- ggplot(merged_data, aes(x = sprich, y = FRichness)) +
+  geom_point(size = 4, color = "steelblue") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_lm(interval = "confidence", color = "steelblue") +
+  xlab("Species Richness") +
+  ylab("Functional Richness")
+
+b.1 <- ggplot(merged_data, aes(x = sprich, y = FEveness)) +
+  geom_point(size = 4, color = "steelblue") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_lm(interval = "confidence", color = "steelblue") +
+  xlab("Species Richness") +
+  ylab("Functional Eveness")
+
+c.1 <- ggplot(merged_data, aes(x = sprich, y = FDiversity)) +
+  geom_point(size = 4, color = "steelblue") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_lm(interval = "confidence", color = "steelblue") +
+  xlab("Species Richness") +
+  ylab("Functional Diversity")
+
+d.1 <- ggplot(merged_data, aes(x = sprich, y = FDispersion)) +
+  geom_point(size = 4, color = "steelblue") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_lm(interval = "confidence", color = "steelblue") +
+  xlab("Species Richness") +
+  ylab("Functional Dispersion")
+
+
+plot.relat <- (a.1 | b.1) / (c.1 | d.1)
+plot.relat
+```
