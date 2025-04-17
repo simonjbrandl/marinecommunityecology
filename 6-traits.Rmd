@@ -176,7 +176,7 @@ Hints:
 
 - make sure your traits are factors, not characters
 
-```{r, echo = F, results = TRUE}
+```{r, echo = TRUE, results = TRUE}
 
 ### TRAIT COMPOSITION IN ESTUARINE FISHES
 
@@ -197,13 +197,7 @@ library(ggformula)
 fish_traits <- read.csv("data/fish_lab/traits_ed.csv", header = T) %>%
   arrange(Name) %>%
   column_to_rownames("Name") %>%
-  mutate(Home_range = as.factor(Home_range),
-         Diel_activity = as.factor(Diel_activity),
-         Level_water = as.factor(Level_water),
-         Body_shape = as.factor(Body_shape),
-         Home_range = as.factor(Home_range),
-         Diet = as.factor(Diet),
-         Spawning = as.factor(Spawning))
+  mutate_if(is.character,as.factor)
 
 #reading in community composition dataset
 
